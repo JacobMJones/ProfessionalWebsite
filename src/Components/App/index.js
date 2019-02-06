@@ -14,18 +14,34 @@ class App extends Component {
     super(props);
     this.state = {};
   }
+  updateDimensions = () => {
+    this.forceUpdate();
+  };
+  componentWillMount() {
+    this.updateDimensions();
+  }
+  componentDidMount() {
+    window.addEventListener("resize", this.updateDimensions);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions);
+  }
 
   render() {
     return (
       <Router>
-        <>
-        <Route exact path={routes.LANDING} component={LandingPage} />
-        <Route exact path={routes.PROJECTS} component={ProjectsPage} />
-        <Route exact path={routes.TOYS} component={ToysPage} />
-        <Route exact path={routes.WHATIKNOW} component={WhatIKnowPage} />
-        <Route exact path={routes.WHATIVEBUILT} component={WhatIveBuiltPage} />
-        <Route exact path={routes.WORKHISTORY} component={WorkHistoryPage} />
-        </>
+        <div>
+          <Route exact path={routes.LANDING} component={LandingPage} />
+          <Route exact path={routes.PROJECTS} component={ProjectsPage} />
+          <Route exact path={routes.TOYS} component={ToysPage} />
+          <Route exact path={routes.WHATIKNOW} component={WhatIKnowPage} />
+          <Route
+            exact
+            path={routes.WHATIVEBUILT}
+            component={WhatIveBuiltPage}
+          />
+          <Route exact path={routes.WORKHISTORY} component={WorkHistoryPage} />
+        </div>
       </Router>
     );
   }
