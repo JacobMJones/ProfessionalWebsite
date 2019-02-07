@@ -8,7 +8,7 @@ import {
   FlexColumn,
   AllCenter
 } from "../../Theme/globalStyle.js";
-import "../../index.css";
+
 class WhatIveBuilt extends Component {
   constructor(props) {
     super(props);

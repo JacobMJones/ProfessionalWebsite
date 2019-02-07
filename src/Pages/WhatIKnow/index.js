@@ -13,7 +13,6 @@ import {
   Title,
   Blurb
 } from "../../Theme/globalStyle.js";
-import "../../index.css";
 
 
 
@@ -36,7 +35,7 @@ class WhatIKnow extends Component {
   };
   render() {
     return (
-      <FullPage background={this.state.backgroundColor}>
+      <FullPage overflow={'none'}>
         <HorizontalCenter>
           <Title>My Notes</Title>
           <Search list={whatIKnowData} filterList={this.filterList}/>

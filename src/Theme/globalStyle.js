@@ -6,7 +6,7 @@ const FullPage = styled.section`
   height: 100vh;
   width: 100vw;
   background: ${props => (props.background ? props.background : "#ffeddf")};
-  overflow: hidden;
+  overflow: ${props => (props.overflow ? props.overflow : 'hidden')};
 `;
 
 const FlexRow = styled.section`
@@ -52,10 +52,11 @@ const Title = styled.section`
   width: 80vw;
   color: #001514;
   display:inline-block;
+  margin-top: ${props => (props.marginTop ? props.marginTop :16)}px;
   @import url("https://fonts.googleapis.com/css?family=Mukta");
 
   font-family: "Mukta", sans-serif;
-  font-size: 56px;
+  font-size: ${props => (props.fontSize ? props.fontSize : 40)}px;
   text-align: center;
   @media (min-width: 320px) {
   }

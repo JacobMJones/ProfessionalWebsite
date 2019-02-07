@@ -36,9 +36,9 @@ class Landing extends Component {
     return (
       <FullPage>
         <AllCenter>
-          <FlipInX duration="0">
-            <Title>Jacob M Jones</Title>
-          </FlipInX>
+          <Title marginTop={36}>
+            <FlipInX duration="0">Jacob M Jones</FlipInX>
+          </Title>
           <FlexColumn>
             {animationDirection === "normal" &&
               landingButtonData.map((item, index) => {
@@ -99,7 +99,7 @@ class Landing extends Component {
                   </FlexElement>
                 );
               })}
-               <Title>....under construction...</Title>
+            <Title fontSize={24}>....under construction...</Title>
           </FlexColumn>
         </AllCenter>
       </FullPage>

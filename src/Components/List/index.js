@@ -1,21 +1,19 @@
 import React from "react";
 import ResultCard from "../ResultCard";
-
+import { ListBackground } from "./style.js";
 class List extends React.Component {
   render() {
-    console.log("in list");
     return (
-     <>
+      <>
         {this.props.items.map((item, index) => {
-          console.log(item);
           return (
-            <div key={item.name + index}>
+            <ListBackground key={item.name + index}>
               <ResultCard
                 title={item.name}
                 blurb={item.blurb}
                 link={item.link}
               />
-            </div>
+            </ListBackground>
           );
         })}
       </>

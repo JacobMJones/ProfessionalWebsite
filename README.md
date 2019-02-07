@@ -1,1 +1,1 @@
-This is my personal website
+This is my personal website. As well as serving as a clearing house for stuff related to web dev, it is also a personal project. I try and make this code base as clean as possible. I use it to figure out what might be best practices when it comes to React. That said, I also use the code base as a place of learning, so some things are overly engineered or at times (hopefully brief) a complete mess. 

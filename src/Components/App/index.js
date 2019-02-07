@@ -8,7 +8,7 @@ import WhatIKnowPage from "../../Pages/WhatIKnow";
 import WhatIveBuiltPage from "../../Pages/WhatIveBuilt";
 import WorkHistoryPage from "../../Pages/WorkHistory";
 import LandingPage from "../../Pages/Landing";
-import "../../index.css";
+
 class App extends Component {
   constructor(props) {
     super(props);

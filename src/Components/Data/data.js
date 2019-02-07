@@ -3,7 +3,7 @@ import DataContext, { withData } from "./context";
 class Data {
   constructor() {
     this.landingButtonData = [
-      { title: "What I know", path: "/what-i-know" },
+      { title: "Notes", path: "/notes" },
       { title: "What I've built", path: "/what-ive-built" },
       { title: "Projects", path: "/projects" },
       { title: "Work history", path: "/work-history" },
