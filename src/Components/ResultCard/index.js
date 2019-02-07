@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import whatIKnowData from "../whatIKnowData";
-import styled, { ThemeProvider } from "styled-components";
 
-import { StyledLink, Card, Title, Blurb } from "./style";
+
+import { StyledLink, Card, Title, Blurb, HorizontalCenter } from "./style";
 
 class WhatIKnow extends Component {
   constructor(props) {
@@ -14,6 +13,7 @@ class WhatIKnow extends Component {
     const { title, link, blurb } = this.props;
     const { url, name } = link;
     return (
+      <HorizontalCenter>
       <Card>
         <Title>{title}</Title>
         <Blurb> {blurb}</Blurb>
@@ -22,6 +22,7 @@ class WhatIKnow extends Component {
           {name}
         </StyledLink>
       </Card>
+      </HorizontalCenter>
     );
   }
 }

@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-import whatIKnowData from "./whatIKnowData"
+import whatIKnowData from "./whatIKnowData";
 import styled, { ThemeProvider } from "styled-components";
-import Search from '../../Components/Search/index'
+import Search from "../../Components/Search/index";
+import List from "../../Components/List"
 import {
   FullPage,
+  HorizontalCenter,
   FlexElement,
   FlexRow,
   FlexColumn,
@@ -20,23 +22,26 @@ class WhatIKnow extends Component {
     super(props);
     this.state = {};
   }
-
-  
+  componentWillMount() {
+    this.setState({ initialItems: whatIKnowData, items: whatIKnowData });
+  }
+  filterList = event => {
+    let updatedList = this.state.initialItems;
+    updatedList = updatedList.filter(function(item) {
+      return (
+        item.name.toLowerCase().search(event.target.value.toLowerCase()) !== -1
+      );
+    });
+    this.setState({ items: updatedList });
+  };
   render() {
     return (
       <FullPage background={this.state.backgroundColor}>
-        <AllCenter top={40}>
+        <HorizontalCenter>
           <Title>My Notes</Title>
-
-          <FlexRow>
-            <Blurb>
-              Reminders, code snippets, and explanations of key dev concepts. I
-              write these to remember and for when I forget.
-            </Blurb>
-           
-          </FlexRow>
-          <Search list={whatIKnowData}/>
-        </AllCenter>
+          <Search list={whatIKnowData} filterList={this.filterList}/>
+          <List items={this.state.items} />
+        </HorizontalCenter>
       </FullPage>
     );
   }

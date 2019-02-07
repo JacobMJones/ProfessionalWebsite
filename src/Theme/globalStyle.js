@@ -38,9 +38,7 @@ const AllCenter = styled.section`
   transform: translate(-50%, -50%);
 `;
 const HorizontalCenter = styled.section`
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  text-align: center;
 `;
 const ButtonText = styled.section`
   @import url("https://fonts.googleapis.com/css?family=Mukta");
@@ -53,16 +51,15 @@ const ButtonText = styled.section`
 const Title = styled.section`
   width: 80vw;
   color: #001514;
+  display:inline-block;
   @import url("https://fonts.googleapis.com/css?family=Mukta");
 
   font-family: "Mukta", sans-serif;
   font-size: 56px;
   text-align: center;
   @media (min-width: 320px) {
-  
   }
   @media (min-width: 801px) {
-  
   }
 `;
 
@@ -70,16 +67,15 @@ const Blurb = styled.section`
   @import url("https://fonts.googleapis.com/css?family=Mukta");
   font-family: "Mukta", sans-serif;
 
- 
-  position:relative;
- 
+  position: relative;
+
   font-size: 18px;
   letter-spacing: 0.4px;
   @media (min-width: 800px) {
   }
   @media (min-width: 801px) {
     width: 30vw;
-    left:25vw;
+    left: 25vw;
   }
 `;
 export {
