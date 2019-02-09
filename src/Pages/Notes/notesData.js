@@ -93,3 +93,6 @@ module.exports = [
 //Promises, callbacks, async
 //closures 
 //runtime
+//{...props}
+//.attrs() attributes
+//hideVisually
