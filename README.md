@@ -2,11 +2,15 @@ This is my personal website. It serves as a clearing house for stuff related to 
 
 Currently uses:
 
-..*[create-react-app](https://github.com/facebook/create-react-app)
-..*[react-router](https://github.com/ReactTraining/react-router)
-..*[react-awesome-button](https://github.com/rcaferati/react-awesome-button)
-..*[styled-components](https://github.com/styled-components/styled-components)
-..*[animate-css-styled-components](https://github.com/dielduarte/animate-css-styled-components)
+[create-react-app](https://github.com/facebook/create-react-app)
+
+[react-router](https://github.com/ReactTraining/react-router)
+
+[react-awesome-button](https://github.com/rcaferati/react-awesome-button)
+
+[styled-components](https://github.com/styled-components/styled-components)
+
+[animate-css-styled-components](https://github.com/dielduarte/animate-css-styled-components)
 
 
 https://www.jacobmjones.com
