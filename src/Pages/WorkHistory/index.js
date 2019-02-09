@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 
-import styled, {ThemeProvider} from 'styled-components';
-import { FullPage, FlexElement, FlexRow, FlexColumn, AllCenter } from "../../Theme/globalStyle.js";
+import styled, { ThemeProvider } from "styled-components";
+import {
+  FullPage,
+  FlexElement,
+  FlexRow,
+  FlexColumn,
+  AllCenter, Title
+} from "../../Theme/globalStyle.js";
 
 class WorkHistory extends Component {
   constructor(props) {
@@ -14,8 +20,6 @@ class WorkHistory extends Component {
       <FullPage background={this.state.backgroundColor}>
         <AllCenter>Work History</AllCenter>
       </FullPage>
-
-      
     );
   }
 }

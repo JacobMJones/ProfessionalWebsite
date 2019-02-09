@@ -18,7 +18,7 @@ class WhatIveBuilt extends Component {
   render() {
     return (
       <FullPage background={this.state.backgroundColor}>
-        <AllCenter>WhatIveBuilt</AllCenter>
+        <AllCenter>These are tutorials and mini projects I've completed in order to learn programming concepts.</AllCenter>
       </FullPage>
     );
   }

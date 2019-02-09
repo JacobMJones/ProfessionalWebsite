@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 
-
 import { StyledLink, Card, Title, Blurb, HorizontalCenter } from "./style";
 
-class WhatIKnow extends Component {
+class ResultCard extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -11,19 +10,19 @@ class WhatIKnow extends Component {
 
   render() {
     const { title, link, blurb } = this.props;
-    const { url, name } = link;
+
     return (
       <HorizontalCenter>
-      <Card>
-        <Title>{title}</Title>
-        <Blurb> {blurb}</Blurb>
+        <Card>
+          <Title>{title}</Title>
+          <Blurb> {blurb}</Blurb>
 
-        <StyledLink as="a" href={url}>
-          {name}
-        </StyledLink>
-      </Card>
+          <StyledLink as="a" href={link && link.url}>
+            {link && link.name}
+          </StyledLink>
+        </Card>
       </HorizontalCenter>
     );
   }
 }
-export default WhatIKnow;
+export default ResultCard;

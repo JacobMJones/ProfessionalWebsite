@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import * as routes from "../../Constants/routes";
 import ProjectsPage from "../../Pages/Projects";
 import ToysPage from "../../Pages/Toys";
-import WhatIKnowPage from "../../Pages/WhatIKnow";
+import Notes from "../../Pages/Notes";
 import WhatIveBuiltPage from "../../Pages/WhatIveBuilt";
 import WorkHistoryPage from "../../Pages/WorkHistory";
 import LandingPage from "../../Pages/Landing";
@@ -34,7 +34,7 @@ class App extends Component {
           <Route exact path={routes.LANDING} component={LandingPage} />
           <Route exact path={routes.PROJECTS} component={ProjectsPage} />
           <Route exact path={routes.TOYS} component={ToysPage} />
-          <Route exact path={routes.WHATIKNOW} component={WhatIKnowPage} />
+          <Route exact path={routes.NOTES} component={Notes} />
           <Route
             exact
             path={routes.WHATIVEBUILT}
