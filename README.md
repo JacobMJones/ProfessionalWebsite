@@ -13,4 +13,4 @@ Currently uses:
 [animate-css-styled-components](https://github.com/dielduarte/animate-css-styled-components)
 
 
-https://www.jacobmjones.com
+see the site in action: https://www.jacobmjones.com
