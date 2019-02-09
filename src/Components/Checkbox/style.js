@@ -1,14 +1,5 @@
 import styled from "styled-components";
 
-const RadioButton = styled.section`
-  margin: 20px;
-  padding: 0;
-  height: 5vh;
-  display: inline-block;
-  font-size: 32px;
-  text-align: center;
-  width: 5vw;
-`;
 const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
   // Hide checkbox visually but remain accessible to screen readers.
   // Source: https://polished.js.org/docs/#hidevisually
@@ -33,10 +24,10 @@ const Icon = styled.svg`
 `;
 const StyledCheckbox = styled.div`
   display: inline-block;
-  width: 16px;
-  height: 16px;
-  background: ${props => (props.checked ? "#248232" : "#032b43")}
-  border-radius: 3px;
+  width: ${props => (props.checked ? "30px" : "32px")}
+  height: ${props => (props.checked ? "30px" : "32px")}
+  background: ${props => (props.checked ? "#0985CE" : "#248232")}
+  border-radius: ${props => (props.checked ? "12px" : "5px")}
   transition: all 150ms;
 
   ${Icon} {
@@ -44,7 +35,11 @@ const StyledCheckbox = styled.div`
   }
 `;
 const Text = styled.div`
-  margin-left: 4px;
+  @import url("https://fonts.googleapis.com/css?family=Mukta");
+  font-family: "Mukta", sans-serif;
+  font-size: 16px;
+  margin-left: 6px;
+  margin-top: 3px;
   float: right;
 `;
 const CheckboxContainer = styled.div`
@@ -52,11 +47,4 @@ const CheckboxContainer = styled.div`
   vertical-align: middle;
 `;
 
-export {
-  RadioButton,
-  HiddenCheckbox,
-  StyledCheckbox,
-  CheckboxContainer,
-  Icon,
-  Text
-};
+export { HiddenCheckbox, StyledCheckbox, CheckboxContainer, Icon, Text };

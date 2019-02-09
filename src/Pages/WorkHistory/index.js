@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Checkbox from "../../Components/Checkbox";
+import List from "../../Components/List"
 import styled, { ThemeProvider } from "styled-components";
 import {
   FullPage,
@@ -14,16 +15,16 @@ import {
 class WorkHistory extends Component {
   constructor(props) {
     super(props);
-    this.state = { checked: true };
+    this.state = { checked: false, techTitle:false };
   }
 
   handleCheckboxChange = event =>
-    this.setState({ checked: !this.state.checked });
+    this.setState({ checked: !this.state.checked, techTitle:!this.state.techTitle });
   render() {
     return (
       <FullPage overflow={"none"}>
         <HorizontalCenter>
-          <Title>Work History</Title>
+          <Title>{this.state.techTitle ? "Tech Jobs" : "Work History"}</Title>
           <br/>
           <label>
             <Checkbox
@@ -34,6 +35,7 @@ class WorkHistory extends Component {
             />  
           </label> 
         </HorizontalCenter>
+        
       </FullPage>
     );
   }
