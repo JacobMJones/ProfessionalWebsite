@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Checkbox from "../../Components/Checkbox";
-import List from "../../Components/List"
+import workHistoryData from "./workHistoryData";
+import CollapsableCard from "../../Components/CollapsableCard";
+import List from "../../Components/List";
 import styled, { ThemeProvider } from "styled-components";
 import {
   FullPage,
@@ -15,27 +17,37 @@ import {
 class WorkHistory extends Component {
   constructor(props) {
     super(props);
-    this.state = { checked: false, techTitle:false };
+    this.state = { checked: false, techTitle: false };
   }
 
   handleCheckboxChange = event =>
-    this.setState({ checked: !this.state.checked, techTitle:!this.state.techTitle });
+    this.setState({
+      checked: !this.state.checked,
+      techTitle: !this.state.techTitle
+    });
   render() {
+    const { techTitle, checked } = this.state;
     return (
       <FullPage overflow={"none"}>
         <HorizontalCenter>
-          <Title>{this.state.techTitle ? "Tech Jobs" : "Work History"}</Title>
-          <br/>
+          <Title>{techTitle ? "Tech Jobs" : "Work History"}</Title>
+          <br />
           <label>
             <Checkbox
               className="yo"
-              checked={this.state.checked}
+              checked={checked}
               onChange={this.handleCheckboxChange}
-              text={'only tech related'}
-            />  
-          </label> 
+              text={"only tech related"}
+            />
+          </label>
         </HorizontalCenter>
-        
+        <FlexRow>
+          <FlexElement />
+          <FlexElement minWidth={"80vw"}>
+            <CollapsableCard data={workHistoryData} />
+          </FlexElement>
+          <FlexElement />
+        </FlexRow>
       </FullPage>
     );
   }

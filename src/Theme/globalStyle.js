@@ -15,6 +15,7 @@ const FlexRow = styled.section`
   height: 100%;
   width: 100%;
   justify-contents: ${props => (props.justify ? props.justify : "center")};
+  
 `;
 const FlexColumn = styled.section`
   height:100%
@@ -26,10 +27,11 @@ const FlexElement = styled.section`
   flex: ${props => (props.flexSize ? props.flexSize : 1)};
   background: ${props => (props.background ? props.background : "transparent")};
   border-radius: ${props => (props.borderRadius ? props.borderRadius : 1)}px;
-  margin: ${props => (props.margin ? props.margin : 2)}px;
+  margin: ${props => (props.margin ? props.margin : 0)}px;
   font-size: ${props => (props.fontSize ? props.fontSize : 1)}em;
   position: relative;
   text-align: center;
+  min-width:${props =>(props.minWidth ? props.minWidth : "10vw")};
 `;
 const AllCenter = styled.section`
   position: absolute;
