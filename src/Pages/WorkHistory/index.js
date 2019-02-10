@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Checkbox from "../../Components/Checkbox";
 import workHistoryData from "./workHistoryData";
+import workHistoryDataTech from "./workHistoryDataTech";
 import CollapsableCard from "../../Components/CollapsableCard";
 import List from "../../Components/List";
 import styled, { ThemeProvider } from "styled-components";
@@ -17,7 +18,7 @@ import {
 class WorkHistory extends Component {
   constructor(props) {
     super(props);
-    this.state = { checked: false, techTitle: false };
+    this.state = { checked: false, techTitle: false, techOnly:false };
   }
 
   handleCheckboxChange = event =>
@@ -26,7 +27,7 @@ class WorkHistory extends Component {
       techTitle: !this.state.techTitle
     });
   render() {
-    const { techTitle, checked } = this.state;
+    const { techTitle, checked, techOnly } = this.state;
     return (
       <FullPage overflow={"none"}>
         <HorizontalCenter>
@@ -44,7 +45,7 @@ class WorkHistory extends Component {
         <FlexRow>
           <FlexElement />
           <FlexElement minWidth={"80vw"}>
-            <CollapsableCard data={workHistoryData} />
+            <CollapsableCard data={checked ? workHistoryDataTech : workHistoryData}  />
           </FlexElement>
           <FlexElement />
         </FlexRow>

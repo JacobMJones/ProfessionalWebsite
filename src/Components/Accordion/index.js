@@ -1,10 +1,12 @@
+//most code from https://github.com/glennflanagan/react-responsive-accordion
+
 import React from "react";
 import PropTypes from "prop-types";
 import Collapsible from "react-collapsible";
 import createReactClass from "create-react-class";
 
 var Accordion = createReactClass({
-  //Set validation for prop types
+ 
   propTypes: {
     transitionTime: PropTypes.number,
     easing: PropTypes.string,
