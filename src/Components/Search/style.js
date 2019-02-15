@@ -5,7 +5,7 @@ const SearchBox = styled.section`
   padding: 0;
   background: ${props => (props.background ? props.background : "white")};
 
-  height:10vh;
+  height:8vh;
   display: inline-block;
   font-size:32px;
   text-align:center;

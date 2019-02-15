@@ -15,7 +15,6 @@ import {
 } from "../../Theme/globalStyle.js";
 
 
-
 class Notes extends Component {
   constructor(props) {
     super(props);
@@ -35,9 +34,9 @@ class Notes extends Component {
   };
   render() {
     return (
-      <FullPage overflow={'none'}>
+      <FullPage overflowY={'none'}>
         <HorizontalCenter>
-          <Title>My Notes</Title>
+          <Title marginTop={56}>My Notes</Title>
           <Search list={notesData} filterList={this.filterList}/>
           <List items={this.state.items} />
         </HorizontalCenter>

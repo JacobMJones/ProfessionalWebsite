@@ -5,8 +5,10 @@ const FullPage = styled.section`
   padding: 0;
   height: 100vh;
   width: 100vw;
-  background: ${props => (props.background ? props.background : "#ffeddf")};
-  overflow: ${props => (props.overflow ? props.overflow : 'hidden')};
+  background: ${props => (props.background ? props.background : "#d8cfaf")};
+  overflow-x: ${props => (props.overflowX ? props.overflow : "hidden")};
+  overflow-y: ${props => (props.overflowY ? props.overflow : "hidden")};
+
 `;
 
 const FlexRow = styled.section`
@@ -15,23 +17,24 @@ const FlexRow = styled.section`
   height: 100%;
   width: 100%;
   justify-contents: ${props => (props.justify ? props.justify : "center")};
-  
 `;
 const FlexColumn = styled.section`
   height:100%
   width:100%
   display: flex;
   flex-direction: column;
+
 `;
 const FlexElement = styled.section`
   flex: ${props => (props.flexSize ? props.flexSize : 1)};
   background: ${props => (props.background ? props.background : "transparent")};
   border-radius: ${props => (props.borderRadius ? props.borderRadius : 1)}px;
   margin: ${props => (props.margin ? props.margin : 0)}px;
+  margin-left: ${props => (props.marginLeft ? props.marginLeft : 0)}vw;
   font-size: ${props => (props.fontSize ? props.fontSize : 1)}em;
   position: relative;
   text-align: center;
-  min-width:${props =>(props.minWidth ? props.minWidth : "10vw")};
+  min-width: ${props => (props.minWidth ? props.minWidth : "10vw")};
 `;
 const AllCenter = styled.section`
   position: absolute;
@@ -40,26 +43,25 @@ const AllCenter = styled.section`
   transform: translate(-50%, -50%);
 `;
 const HorizontalCenter = styled.section`
-  text-align: center;
+  text-align: ${props => (props.textAlign ? props.textAlign : "center")};
+  background: ${props => (props.background ? props.background : "transparent")};
 `;
 const ButtonText = styled.section`
-  @import url("https://fonts.googleapis.com/css?family=Mukta");
-
   color: white;
-  font-family: "Mukta", sans-serif;
   font-size: 24px;
   letter-spacing: 2px;
 `;
 const Title = styled.section`
-  width: 80vw;
-  color: #001514;
-  display:inline-block;
-  margin-top: ${props => (props.marginTop ? props.marginTop :16)}px;
-  @import url("https://fonts.googleapis.com/css?family=Mukta");
-
-  font-family: "Mukta", sans-serif;
+position:relative;
+  width: 100%;
+  border-radius: ${props => (props.borderRadius ? props.borderRadius : 0)}
+  color: ${props => (props.color ? props.color : " #001514")}
+  background: ${props => (props.background ? props.background : "transparent")}
+  display: inline-block;
+  margin-top: ${props => (props.marginTop ? props.marginTop : 0)}px;
+text-decoration: ${props => (props.underline ? props.underline : 'none')}
   font-size: ${props => (props.fontSize ? props.fontSize : 40)}px;
-  text-align: center;
+  text-align: ${props => (props.textAlign ? props.textAlign : "center")};
   @media (min-width: 320px) {
   }
   @media (min-width: 801px) {
@@ -67,17 +69,20 @@ const Title = styled.section`
 `;
 
 const Blurb = styled.section`
-  @import url("https://fonts.googleapis.com/css?family=Mukta");
-  font-family: "Mukta", sans-serif;
-
   position: relative;
-
-  font-size: 18px;
+ 
+  color: ${props => (props.color ? props.color : " #001514")}
+  background: ${props => (props.background ? props.background : "transparent")};
+  margin-top: ${props => (props.marginTop ? props.marginTop : 0)}px;
+  margin-left: ${props => (props.marginLeft ? props.marginLeft : 0)}%;
+  text-align: ${props => (props.textAlign ? props.textAlign : "left")};
+  font-size: ${props => (props.fontSize ? props.fontSize : 18)}px;
   letter-spacing: 0.4px;
-  @media (min-width: 800px) {
+  @media (max-width: 800px) {
+   
   }
   @media (min-width: 801px) {
-    width: 30vw;
+    width: 40vw;
     left: 25vw;
   }
 `;

@@ -3,12 +3,17 @@ import { AwesomeButton } from "react-awesome-button";
 import { Redirect } from "react-router";
 import "react-awesome-button/dist/styles.css";
 import { withData } from "../../Components/Data/data";
-import { FlipInX } from "animate-css-styled-components";
+import { BaseAnimation } from 'animate-css-styled-components';
+import Animate, { FlipInX,  Flash,
+  Bounce,
+  FadeOut,
+  FadeIn } from "animate-css-styled-components";
 import {
   FullPage,
   FlexElement,
   FlexColumn,
   AllCenter,
+  HorizontalCenter,
   ButtonText,
   Title
 } from "../../Theme/globalStyle.js";
@@ -29,21 +34,22 @@ class Landing extends Component {
     const screenSizeMobile = 800;
     const screenSizeDesktop = 1200;
     const { animationDirection, redirect } = this.state;
-
+    const windowWidth = window.innerWidth; 
     if (this.state.redirect) {
       return <Redirect push to={this.state.url} />;
     }
     return (
       <FullPage>
-        <AllCenter>
-          <Title marginTop={36}>
-            <FlipInX duration="0">Jacob M Jones</FlipInX>
+        
+        <HorizontalCenter>
+          <Title marginTop={56}>
+            <FlipInX duration={0}>Jacob Jones</FlipInX>
           </Title>
-          <FlexColumn>
+          <FlexColumn style={{marginTop:16}}>
             {animationDirection === "normal" &&
               landingButtonData.map((item, index) => {
                 return (
-                  <FlexElement key={`landing-button${index}`}>
+                  <FlexElement  key={`landing-button${index}`}>
                     <FlipInX
                       direction={animationDirection}
                       duration={flipSpeed}
@@ -64,10 +70,10 @@ class Landing extends Component {
                         }}
                         style={
                           screenSize < screenSizeMobile
-                            ? { width: "80vw" }
+                            ? { width: "80vw", marginTop:"12px" }
                             : screenSize < screenSizeDesktop
-                            ? { width: "32vw" }
-                            : { width: "22vw" }
+                            ? { width: "40vw", marginTop:"20px" }
+                            : { width: "40vw", marginTop:"20px"  }
                         }
                       >
                         <ButtonText> {item.title}</ButtonText>
@@ -85,13 +91,13 @@ class Landing extends Component {
                       duration={flipSpeed}
                     >
                       <AwesomeButton
-                        style={
-                          screenSize < screenSizeMobile
-                            ? { width: "80vw" }
-                            : screenSize < screenSizeDesktop
-                            ? { width: "32vw" }
-                            : { width: "22vw" }
-                        }
+                             style={
+                              screenSize < screenSizeMobile
+                                ? { width: "80vw", marginTop:"12px" }
+                                : screenSize < screenSizeDesktop
+                                ? { width: "40vw", marginTop:"20px" }
+                                : { width: "40vw", marginTop:"20px"  }
+                            }
                       >
                         <ButtonText> {item.title}</ButtonText>
                       </AwesomeButton>
@@ -99,9 +105,10 @@ class Landing extends Component {
                   </FlexElement>
                 );
               })}
-            <Title fontSize={24}>....under construction...</Title>
+            {/* <Title fontSize={24}>....under construction...</Title> */}
           </FlexColumn>
-        </AllCenter>
+          under construction...only notes and resume have content
+        </HorizontalCenter>
       </FullPage>
     );
   }

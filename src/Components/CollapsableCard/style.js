@@ -1,48 +1,64 @@
 import styled from "styled-components";
 
 const Card = styled.section`
-  margin-top: 20px;
+margin-bottom:16px;
   padding: 0;
-  background: ${props => (props.background ? props.background : "white")};
-  width: 80vw;
+  background: ${props => (props.background ? props.background : "transparent")};
+ 
   display: inline-block;
+  margin-left:16px;
 
-  @media (min-width: 320px) {
-    width: 80vw;
+  @media (min-width: 800px) {
+    width: 90vw;
   }
   @media (min-width: 801px) {
-    width: 50vw;
+    width: 90vw;
   }
 `;
 
 const Title = styled.section`
-  @import url("https://fonts.googleapis.com/css?family=Mukta");
-  font-family: "Mukta", sans-serif;
+
   margin: 8px;
- 
   padding: 0;
   font-size: 24px;
 `;
 const Subtitle = styled.section`
-  @import url("https://fonts.googleapis.com/css?family=Mukta");
-  font-family: "Mukta", sans-serif;
+
+
   text-align:left;
-  margin-top: 2px;
-  margin-left: 8px;
+ 
   padding: 0;
-  font-size: 20px;
+  
   text-decoration: underline;
+
+  @media (max-width: 800px){
+    font-size: 20px;
+    margin-top: 16px;
+    margin-left:16px;
+  }
+  @media (min-width: 801px) {
+    font-size: 28px;
+
+    margin-left: 32px;
+  }
 `;
 const Blurb = styled.section`
-@import url("https://fonts.googleapis.com/css?family=Mukta");
   text-align: left;
-  margin-top: 8px;
-  margin-left: 16px;
+  
   padding: 0;
-  font-family: "Mukta", sans-serif;
-  font-size: 16px;
-  width:90%;
+  
+  width:80%;
  
+  @media (max-width: 800px){
+    font-size: 16px;margin-top: 4px;
+    margin-left: 30px;
+  }
+  @media (min-width: 801px) {
+    width:80%;
+    word-wrap:break-word;
+    font-size:1.1em;
+   margin: .8vw;
+  }
 `;
 const StyledLink = styled.section`
   margin: 8;

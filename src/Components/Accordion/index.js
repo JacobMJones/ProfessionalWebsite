@@ -2,7 +2,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import Collapsible from "react-collapsible";
+import Collapsible from "../Collapsible";
 import createReactClass from "create-react-class";
 
 var Accordion = createReactClass({

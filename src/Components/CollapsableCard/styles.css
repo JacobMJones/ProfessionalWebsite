@@ -1,16 +1,25 @@
 @import url("https://fonts.googleapis.com/css?family=Mukta");
 
-.Collapsible{
-border-radius:12px;
-margin-top:8px;
-text-align: center;
-width:80vw;
-background-color: aliceblue;
-}
-
-.Collapsible__trigger{
-    font-family: "Mukta", sans-serif;
-    font-size:28px;
+.Collapsible {
+  border-radius: 12px;
+  margin-top: 8px;
+  text-align: center;
 
 }
 
+.Collapsible__trigger {
+  font-family: "Mukta", sans-serif;
+  font-size: 28px;
+  
+}
+
+/* @media only screen and (max-width: 800px) {
+  .Collapsible {
+    width: 80vw;
+  }
+}
+@media only screen and (min-width: 801px) {
+  .Collapsible {
+    width: 60vw;
+  }
+} */

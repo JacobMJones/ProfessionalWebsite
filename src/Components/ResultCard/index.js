@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import { StyledLink, Card, Title, Blurb, HorizontalCenter } from "./style";
 
 class ResultCard extends Component {
@@ -12,14 +11,15 @@ class ResultCard extends Component {
     const { title, link, blurb } = this.props;
 
     return (
-      <HorizontalCenter>
+      <HorizontalCenter> 
         <Card>
+          <div style={{margin:16}}>
           <Title>{title}</Title>
           <Blurb> {blurb}</Blurb>
-
           <StyledLink as="a" href={link && link.url}>
             {link && link.name}
           </StyledLink>
+          </div>
         </Card>
       </HorizontalCenter>
     );

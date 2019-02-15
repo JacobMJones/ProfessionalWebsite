@@ -17,13 +17,24 @@ module.exports = [
       name: "mdn"
     }
   },
+
+  {
+    name: "Callback",
+    blurb:
+      "A callback is a function that is passed as an argument to another function. They can be called synchronously or asynchronously. Callbacks are often used to continue code execution after an asynchronous operation has completed.",
+    link: {
+      url:
+        "https://developer.mozilla.org/en-US/docs/Glossary/Callback_function",
+      name: "mdn"
+    }
+  },
   {
     name: "Lambda",
     blurb:
       "A lambda is a function literal, it is not bound to an identifier. An expression whose value is a function.",
     link: {
-      url: 'https://en.wikipedia.org/wiki/Anonymous_function',
-      name: 'wikipedia'
+      url: "https://en.wikipedia.org/wiki/Anonymous_function",
+      name: "wikipedia"
     }
   },
   {
@@ -52,6 +63,16 @@ module.exports = [
     link: {
       url: "https://dev.to/sarah_chima/enhanced-object-literals-in-es6-a9d",
       name: "article"
+    }
+  },
+  {
+    name: "Promise",
+    blurb:
+      "A Promise is an object representing the eventual completion or failure of an asynchronous operation. You attach callbacks to the promise instead of passing callbacks into a function. Callbacks can be chained together with .then() and will be executed one after the other.",
+    link: {
+      url:
+        "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises",
+      name: 'mdn'
     }
   },
   {
@@ -91,8 +112,9 @@ module.exports = [
 //filter, map, reduce
 // Identifier => Expression
 //Promises, callbacks, async
-//closures 
+//closures
 //runtime
 //{...props}
 //.attrs() attributes
 //hideVisually
+//webpack
