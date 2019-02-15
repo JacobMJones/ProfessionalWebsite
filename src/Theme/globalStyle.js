@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 const FullPage = styled.section`
-  margin: 0;
+  margin-left: 0px;
   padding: 0;
   height: 100vh;
   width: 100vw;
   background: ${props => (props.background ? props.background : "#d8cfaf")};
-  overflow-x: ${props => (props.overflowX ? props.overflow : "hidden")};
-  overflow-y: ${props => (props.overflowY ? props.overflow : "hidden")};
+  overflow-x: ${props => (props.overflowX ? props.overflow : "none")};
+  overflow-y: ${props => (props.overflowY ? props.overflow : "none")};
 
 `;
 

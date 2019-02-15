@@ -3,26 +3,14 @@ import Checkbox from "../../Components/Checkbox";
 import workHistoryData from "./workHistoryData";
 import CollapsableCard from "../../Components/CollapsableCard";
 import PlainResume from "./PlainResume";
-import List from "../../Components/List";
-import { BaseAnimation } from "animate-css-styled-components";
-import Animate, {
-  FlipInX,
-  Flash,
-  Bounce,
-  FadeOut,
-  FadeIn,
-  SlideInUp
-} from "animate-css-styled-components";
-import styled, { ThemeProvider } from "styled-components";
+
 import {
   FullPage,
   FlexElement,
   FlexRow,
-  FlexColumn,
-  AllCenter,
   Title,
   HorizontalCenter
-} from "../../Theme/globalStyle.js";
+} from "./style";
 
 class WorkHistory extends Component {
   constructor(props) {
@@ -49,8 +37,10 @@ class WorkHistory extends Component {
   render() {
     const { techTitle, checked, techOnly, checked2 } = this.state;
     return (
-      <FullPage overflowY={"none"} background={checked2 && "white"}>
-        <HorizontalCenter>
+    
+      <FullPage style={{width:'100%'}} overflowY={"none"} background={checked2 ? "white" : "#d8cfaf"} >
+ 
+        <HorizontalCenter >
           <Title marginTop={40}>
             {techTitle ? "Tech Jobs" : "Work History"}
           </Title>
@@ -85,7 +75,9 @@ class WorkHistory extends Component {
         ) : (
           <PlainResume data={workHistoryData} showOnlyTech={checked} />
         )}
+    
       </FullPage>
+    
     );
   }
 }

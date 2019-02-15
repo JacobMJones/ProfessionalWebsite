@@ -54,8 +54,8 @@ class CollapsableCard extends Component {
         delay={`${index / 20}s`}
         duration={animationHasPlayed ? "0" : ".8s"}
       >
-        <Collapsible trigger={item.company.name}>
-          <HorizontalCenter>
+        <Collapsible trigger={item.company.name} >
+          <HorizontalCenter >
             <Card>
               <div style={{ height: 16 }} />
               <Subtitle>Description</Subtitle>

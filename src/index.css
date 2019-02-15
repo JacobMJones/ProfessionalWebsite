@@ -4,7 +4,7 @@
 body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+   width:103vw;
     background-color: #d8cfaf;
     font-family: "Mukta", sans-serif;
   }
