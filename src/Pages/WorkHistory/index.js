@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import Checkbox from "../../Components/Checkbox";
 import workHistoryData from "./workHistoryData";
 import CollapsableCard from "../../Components/CollapsableCard";
-import PlainResume from "./PlainResume";
+import PlainResume from "./PlainResume/PlainResume";
 
 import {
-  FullPage,
   FlexElement,
   FlexRow,
   Title,
-  HorizontalCenter
+  HorizontalCenter,
+  FullPage
 } from "./style";
 
 class WorkHistory extends Component {
@@ -29,18 +29,20 @@ class WorkHistory extends Component {
       techTitle: !this.state.techTitle
     });
 
+
+    
+
   handleCheckboxChangeResumeStyle = event =>
     this.setState({
       checked2: !this.state.checked2
     });
-    
+
   render() {
     const { techTitle, checked, techOnly, checked2 } = this.state;
+    let screenWidth = window.innerWidth;
     return (
-    
-      <FullPage style={{width:'100%'}} overflowY={"none"} background={checked2 ? "white" : "#d8cfaf"} >
- 
-        <HorizontalCenter >
+      <FullPage background={checked2 ? "white" : "#d8cfaf"}>
+        <HorizontalCenter>
           <Title marginTop={40}>
             {techTitle ? "Tech Jobs" : "Work History"}
           </Title>
@@ -62,8 +64,9 @@ class WorkHistory extends Component {
               text={"plain resume"}
             />
           </label>
-          <div style={{ height: "10px" }} />
+    
         </HorizontalCenter>
+
         {!this.state.checked2 ? (
           <FlexRow>
             <FlexElement />
@@ -75,9 +78,7 @@ class WorkHistory extends Component {
         ) : (
           <PlainResume data={workHistoryData} showOnlyTech={checked} />
         )}
-    
       </FullPage>
-    
     );
   }
 }

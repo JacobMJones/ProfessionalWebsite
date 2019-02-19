@@ -5,14 +5,8 @@ import Animated, {
 } from "animated-styled-components";
 import styled, { ThemeProvider } from "styled-components";
 
-import {
-  FullPage,
-  FlexElement,
-  FlexRow,
-  FlexColumn,
-  AllCenter
-} from "../../Theme/globalStyle.js";
-import { Box } from "./style";
+import PrettyTitle from "./SpecificToys/PrettyTitle"
+import { Box, FullPage } from "./style";
 import posed from "react-pose";
 
 function getRandomArbitrary(min, max) {
@@ -44,6 +38,7 @@ class Toys extends Component {
         <Box borderRadius={this.state.borderRadius} onClick={()=>{this.setState({borderRadius:getRandomArbitrary(4,100)})}} >
           Click Here to slideOutUp
         </Box>
+<PrettyTitle/>
       </FullPage>
       //
     );

@@ -1,18 +1,12 @@
 import React, { Component } from "react";
 import notesData from "./notesData";
-import styled, { ThemeProvider } from "styled-components";
 import Search from "../../Components/Search/index";
 import List from "../../Components/List"
 import {
   FullPage,
   HorizontalCenter,
-  FlexElement,
-  FlexRow,
-  FlexColumn,
-  AllCenter,
   Title,
-  Blurb
-} from "../../Theme/globalStyle.js";
+} from "./style.js";
 
 
 class Notes extends Component {
@@ -37,6 +31,7 @@ class Notes extends Component {
       <FullPage overflowY={'none'}>
         <HorizontalCenter>
           <Title marginTop={56}>My Notes</Title>
+          <br/>
           <Search list={notesData} filterList={this.filterList}/>
           <List items={this.state.items} />
         </HorizontalCenter>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import styled, {ThemeProvider} from 'styled-components';
-import { FullPage, FlexElement, FlexRow, FlexColumn, AllCenter } from "../../Theme/globalStyle.js";
+
+
 import "../../index.css";
 class WhatIveBuilt extends Component {
   constructor(props) {
@@ -11,9 +11,9 @@ class WhatIveBuilt extends Component {
 
   render() {
     return (
-      <FullPage background={this.state.backgroundColor}>
-        <AllCenter>What I've Built</AllCenter>
-      </FullPage>
+      <div background={this.state.backgroundColor}>
+        
+      </div>
 
       
     );

@@ -6,7 +6,7 @@ class Data {
      
       { title: "Skills", path: "/what-ive-built" },
       { title: "Projects", path: "/projects" },
-      { title: "Resume", path: "/work-history" },
+      { title: "Work History", path: "/work-history" },
       { title: "Notes", path: "/notes" },
       { title: "Toys", path: "/toys" }
     ];

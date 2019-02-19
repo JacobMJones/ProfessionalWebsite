@@ -95,7 +95,7 @@ class Collapsible extends Component {
 
   handleTriggerClick(event) {
   //  event.preventDefault();
-console.log('dasdsfkhsdghkj')
+
     if (this.props.triggerDisabled) {
       return
     }
@@ -205,8 +205,9 @@ console.log('dasdsfkhsdghkj')
           onClick={()=>{this.handleTriggerClick()}}
         >
           <div
-          style={{marginTop:'16px', backgroundColor:'white'}}
+          style={{marginTop:'16px', backgroundColor:'white', borderRadius:'5px'}}
             className={innerClassString.trim()}
+           
           >
             {children}      
           </div>

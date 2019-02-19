@@ -10,8 +10,7 @@ const Checkbox = ({ className, checked, text, ...props }) => (
     
       <Icon viewBox="0 0 24 24">
         <polyline points="20 6 9 17 4 12" />
-      </Icon>
-      
+      </Icon>     
     </StyledCheckbox>
     <Text>{text}</Text>
   </CheckboxContainer>

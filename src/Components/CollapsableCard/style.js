@@ -1,63 +1,49 @@
 import styled from "styled-components";
 
 const Card = styled.section`
-margin-bottom:16px;
-  padding: 0;
-  background: ${props => (props.background ? props.background : "transparent")};
+  margin: 0;
  
-  display: inline-block;
-  margin-left:16px;
-
-  @media (min-width: 800px) {
-    width: 90vw;
-  }
-  @media (min-width: 801px) {
-    width: 90vw;
-  }
 `;
 
 const Title = styled.section`
-
   margin: 8px;
   padding: 0;
   font-size: 24px;
 `;
 const Subtitle = styled.section`
-
-
-  text-align:left;
- 
-  padding: 0;
-  
-  text-decoration: underline;
-
-  @media (max-width: 800px){
+  text-align: center;
+  background: #248232;
+  color: white;
+  opacity: 0.8;
+  border-radius: 5px;
+  @media (max-width: 800px) {
     font-size: 20px;
     margin-top: 16px;
-    margin-left:16px;
+    margin-bottom: 16px;
   }
   @media (min-width: 801px) {
     font-size: 28px;
-
-    margin-left: 32px;
+    margin-top: 24px;
+    margin-bottom: 24px;
   }
 `;
 const Blurb = styled.section`
   text-align: left;
-  
   padding: 0;
-  
-  width:80%;
- 
-  @media (max-width: 800px){
-    font-size: 16px;margin-top: 4px;
-    margin-left: 30px;
+  width: 80%;
+
+  @media (max-width: 800px) {
+    font-size: 16px;
+    margin-top: 4px;
+    margin-left: 16px;
+    width:90%;
   }
   @media (min-width: 801px) {
-    width:80%;
-    word-wrap:break-word;
-    font-size:1.1em;
-   margin: .8vw;
+    width: 80%;
+    word-wrap: break-word;
+    font-size: 20px;
+    margin-top: 4px;
+    margin-left: 10vw;
   }
 `;
 const StyledLink = styled.section`
@@ -70,4 +56,39 @@ const StyledLink = styled.section`
 const HorizontalCenter = styled.section`
   text-align: center;
 `;
-export { Card, Title, StyledLink, Blurb, HorizontalCenter, Subtitle };
+const FlexRow = styled.section`
+  display: flex;
+  flex-driection: row;
+  height: 100%;
+  width: 100%;
+  justify-contents: ${props => (props.justify ? props.justify : "center")};
+`;
+const FlexColumn = styled.section`
+  height:100%
+  width:100%
+  display: flex;
+  flex-direction: column;
+
+`;
+const FlexElement = styled.section`
+  flex: ${props => (props.flexSize ? props.flexSize : 1)};
+  background: ${props => (props.background ? props.background : "transparent")};
+  border-radius: ${props => (props.borderRadius ? props.borderRadius : 1)}px;
+  margin: ${props => (props.margin ? props.margin : 0)}px;
+  margin-left: ${props => (props.marginLeft ? props.marginLeft : 0)}vw;
+  font-size: ${props => (props.fontSize ? props.fontSize : 1)}em;
+  position: relative;
+  text-align: center;
+  min-width: ${props => (props.minWidth ? props.minWidth : "10vw")};
+`;
+export {
+  Card,
+  Title,
+  StyledLink,
+  Blurb,
+  HorizontalCenter,
+  Subtitle,
+  FlexElement,
+  FlexRow,
+  FlexColumn
+};

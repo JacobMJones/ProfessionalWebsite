@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-
-import styled, {ThemeProvider} from 'styled-components';
-import { FullPage, FlexElement, FlexRow, FlexColumn, AllCenter } from "../../Theme/globalStyle.js";
-
+import { FullPage, HorizontalCenter, Title, Brace } from "./style.js";
+import ProjectCard from "./ProjectCard";
 class Projects extends Component {
   constructor(props) {
     super(props);
@@ -11,11 +9,16 @@ class Projects extends Component {
 
   render() {
     return (
-      <FullPage background={this.state.backgroundColor}>
-        <AllCenter>Projects</AllCenter>
+      <FullPage>
+        <HorizontalCenter>
+        <Title fontSize={64}  fontWeight={1000}>
+          <HorizontalCenter>Projects</HorizontalCenter>
+          <Brace/>
+        </Title>
+          <ProjectCard />
+        
+        </HorizontalCenter>
       </FullPage>
-
-      
     );
   }
 }
