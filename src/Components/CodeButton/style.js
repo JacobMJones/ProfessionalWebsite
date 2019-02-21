@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
-const Home = styled.div`
+const Code= styled.div`
   @media (max-width: 800px) {
     width: 10vw;
     height: auto;
-
-    margin-right:5vw
+    margin-left:5vw
   }
   @media (min-width: 801px) {
     width: 4vw;
@@ -13,4 +12,4 @@ const Home = styled.div`
   }
 `;
 
-export { Home };
+export { Code};

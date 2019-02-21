@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router";
-import H from './style'
+import {Home} from './style'
 class HomeButton extends Component {
   constructor(props) {
     super(props);
@@ -15,13 +15,14 @@ class HomeButton extends Component {
       return <Redirect to={"/"} push />;
     }
     return (
-      <img 
-      style={{width:'4vw', height:'4vw'}}
+      <Home
+        as="img"
         src="/images/home.png"
         onClick={() => {
           this.handleClick();
         }}
       />
+    
     );
   }
 }

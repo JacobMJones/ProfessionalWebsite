@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import {Code} from './style'
 
 class CodeButton extends Component {
   constructor(props) {
@@ -10,8 +10,8 @@ class CodeButton extends Component {
   render() {
     const { functionToCall } = this.props;
     return (
-      <img
-        style={{ width: "4vw", height: "4vw" }}
+      <Code
+        as='img'
         src="/images/code.png"
         onClick={() => {
           functionToCall();

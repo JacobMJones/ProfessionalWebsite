@@ -21,15 +21,14 @@ class Projects extends Component {
   }
 
   async componentDidMount() {
-    let code = await getCode();
-    this.setState({ message: code });
+    let code =  await getCode("https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Pages/Projects/index.js");
+    this.setState({ code: code });
   }
   showCode = () => {
     this.setState({ showCode: !this.state.showCode });
   };
 
   render() {
-    const screenWidth = window.innerWidth;
     return (
       <FullPage background="#d8cfaf">
         <HorizontalCenter>
@@ -48,7 +47,7 @@ class Projects extends Component {
           {!this.state.showCode ? (
             <ProjectCard />
           ) : (
-            <PrismCode code={this.state.message} />
+            <PrismCode code={this.state.code} />
           )}
         </HorizontalCenter>
       </FullPage>

@@ -1,10 +1,8 @@
-import Parser from 'html-react-parser';
+import Parser from "html-react-parser";
 
-export default () => {
+export default url => {
   console.log("get code");
-  let code = fetch(
-    "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Pages/Projects/index.js"
-  )
+  let code = fetch(url)
     .then(function(response) {
       return response.text();
     })
@@ -13,4 +11,4 @@ export default () => {
     });
 
   return code;
-}
+};
