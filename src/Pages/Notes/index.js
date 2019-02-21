@@ -30,9 +30,10 @@ class Notes extends Component {
     return (
       <FullPage overflowY={'none'}>
         <HorizontalCenter>
-          <Title marginTop={56}>My Notes</Title>
+          {/* <Title marginTop={56}>My Notes</Title> */}
           <br/>
           <Search list={notesData} filterList={this.filterList}/>
+          <br/>  <br/>
           <List items={this.state.items} />
         </HorizontalCenter>
       </FullPage>

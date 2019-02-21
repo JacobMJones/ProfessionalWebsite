@@ -20,18 +20,15 @@ position:relative;
   margin-top: ${props => (props.marginTop ? props.marginTop : 0)}px;
   font-size: ${props => (props.fontSize ? props.fontSize : 40)}px;
   text-align: ${props => (props.textAlign ? props.textAlign : "center")};
-  @media (min-width: 320px) {
-  }
-  @media (min-width: 801px) {
-  }
+
 `;
 const FullPage = styled.section`
   background: ${props => (props.background ? props.background : "#d8cfaf")};
-  overflow-x: hidden;
+  overflow: hidden;
 `;
 const ButtonText = styled.section`
   color: white;
-  font-size: 24px;
+  font-size: 32px;
   letter-spacing: 2px;
 `;
 const HorizontalCenter = styled.section`

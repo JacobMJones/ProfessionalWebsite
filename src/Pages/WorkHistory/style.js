@@ -4,6 +4,7 @@ const FullPage = styled.section`
   background: ${props => (props.background ? props.background : "transparent")};
   width:100%;
   overflow-x: hidden;
+ 
 `;
 
 const FlexRow = styled.section`
@@ -61,10 +62,7 @@ position:relative;
 
   font-size: ${props => (props.fontSize ? props.fontSize : 40)}px;
   text-align: ${props => (props.textAlign ? props.textAlign : "center")};
-  @media (min-width: 320px) {
-  }
-  @media (min-width: 801px) {
-  }
+  
 `;
 
 const Blurb = styled.section`

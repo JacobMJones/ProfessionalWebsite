@@ -2,12 +2,9 @@ import React, { Component } from "react";
 import { StyledLink, Card, Title, Blurb, HorizontalCenter } from "./style";
 import YouTube from "react-youtube";
 import ProjectCardData from "../projectsData";
-const opts = {
-  width: "70%"
 
-  // playerVars: { // https://developers.google.com/youtube/player_parameters
-  //   autoplay: 1
-  // }
+const opts = {
+  width: "85%"
 };
 
 class ProjectCard extends Component {
@@ -17,40 +14,48 @@ class ProjectCard extends Component {
   }
 
   render() {
-    const { title, link, blurb } = this.props;
-
+    const screenWidth = window.innerWidth;
     return (
       <HorizontalCenter>
         {ProjectCardData.map((item, index) => {
-          const color = (1 === index % 2)  ? 'white' : '#ffeddf'
+          const color = 1 === index % 2 ? "white" : "#ffeddf";
           return (
-            <Card background={color}>
-            <div style={{padding:24}}>
-              {item.videoUrl && (
-               
-                  <YouTube videoId={item.videoUrl} opts={opts} />
-                
-              )}
-              <Title>{item.title}</Title>
-              <hr style={{ marginTop: -4, marginBottom: 16 }} />
-              <Blurb>
-                <b> {item.blurb[0]}</b>
-                <br /> {item.blurb[1]}
-              </Blurb>
+            <>
+              <Card background={color}>
+                <div style={{ padding: 24 }}>
+                  <Title>{item.title}</Title>
+                  <hr style={{ marginTop: -4, marginBottom: 16 }} />
+                  <Blurb>
+                    <b> {item.blurb[0]}</b>
+                    <br /> {item.blurb[1]}
+                  </Blurb>
 
-              {item.webUrl && (
-                <div style={{ marginTop: "32px", marginBottom: "32px" }}>
-                  <StyledLink as="a" href={item.webUrl}>
-                    Homepage
-                  </StyledLink>
+                  {item.webUrl && (
+                    <div style={{ marginTop: "16px" }}>
+                      <StyledLink as="a" href={item.webUrl}>
+                        Homepage
+                      </StyledLink>
+                    </div>
+                  )}
+                  <div style={{ height: 24, backgroundColor: "color" }} />
                 </div>
-              )}
-                <div style={{height:24, backgroundColor:'color'}}/>
-                </div>
-            </Card>
+                {item.videoUrl && (
+                  <YouTube videoId={item.videoUrl} opts={opts} />
+                )}
+                  <div
+                style={
+                  screenWidth > 800 ? { height: "8vh" } : { height: "4vh" }
+                }
+              />
+              </Card>
+              <div
+                style={
+                  screenWidth > 800 ? { height: "8vh" } : { height: "4vh" }
+                }
+              />
+            </>
           );
         })}
-        <div style={{ height: "50px" }} />
       </HorizontalCenter>
     );
   }

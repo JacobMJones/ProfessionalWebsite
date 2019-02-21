@@ -2,31 +2,32 @@ import styled from "styled-components";
 
 const Text = styled.div`
   font-size: ${props => (props.fontSize ? props.fontSize : 6)}em;
- 
-  text-align: center;
+  font-family: "Fira Sans", sans-serif;
+ font-weight:bold;
   z-index: 1;
   transform: translateX(0%);
-  color: blue;
+  color: #001514;
   transform: translateY(-100%);
   transition: transform 200ms, color 200ms, font-size 200ms;
   &:hover {
     font-size: ${props => (props.fontSize ? props.fontSize : 6)}em;
-    color: blue;
+    color:#ffeddf;
     transform: translate(6%, -105%);
   }
 `;
 const Text2 = styled.div`
   font-size: ${props => (props.fontSize ? props.fontSize : 6)}em;
+  font-family: "Fira Sans", sans-serif;
 
-  text-align: center;
-  color: green;
+  color: #248232;
   z-index: 0;
   transform: translateY(0%);
 `;
 
 const Outer = styled.div`
+margin-top: ${props => (props.fontSize ? props.fontSize+2 : 6)}em;
   text-align: center;
-  max-height: ${props => (props.fontSize ? props.fontSize *1.2 : 10)}em;
+  max-height: ${props => (props.fontSize ? props.fontSize  : 10)}em;
 `;
 
 const LetterWrapper = styled.div`

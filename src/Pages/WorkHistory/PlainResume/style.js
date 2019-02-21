@@ -39,12 +39,12 @@ position:relative;
 `;
 
 const Blurb = styled.section`
-  position: relative;
+  
  
   color: ${props => (props.color ? props.color : " #001514")}
   background: ${props => (props.background ? props.background : "transparent")};
   margin-top: ${props => (props.marginTop ? props.marginTop : 0)}px;
-  margin-left: ${props => (props.marginLeft ? props.marginLeft : 0)}%;
+  margin-left: ${props => (props.marginLeft ? props.marginLeft : 5)}%;
   text-align: ${props => (props.textAlign ? props.textAlign : "left")};
   font-size: ${props => (props.fontSize ? props.fontSize : 18)}px;
   letter-spacing: 0.4px;

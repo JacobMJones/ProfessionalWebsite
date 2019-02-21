@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Text, Text2, Outer, Inner, WordWrapper, LetterWrapper } from "./style";
 
-class PrettyTitle extends Component {
+class ActionTitle extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -10,14 +10,12 @@ class PrettyTitle extends Component {
   render() {
     const fontSize = this.props.fontSize ? this.props.fontSize : 5;
     const text = this.props.text ? this.props.text : "Add text";
-    return (
-      <div>
+    return (    
         <Outer fontSize={fontSize}>
           <Inner>
             <WordWrapper>{this.LetterMaker(text, fontSize)}</WordWrapper>
           </Inner>
-        </Outer>
-      </div>
+        </Outer>    
     );
   }
 
@@ -25,7 +23,7 @@ class PrettyTitle extends Component {
     const wordArray = word.split("");
     const htmlToReturn = wordArray.map((item, index) => {
       console.log(item);
-      return (
+      return (<div>
         <LetterWrapper fontSize={fontSize}>
           <Text2 fontSize={fontSize}>
             {item !== " " ? item : <span>&nbsp;</span>}
@@ -34,9 +32,10 @@ class PrettyTitle extends Component {
             {item !== " " ? item : <span>&nbsp;</span>}
           </Text>
         </LetterWrapper>
+        </div>
       );
     });
     return htmlToReturn;
   };
 }
-export default PrettyTitle;
+export default ActionTitle;

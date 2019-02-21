@@ -16,7 +16,7 @@ class PlainResume extends Component {
         <HorizontalCenter>
           <div style={{ height: 64 }} />
           {this.props.data.map((item, index) => {
-            const color = 1 === index % 2 ?  "#ffeddf" : "white";
+            const color = 1 === index % 2 ? "#ffeddf" : "white";
             if (item.tech || !this.props.showOnlyTech) {
               return (
                 <div>
@@ -36,7 +36,7 @@ class PlainResume extends Component {
                     <div>
                       <Blurb
                         marginTop={32}
-                        marginLeft={screenWidth > 800 ? "-45" : "4"}
+                        // marginLeft={screenWidth > 800 ? "-45" : "4"}
                       >
                         {this.props.data[index].company.description}
                       </Blurb>
@@ -50,11 +50,7 @@ class PlainResume extends Component {
                       >
                         <b>Responsibilities</b>
                       </Title>
-                      <Blurb
-                        marginLeft="-45"
-                        marginTop={32}
-                        marginLeft={screenWidth > 800 ? "-45" : "4"}
-                      >
+                      <Blurb marginTop={32}>
                         {this.props.data[index].role.map((item, index) => {
                           return (
                             <li style={{ marginTop: "16px" }}>
@@ -65,7 +61,6 @@ class PlainResume extends Component {
                       </Blurb>
                       {item.tech && (
                         <>
-                          {" "}
                           <Title
                             underline={"underline"}
                             // background={"#d8cfaf"}
@@ -76,10 +71,7 @@ class PlainResume extends Component {
                           >
                             <b>Technology</b>
                           </Title>
-                          <Blurb
-                            marginLeft={screenWidth > 800 ? "-45" : "4"}
-                            marginTop={32}
-                          >
+                          <Blurb marginTop={32}>
                             {this.props.data[index].tech.map((item, index) => {
                               return (
                                 <li style={{ listStyleType: "square" }}>
@@ -93,7 +85,7 @@ class PlainResume extends Component {
                       <div style={{ height: "80px" }} />
                     </div>
                   </Card>
-                  <div style={{height:'64px'}}/>
+                  <div style={{ height: "64px" }} />
                 </div>
               );
             }

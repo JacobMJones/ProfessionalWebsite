@@ -4,11 +4,11 @@ class Data {
   constructor() {
     this.landingButtonData = [
      
-      { title: "Skills", path: "/what-ive-built" },
+      // { title: "Skills", path: "/what-ive-built" },
       { title: "Projects", path: "/projects" },
       { title: "Work History", path: "/work-history" },
       { title: "Notes", path: "/notes" },
-      { title: "Toys", path: "/toys" }
+      // { title: "Toys", path: "/toys" }
     ];
   }
   getWindowWidth = () => {
