@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-
+import Parser from "html-react-parser";
 import Prism from "prismjs";
+import PrismJsx from 'prismjs/components/prism-jsx.min';
 import "../../Theme/prism.css";
 class PrismCode extends Component {
   constructor(props) {
@@ -21,8 +22,8 @@ class PrismCode extends Component {
             maxWidth: "90vw"
           }}
         >
-          <code className="language-javascript" style={{}}>
-            {code}
+          <code className="language-jsx" style={{}}>
+       {code}
           </code>
         </pre>
       </div>
@@ -30,3 +31,5 @@ class PrismCode extends Component {
   }
 }
 export default PrismCode;
+{/* <div className="Container" dangerouslySetInnerHTML={{__html: 
+        someHtml}}></div> */}
