@@ -6,48 +6,26 @@ import ActionTitle from "../../Components/ActionTitle";
 import HomeButton from "../../Components/HomeButton";
 import CodeButton from "../../Components/CodeButton";
 import getCode from "../../Functions/getCode.js";
+import PrismCode from "../../Components/PrismCode";
+
+import "../../Theme/prism.css";
 class Projects extends Component {
   constructor(props) {
     super(props);
-    this.state = { showCode: false, message: "loading" };
+    this.state = { showCode: false };
   }
-  getCode = url => {
-    console.log("get code");
-    let code = fetch(
-      "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Pages/Projects/index.js"
-    )
-      .then(function(response) {
-        // When the page is loaded convert it to text
-        return response.text();
-      })
-      .then(function(html) {
-        var parser = new DOMParser();
-        var doc = parser.parseFromString(html, "text/html");
 
-        // You can now even select part of that html as you would in the regular DOM
-        // Example:
-        // var docArticle = doc.querySelector('article').innerHTML;
-        let body = doc.querySelector("body").innerHTML;
-        console.log(body.toString());
-
-        return body;
-      })
-      .catch(function(err) {
-        console.log("Failed to fetch page: ", err);
-      });
-
-    return code;
-  };
   async componentDidMount() {
-    this.setState({ message: "loading..." });
-    let code = await this.getCode();
-    console.log("last part");
+    let code = await getCode();
     this.setState({ message: code });
   }
+  showCode = () => {
+
+    this.setState({ showCode: !this.state.showCode });
+  };
 
   render() {
-    const { message } = this.state;
-    const { showCode } = this.state;
+    
     const screenWidth = window.innerWidth;
     return (
       <FullPage background="#d8cfaf">
@@ -93,32 +71,15 @@ class Projects extends Component {
                       }
                 }
               >
-                {/* <CodeButton /> */}
-                <button />
+                <CodeButton functionToCall={this.showCode} />
               </div>
             </div>
           </div>
           <div style={{ height: "40px" }} />
-          {!this.showCode ? (
-            <div
-              style={{
-                display: "block"
-              }}
-            >
-              <pre
-                style={{
-                  wordWrap: "break-word",
-                  whiteSpace:'pre-wrap',
-                  textAlign: "left",
-                  padding: "20px",
-                  maxWidth: "90vw"
-                }}
-              >
-                {message}
-              </pre>
-            </div>
-          ) : (
+          {!this.state.showCode ? (
             <ProjectCard />
+          ) : (
+            <PrismCode code={this.state.message} />
           )}
         </HorizontalCenter>
       </FullPage>
