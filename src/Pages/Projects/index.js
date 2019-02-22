@@ -42,7 +42,7 @@ class Projects extends Component {
               <HomeButton />
             </NavButtonWrapper>
             <FlexElement>
-              <ActionTitle text="Projects" fontSize={4} />
+              <ActionTitle text="Projects" fontSize={3.5} />
             </FlexElement>
             <NavButtonWrapper textAlign="left">
               <CodeButton functionToCall={this.showCode} />

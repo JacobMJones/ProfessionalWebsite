@@ -5,13 +5,16 @@ import ActionTitle from "../../Components/ActionTitle";
 import "react-awesome-button/dist/styles.css";
 import { withData } from "../../Components/Data/data";
 import { FlipInX } from "animate-css-styled-components";
+import CodeButton from "../../Components/CodeButton";
 import {
   FullPage,
   FlexElement,
   FlexColumn,
   HorizontalCenter,
   ButtonText,
-  Title
+  Title,
+  NavButtonWrapper,
+  FlexRow
 } from "./style.js";
 
 class Landing extends Component {
@@ -37,12 +40,8 @@ class Landing extends Component {
       <FullPage>
         <HorizontalCenter>
           <FlipInX duration={0}>
-            <ActionTitle
-              text="Jacob Jones"
-              fontSize={screenSize < 800 ? 3.5 : 4.5}
-            />
+            <ActionTitle text="Jacob Jones" fontSize={3.5} />
           </FlipInX>
-
           <FlexColumn>
             {animationDirection === "normal" &&
               landingButtonData.map((item, index) => {

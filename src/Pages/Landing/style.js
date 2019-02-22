@@ -48,6 +48,25 @@ const FlexColumn = styled.section`
   flex-direction: column;
 marginTop:12;
 `;
+
+const NavButtonWrapper = styled.div`
+flex:1
+text-align:${props => (props.textAlign ? props.textAlign : "right")};
+@media (max-width: 800px) {
+margin-top:5em;
+paddingRight: 32
+
+}
+@media (min-width: 801px) {
+  margin-top:3.5em;
+  
+}
+`;
+
+const FlexRow = styled.section`
+ display:flex;
+ flex-direction:row;
+`;
 export {
   SlideOutDown,
   Title,
@@ -55,5 +74,8 @@ export {
   HorizontalCenter,
   FullPage,
   FlexElement,
-  FlexColumn
+  FlexColumn,
+  NavButtonWrapper,
+  
+  FlexRow
 };

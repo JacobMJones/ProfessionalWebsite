@@ -20,7 +20,6 @@ const opts = {
 class ProjectCard extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
   }
 
   render() {

@@ -59,8 +59,9 @@ position:relative;
   margin-top: ${props => (props.marginTop ? props.marginTop : 0)}px;
   border-bottom: ${props => (props.borderBottom ? props.borderBottom : "none")};
  
-
-  font-size: ${props => (props.fontSize ? props.fontSize : 40)}px;
+  font-family: "Fira Sans", sans-serif;
+  font-size: ${props => (props.fontSize ? props.fontSize : 3.5)}em;
+  font-weight:bold;
   text-align: ${props => (props.textAlign ? props.textAlign : "center")};
   
 `;

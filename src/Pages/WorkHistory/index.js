@@ -43,7 +43,7 @@ class WorkHistory extends Component {
     return (
       <FullPage background={checked2 ? "white" : "#d8cfaf"}>
         <HorizontalCenter>
-          <Title marginTop={40} fontSize={screenWidth > 800 ? 80 : 56}>
+          <Title marginTop={48}>
             {techTitle ? "Tech Jobs" : "Work History"}
           </Title>
           <br />
