@@ -3,6 +3,7 @@ import Checkbox from "../../Components/Checkbox";
 import workHistoryData from "./workHistoryData";
 import CollapsableCard from "../../Components/CollapsableCard";
 import PlainResume from "./PlainResume/PlainResume";
+import TitleNavBar from "../../Components/TitleNavBar"
 import HomeButton from "../../Components/HomeButton";
 import CodeButton from "../../Components/CodeButton";
 import ActionTitle from "../../Components/ActionTitle";
@@ -43,22 +44,7 @@ class WorkHistory extends Component {
     return (
       <FullPage background={checked2 ? "white" : "#d8cfaf"}>
         <HorizontalCenter>
-        <FlexRow>          
-            <NavButtonWrapper textAlign="right">
-              <HomeButton />
-            </NavButtonWrapper>
-            <FlexElement minWidth={30}>
-              <ActionTitle text={checked ? "Tech Jobs" : "All Jobs"} fontSize={3.5} />
-            </FlexElement>
-            <NavButtonWrapper textAlign="left">
-              <CodeButton
-                functionToCall={this.showCode}
-                image={
-                  this.state.showCode ? "images/page.png" : "/images/code.png"
-                }
-              />
-            </NavButtonWrapper  >
-          </FlexRow>
+          <TitleNavBar title={checked ? "Tech Jobs" : "All Jobs"} />
           <div style={{height:'16px'}}/>
         
           <label>

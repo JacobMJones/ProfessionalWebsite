@@ -7,9 +7,6 @@ const FullPage = styled.section`
 const HorizontalCenter = styled.section`
   text-align: ${props => (props.textAlign ? props.textAlign : "center")};
   background: ${props => (props.background ? props.background : "transparent")};
-  
-   
-
 `;
 const NavButtonWrapper = styled.div`
 flex:1

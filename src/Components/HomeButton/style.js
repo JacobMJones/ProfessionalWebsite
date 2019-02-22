@@ -1,16 +1,18 @@
 import styled from "styled-components";
 
 const Home = styled.div`
-  @media (max-width: 800px) {
-    width: 6vw;
-    height: auto;
 
+  @media (max-width: 800px) {
+    width:25px
+ 
+    position:absolute;
+    bottom:20px;
+    right:20px;
    
   }
   @media (min-width: 801px) {
-    width: 4vw;
-    height: auto;
-    margin-top:2vh;
+    width: 4vw;  
+    width: 50px;
   }
 `;
 

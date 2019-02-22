@@ -56,9 +56,16 @@ const AllCenter = styled.section`
   transform: translate(-50%, -50%);
 `;
 const HorizontalCenter = styled.section`
-margin-top:-10vh;
+
   text-align: ${props => (props.textAlign ? props.textAlign : "center")};
   background: ${props => (props.background ? props.background : "transparent")};
+   
+  @media (max-width: 800px) {
+    margin-top:-10vh;
+    }
+    @media (min-width: 801px) {
+      margin-top:-1.2vh;
+      }
 `;
 const ButtonText = styled.section`
   color: white;

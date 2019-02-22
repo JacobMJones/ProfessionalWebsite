@@ -4,6 +4,8 @@ import {
   HorizontalCenter,
   NavButtonWrapper,
   FlexElement,
+  Title,
+  FlexElementTitle,
   FlexRow
 } from "./style.js";
 import ProjectCard from "./ProjectCard";
@@ -14,7 +16,7 @@ import getCode from "../../Functions/getCode.js";
 import PrismCode from "../../Components/PrismCode";
 import "../../Theme/prism.css";
 import codeData from "../../Constants/codeData";
-
+import TitleNavBar from "../../Components/TitleNavBar";
 class Projects extends Component {
   constructor(props) {
     super(props);
@@ -39,23 +41,28 @@ class Projects extends Component {
     return (
       <FullPage background="#d8cfaf">
         <HorizontalCenter>
-          <FlexRow>
-            <NavButtonWrapper textAlign="right">
-              <HomeButton />
-            </NavButtonWrapper>
-            <FlexElement minWidth={30}>
-              <ActionTitle text="Projects" fontSize={3.5} />
+          {/* <FlexRow>
+            <FlexElement textAlign="right" >
+              <HomeButton /> 
             </FlexElement>
-            <NavButtonWrapper textAlign="left">
+            <FlexElementTitle>
+              <Title fontSize={3.5}>Projects</Title>
+            </FlexElementTitle>
+            <FlexElement textAlign="left">
               <CodeButton
                 functionToCall={this.showCode}
                 image={
                   this.state.showCode ? "images/page.png" : "/images/code.png"
                 }
               />
-            </NavButtonWrapper>
-          </FlexRow>
-          <div style={{ height: "40px" }} />
+            </FlexElement>
+          </FlexRow> */}
+          <TitleNavBar
+            title="Projects"
+            showCode={this.showCode}
+            flip={this.state.showCode}
+         / >
+       
           {!this.state.showCode ? (
             <ProjectCard />
           ) : (

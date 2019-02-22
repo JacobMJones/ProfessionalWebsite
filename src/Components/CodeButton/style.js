@@ -2,15 +2,22 @@ import styled from "styled-components";
 
 const Code= styled.div`
   @media (max-width: 800px) {
-    width: 6vw;
-    height: auto;
-
+    width: 25px
+  
+ 
+    position:absolute;
+    bottom:17px;
+    left:20px;
+   
   }
   @media (min-width: 801px) {
-    width: 4vw;
+    width: 50px;
     height: auto;
-    margin-top:2vh;
+    position:absolute;
+    bottom:17px;
+    left:20px;
   }
 `;
 
 export { Code};
+
