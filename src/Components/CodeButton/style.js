@@ -14,8 +14,8 @@ const Code= styled.div`
     width: 50px;
     height: auto;
     position:absolute;
-    bottom:17px;
-    left:20px;
+    bottom:1vh;
+    right:20vw;
   }
 `;
 

@@ -13,6 +13,9 @@ const Home = styled.div`
   @media (min-width: 801px) {
     width: 4vw;  
     width: 50px;
+    position:absolute;
+    bottom:1vh;
+    left:20vw;
   }
 `;
 

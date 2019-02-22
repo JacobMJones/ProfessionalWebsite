@@ -44,9 +44,11 @@ class WorkHistory extends Component {
     return (
       <FullPage background={checked2 ? "white" : "#d8cfaf"}>
         <HorizontalCenter>
+          <div style={{marginTop:140}}>
           <TitleNavBar title={checked ? "Tech Jobs" : "All Jobs"} />
-          <div style={{height:'16px'}}/>
-        
+         
+          <div style={{height:'8px'}}/>
+          </div>
           <label>
             <Checkbox
               className="yo"
