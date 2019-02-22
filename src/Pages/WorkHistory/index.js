@@ -3,13 +3,16 @@ import Checkbox from "../../Components/Checkbox";
 import workHistoryData from "./workHistoryData";
 import CollapsableCard from "../../Components/CollapsableCard";
 import PlainResume from "./PlainResume/PlainResume";
-
+import HomeButton from "../../Components/HomeButton";
+import CodeButton from "../../Components/CodeButton";
+import ActionTitle from "../../Components/ActionTitle";
 import {
   FlexElement,
   FlexRow,
   Title,
   HorizontalCenter,
-  FullPage
+  FullPage,
+  NavButtonWrapper
 } from "./style";
 
 class WorkHistory extends Component {
@@ -29,9 +32,6 @@ class WorkHistory extends Component {
       techTitle: !this.state.techTitle
     });
 
-
-    
-
   handleCheckboxChangeResumeStyle = event =>
     this.setState({
       checked2: !this.state.checked2
@@ -43,11 +43,24 @@ class WorkHistory extends Component {
     return (
       <FullPage background={checked2 ? "white" : "#d8cfaf"}>
         <HorizontalCenter>
-          <Title marginTop={48}>
-            {techTitle ? "Tech Jobs" : "Work History"}
-          </Title>
-          <br />
-          <div style={{ height: "10px" }} />
+        <FlexRow>          
+            <NavButtonWrapper textAlign="right">
+              <HomeButton />
+            </NavButtonWrapper>
+            <FlexElement minWidth={30}>
+              <ActionTitle text={checked ? "Tech Jobs" : "All Jobs"} fontSize={3.5} />
+            </FlexElement>
+            <NavButtonWrapper textAlign="left">
+              <CodeButton
+                functionToCall={this.showCode}
+                image={
+                  this.state.showCode ? "images/page.png" : "/images/code.png"
+                }
+              />
+            </NavButtonWrapper  >
+          </FlexRow>
+          <div style={{height:'16px'}}/>
+        
           <label>
             <Checkbox
               className="yo"
@@ -64,13 +77,12 @@ class WorkHistory extends Component {
               text={"plain resume"}
             />
           </label>
-    
         </HorizontalCenter>
 
         {!this.state.checked2 ? (
           <FlexRow>
             <FlexElement />
-            <FlexElement style={{ minWidth: "80vw", margin: "0 auto" }}>
+            <FlexElement style={{ minWidth: "95vw", margin: "0 auto" }}>
               <CollapsableCard data={workHistoryData} showOnlyTech={checked} />
             </FlexElement>
             <FlexElement />

@@ -13,7 +13,7 @@ import CodeButton from "../../Components/CodeButton";
 import getCode from "../../Functions/getCode.js";
 import PrismCode from "../../Components/PrismCode";
 import "../../Theme/prism.css";
-import codeData from '../../Constants/codeData'
+import codeData from "../../Constants/codeData";
 
 class Projects extends Component {
   constructor(props) {
@@ -23,11 +23,13 @@ class Projects extends Component {
 
   async componentDidMount() {
     let arrayOfCode = [];
-    codeData.ProjectsCode.forEach( async function(element){
-    let code = await getCode(element)
-    arrayOfCode.push(code);
-    })
-   this.setState({ code: arrayOfCode }, ()=>{console.log(this.state)});
+    codeData.ProjectsCode.forEach(async function(element) {
+      let code = await getCode(element);
+      arrayOfCode.push(code);
+    });
+    this.setState({ code: arrayOfCode }, () => {
+      console.log(this.state);
+    });
   }
   showCode = () => {
     this.setState({ showCode: !this.state.showCode });
@@ -38,14 +40,19 @@ class Projects extends Component {
       <FullPage background="#d8cfaf">
         <HorizontalCenter>
           <FlexRow>
-            <NavButtonWrapper>
+            <NavButtonWrapper textAlign="right">
               <HomeButton />
             </NavButtonWrapper>
-            <FlexElement>
+            <FlexElement minWidth={30}>
               <ActionTitle text="Projects" fontSize={3.5} />
             </FlexElement>
             <NavButtonWrapper textAlign="left">
-              <CodeButton functionToCall={this.showCode} />
+              <CodeButton
+                functionToCall={this.showCode}
+                image={
+                  this.state.showCode ? "images/page.png" : "/images/code.png"
+                }
+              />
             </NavButtonWrapper>
           </FlexRow>
           <div style={{ height: "40px" }} />

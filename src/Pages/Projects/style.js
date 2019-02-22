@@ -7,22 +7,33 @@ const FullPage = styled.section`
 const HorizontalCenter = styled.section`
   text-align: ${props => (props.textAlign ? props.textAlign : "center")};
   background: ${props => (props.background ? props.background : "transparent")};
+  margin-top:-10vh;
 `;
 const NavButtonWrapper = styled.div`
 flex:1
-text-align:${props => (props.textAlign ? props.textAlign : "right")};
+text-align:${props => (props.textAlign ? props.textAlign : "center")};
 @media (max-width: 800px) {
-margin-top:5em;
-paddingRight: 32
-
+padding-top:24px;
+padding-left:24px;
+padding-right:24px;
+margin-top:20vh;
 }
 @media (min-width: 801px) {
-  margin-top:3.5em;
-  
+  margin-top:10vh;
+  margin-left:${props =>(props.marginLeft ? props.marginLeft : 0)}vw
 }
 `;
 const FlexElement = styled.section`
   flex: ${props => (props.flexSize ? props.flexSize : 1)};
+  @media (max-width: 800px) {
+    margin-top:5em;
+    paddingRight: 32
+    }
+    @media (min-width: 801px) {
+      margin-top:3.5em;
+      margin-left:${props =>(props.marginLeft ? props.marginLeft : 0)}vw
+      min-width: ${props =>(props.minWidth ? props.minWidth : 0)}vw;
+    }
 `;
 const FlexRow = styled.section`
  display:flex;

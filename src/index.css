@@ -9,3 +9,16 @@ body {
     background-color: #d8cfaf;
     font-family: "Mukta", sans-serif;
   }
+
+  .awesome-landing {
+    @media (max-width: 800px) {
+      width: 80vw;
+      height: 20vh;
+      margintop: 12px;
+    }
+    @media (min-width: 801px) {
+      width: 40vw;
+      height: 20vh;
+      margintop: 20px;
+    }
+  }

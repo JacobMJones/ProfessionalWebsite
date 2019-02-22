@@ -8,7 +8,7 @@ const CodeWrapper = styled.div`
 
   @media (max-width: 800px) {
     font-size: .7em;
-    width: 90vw;
+    width: 98vw;
   }
   @media (min-width: 801px) {
     font-size: 1em;

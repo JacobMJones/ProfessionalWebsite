@@ -8,11 +8,11 @@ class CodeButton extends Component {
   }
 
   render() {
-    const { functionToCall } = this.props;
+    const { functionToCall, image } = this.props;
     return (
       <Code
         as='img'
-        src="/images/code.png"
+        src={image}
         onClick={() => {
           functionToCall();
         }}

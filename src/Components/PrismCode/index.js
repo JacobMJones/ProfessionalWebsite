@@ -21,7 +21,7 @@ class PrismCode extends Component {
             <CodePage>
               <CodeWrapper>
                 <Pre>
-                  <code style={{}} className="language-jsx">
+                  <code className="language-jsx">
                     {item}
                   </code>
                 </Pre>

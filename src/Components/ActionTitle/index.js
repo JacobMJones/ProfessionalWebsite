@@ -7,22 +7,9 @@ class ActionTitle extends Component {
     this.state = {};
   }
 
-  render() {
-    const fontSize = this.props.fontSize ? this.props.fontSize : 5;
-    const text = this.props.text ? this.props.text : "Add text";
-    return (    
-        <Outer fontSize={fontSize}>
-          <Inner>
-            <WordWrapper>{this.LetterMaker(text, fontSize)}</WordWrapper>
-          </Inner>
-        </Outer>    
-    );
-  }
-
   LetterMaker = (word, fontSize) => {
     const wordArray = word.split("");
     const htmlToReturn = wordArray.map((item, index) => {
-      console.log(item);
       return (<div>
         <LetterWrapper fontSize={fontSize}>
           <Text2 fontSize={fontSize}>
@@ -37,5 +24,19 @@ class ActionTitle extends Component {
     });
     return htmlToReturn;
   };
+
+  render() {
+    const fontSize = this.props.fontSize ? this.props.fontSize : 5;
+    const text = this.props.text ? this.props.text : "Add text";
+    return (    
+        <Outer fontSize={fontSize}>
+          <Inner>
+            <WordWrapper>{this.LetterMaker(text, fontSize)}</WordWrapper>
+          </Inner>
+        </Outer>    
+    );
+  }
+
+
 }
 export default ActionTitle;

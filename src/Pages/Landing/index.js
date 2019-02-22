@@ -5,17 +5,26 @@ import ActionTitle from "../../Components/ActionTitle";
 import "react-awesome-button/dist/styles.css";
 import { withData } from "../../Components/Data/data";
 import { FlipInX } from "animate-css-styled-components";
-import CodeButton from "../../Components/CodeButton";
+
 import {
   FullPage,
   FlexElement,
   FlexColumn,
   HorizontalCenter,
   ButtonText,
-  Title,
-  NavButtonWrapper,
-  FlexRow
+  Title
 } from "./style.js";
+
+const deskButton = {
+  width: "40vw",
+  height: "20vh",
+  marginTop: "20px"
+};
+const mobileButton = {
+  width: "80vw",
+  height: "20vh",
+  marginTop: "12px"
+};
 
 class Landing extends Component {
   constructor(props) {
@@ -30,8 +39,6 @@ class Landing extends Component {
     const screenSize = window.innerWidth;
     const { landingButtonData } = this.props.data;
     const flipSpeed = "1s";
-    const screenSizeMobile = 800;
-    const screenSizeDesktop = 1200;
     const { animationDirection } = this.state;
     if (this.state.redirect) {
       return <Redirect to={this.state.url} push />;
@@ -39,9 +46,7 @@ class Landing extends Component {
     return (
       <FullPage>
         <HorizontalCenter>
-          <FlipInX duration={0}>
-            <ActionTitle text="Jacob Jones" fontSize={3.5} />
-          </FlipInX>
+          <Title fontSize={3.5} >Jacob Jones</Title>
           <FlexColumn>
             {animationDirection === "normal" &&
               landingButtonData.map((item, index) => {
@@ -65,25 +70,7 @@ class Landing extends Component {
                             }
                           );
                         }}
-                        style={
-                          screenSize < screenSizeMobile
-                            ? {
-                                width: "80vw",
-                                height: "20vh",
-                                marginTop: "12px"
-                              }
-                            : screenSize < screenSizeDesktop
-                            ? {
-                                width: "40vw",
-                                height: "20vh",
-                                marginTop: "20px"
-                              }
-                            : {
-                                width: "40vw",
-                                height: "20vh",
-                                marginTop: "20px"
-                              }
-                        }
+                        style={screenSize > 800 ? deskButton : mobileButton}
                       >
                         <ButtonText> {item.title}</ButtonText>
                       </AwesomeButton>
@@ -100,25 +87,7 @@ class Landing extends Component {
                       duration={flipSpeed}
                     >
                       <AwesomeButton
-                        style={
-                          screenSize < screenSizeMobile
-                            ? {
-                                width: "80vw",
-                                height: "20vh",
-                                marginTop: "12px"
-                              }
-                            : screenSize < screenSizeDesktop
-                            ? {
-                                width: "40vw",
-                                height: "20vh",
-                                marginTop: "20px"
-                              }
-                            : {
-                                width: "40vw",
-                                height: "20vh",
-                                marginTop: "20px"
-                              }
-                        }
+                        style={screenSize > 800 ? deskButton : mobileButton}
                       >
                         <ButtonText> {item.title}</ButtonText>
                       </AwesomeButton>
@@ -126,7 +95,6 @@ class Landing extends Component {
                   </FlexElement>
                 );
               })}
-            {/* <Title fontSize={24}>....under construction...</Title> */}
           </FlexColumn>
         </HorizontalCenter>
       </FullPage>

@@ -7,7 +7,7 @@ const Card = styled.section`
   @media (max-width: 800px) {
     padding-top: -40px;
     padding-bottom: 64px;
-    width: 100vw;
+    width: 96vw;
   }
   @media (min-width: 801px) {
     width: 50vw;

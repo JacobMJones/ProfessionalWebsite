@@ -13,6 +13,7 @@ const FlexRow = styled.section`
   height: 100%;
   width: 100%;
   justify-contents: ${props => (props.justify ? props.justify : "center")};
+ 
 `;
 const FlexColumn = styled.section`
   height:100%
@@ -21,16 +22,32 @@ const FlexColumn = styled.section`
   flex-direction: column;
 
 `;
+
+const NavButtonWrapper = styled.div`
+flex:1
+text-align:${props => (props.textAlign ? props.textAlign : "center")};
+@media (max-width: 800px) {
+padding-top:24px;
+padding-left:24px;
+padding-right:24px;
+margin-top:20vh;
+}
+@media (min-width: 801px) {
+  margin-top:10vh;
+  margin-left:${props =>(props.marginLeft ? props.marginLeft : 0)}vw
+}
+`;
 const FlexElement = styled.section`
   flex: ${props => (props.flexSize ? props.flexSize : 1)};
-  background: ${props => (props.background ? props.background : "transparent")};
-  border-radius: ${props => (props.borderRadius ? props.borderRadius : 1)}px;
-  margin: ${props => (props.margin ? props.margin : 0)}px;
-  margin-left: ${props => (props.marginLeft ? props.marginLeft : 0)}vw;
-  font-size: ${props => (props.fontSize ? props.fontSize : 1)}em;
-  position: relative;
-  text-align: center;
-  min-width: ${props => (props.minWidth ? props.minWidth : "10vw")};
+  @media (max-width: 800px) {
+    margin-top:5em;
+    paddingRight: 32
+    }
+    @media (min-width: 801px) {
+      margin-top:3.5em;
+      margin-left:${props =>(props.marginLeft ? props.marginLeft : 0)}vw
+      min-width: ${props =>(props.minWidth ? props.minWidth : 0)}vw;
+    }
 `;
 const AllCenter = styled.section`
   position: absolute;
@@ -39,6 +56,7 @@ const AllCenter = styled.section`
   transform: translate(-50%, -50%);
 `;
 const HorizontalCenter = styled.section`
+margin-top:-10vh;
   text-align: ${props => (props.textAlign ? props.textAlign : "center")};
   background: ${props => (props.background ? props.background : "transparent")};
 `;
@@ -49,8 +67,8 @@ const ButtonText = styled.section`
 `;
 const Title = styled.section`
 position:relative;
-  width: 100%;
-
+  min-width:80vw;
+margin-left:-20vw;
   border-radius: ${props => (props.borderRadius ? props.borderRadius : 0)}
   color: ${props => (props.color ? props.color : " #001514")}
   background: ${props => (props.background ? props.background : "transparent")}
@@ -93,5 +111,6 @@ export {
   FlexColumn,
   AllCenter,
   ButtonText,
-  HorizontalCenter
+  HorizontalCenter,
+  NavButtonWrapper
 };
