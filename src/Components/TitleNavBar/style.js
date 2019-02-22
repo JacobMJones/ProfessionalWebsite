@@ -49,7 +49,7 @@ position:relative;
   text-align: ${props => (props.textAlign ? props.textAlign : "center")};
 
   @media (max-width: 800px) {
-    font-size: 50px;
+    font-size: 46px;
     }
     @media (min-width: 801px) {
       font-size: ${props => (props.fontSize ? props.fontSize : 3)}em;

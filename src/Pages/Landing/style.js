@@ -17,7 +17,7 @@ position:relative;
   color: ${props => (props.color ? props.color : " #001514")}
   background: ${props => (props.background ? props.background : "transparent")}
   display: inline-block;
-  margin-top: ${props => (props.marginTop ? props.marginTop : 10 )}vh;
+  margin-top: ${props => (props.marginTop ? props.marginTop : 7)}vh;
   font-size: ${props => (props.fontSize ? props.fontSize : 3)}em;
   font-family: "Fira Sans", sans-serif;
   font-weight:bold;

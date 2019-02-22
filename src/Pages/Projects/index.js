@@ -34,7 +34,7 @@ class Projects extends Component {
     return (
       <FullPage background="#d8cfaf">
         <HorizontalCenter>
-          <div style={{ marginTop: 70, marginBottom:50 }}>
+          <div style={{ marginTop: 50, marginBottom:50 }}>
             <TitleNavBar
               title="Projects"
               showCode={this.showCode}
