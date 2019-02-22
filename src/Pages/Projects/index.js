@@ -13,7 +13,7 @@ import CodeButton from "../../Components/CodeButton";
 import getCode from "../../Functions/getCode.js";
 import PrismCode from "../../Components/PrismCode";
 import "../../Theme/prism.css";
-
+import codeData from '../../Constants/codeData'
 class Projects extends Component {
   constructor(props) {
     super(props);
@@ -21,8 +21,14 @@ class Projects extends Component {
   }
 
   async componentDidMount() {
-    let code =  await getCode("https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Pages/Projects/index.js");
-    this.setState({ code: code });
+    let arrayOfCode = [];
+    // let code =  await for( ) getCode(codeData.ProjectsCode);
+
+    codeData.ProjectsCode.forEach( async function(element){
+    let code = await getCode(element)
+    arrayOfCode.push(code);
+    })
+   this.setState({ code: arrayOfCode }, ()=>{console.log(this.state)});
   }
   showCode = () => {
     this.setState({ showCode: !this.state.showCode });

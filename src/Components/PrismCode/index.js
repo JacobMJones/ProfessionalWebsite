@@ -3,6 +3,7 @@ import Prism from "prismjs";
 import PrismJsx from "prismjs/components/prism-jsx.min";
 import "../../Theme/prism.css";
 import { CodePage, Pre, CodeWrapper } from "./style";
+
 class PrismCode extends Component {
   constructor(props) {
     super(props);
@@ -14,13 +15,21 @@ class PrismCode extends Component {
   render() {
     const { code } = this.props;
     return (
-      <CodePage>
-        <CodeWrapper>
-          <Pre>
-            <code className="language-jsx">{code}</code>
-          </Pre>
-        </CodeWrapper>
-      </CodePage>
+      <>
+        {code.map((item, index) => {
+          return (
+            <CodePage>
+              <CodeWrapper>
+                <Pre>
+                  <code style={{}} className="language-jsx">
+                    {item}
+                  </code>
+                </Pre>
+              </CodeWrapper>
+            </CodePage>
+          );
+        })}
+      </>
     );
   }
 }
