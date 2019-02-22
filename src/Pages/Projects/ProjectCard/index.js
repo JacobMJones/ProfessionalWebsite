@@ -38,7 +38,6 @@ class ProjectCard extends Component {
                     <b> {item.blurb[0]}</b>
                     <br /> {item.blurb[1]}
                   </Blurb>
-
                   {item.webUrl && (
                     <LinkWrapper>
                       <StyledLink as="a" href={item.webUrl}>
