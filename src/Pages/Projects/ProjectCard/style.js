@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 const Card = styled.section`
- 
- 
   background: ${props => (props.background ? props.background : "white")}
     no-repeat;
   display: inline-block;
@@ -12,12 +10,25 @@ const Card = styled.section`
     width: 100vw;
   }
   @media (min-width: 801px) {
-
     width: 50vw;
-    border-radius:10px;
+    border-radius: 10px;
   }
 `;
+const CardWrapper = styled.section`
+  padding: 24px;
+`;
+const Line = styled.section`
+margin-top:-8px;
+margin-bottom:12px
+`;
 
+const LinkWrapper = styled.div`
+margin-top:16px;
+`;
+
+const Divider = styled.div`
+height: ${props =>(props.height ? props.height : 2)}vh;
+`;
 const Title = styled.section`
   margin-top: 32px;
   font-weight: ${props => (props.fontWeight ? props.fontWeight : 300)}px;
@@ -41,4 +52,4 @@ const StyledLink = styled.section`
 const HorizontalCenter = styled.section`
   text-align: center;
 `;
-export { Card, Title, StyledLink, Blurb, HorizontalCenter };
+export { Card, Title, StyledLink, Blurb, HorizontalCenter, CardWrapper, Line, LinkWrapper, Divider };

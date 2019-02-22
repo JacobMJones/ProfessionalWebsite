@@ -1,5 +1,15 @@
 import React, { Component } from "react";
-import { StyledLink, Card, Title, Blurb, HorizontalCenter } from "./style";
+import {
+  StyledLink,
+  Card,
+  Title,
+  Blurb,
+  HorizontalCenter,
+  CardWrapper,
+  Line,
+  LinkWrapper,
+  Divider
+} from "./style";
 import YouTube from "react-youtube";
 import ProjectCardData from "../projectsData";
 
@@ -14,7 +24,6 @@ class ProjectCard extends Component {
   }
 
   render() {
-    const screenWidth = window.innerWidth;
     return (
       <HorizontalCenter>
         {ProjectCardData.map((item, index) => {
@@ -22,37 +31,29 @@ class ProjectCard extends Component {
           return (
             <>
               <Card background={color}>
-                <div style={{ padding: 24 }}>
+                <CardWrapper>
                   <Title>{item.title}</Title>
-                  <hr style={{ marginTop: -4, marginBottom: 16 }} />
+                  <Line as="hr" />
                   <Blurb>
                     <b> {item.blurb[0]}</b>
                     <br /> {item.blurb[1]}
                   </Blurb>
 
                   {item.webUrl && (
-                    <div style={{ marginTop: "16px" }}>
+                    <LinkWrapper>
                       <StyledLink as="a" href={item.webUrl}>
                         Homepage
                       </StyledLink>
-                    </div>
+                    </LinkWrapper>
                   )}
-                  <div style={{ height: 24, backgroundColor: "color" }} />
-                </div>
+                  <Divider />
+                </CardWrapper>
                 {item.videoUrl && (
                   <YouTube videoId={item.videoUrl} opts={opts} />
                 )}
-                  <div
-                style={
-                  screenWidth > 800 ? { height: "8vh" } : { height: "4vh" }
-                }
-              />
+                <Divider />
               </Card>
-              <div
-                style={
-                  screenWidth > 800 ? { height: "8vh" } : { height: "4vh" }
-                }
-              />
+              <Divider />
             </>
           );
         })}
