@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Checkbox from "../../Components/Checkbox";
 import workHistoryData from "./workHistoryData";
-import CollapsableCard from "../../Components/CollapsableCard";
+import CollapsibleCard from "../../Components/CollapsibleCard";
 import PlainResume from "./PlainResume/PlainResume";
 import TitleNavBar from "../../Components/TitleNavBar";
 import codeData from "../../Constants/codeData";
@@ -31,33 +31,37 @@ class WorkHistory extends Component {
   }
 
   async componentDidMount() {
-    console.log("in componenet did mount");
     let arrayOfCode = [];
     codeData.WorkHistoryCode.forEach(async function(element) {
       let code = await getCode(element);
       arrayOfCode.push(code);
     });
-    this.setState({ code: arrayOfCode }, () => {
-      console.log("this", this.state);
-    });
+    this.setState({ code: arrayOfCode });
   }
-  showCode = () => {
-    this.setState({ showCode: !this.state.showCode });
-  };
+  showCode = () =>
+    this.setState(prev => {
+      return {
+        showCode: !prev.showCode
+      };
+    });
 
-  handleCheckboxChange = event =>
-    this.setState({
-      techChecked: !this.state.techChecked,
-      techTitle: !this.state.techTitle
+  handleCheckboxChange = () =>
+    this.setState(prev => {
+      return {
+        techChecked: !prev.techChecked,
+        techTitle: !prev.techTitle
+      };
     });
 
   handleCheckboxChangeResumeStyle = event =>
-    this.setState({
-      plainResumeChecked: !this.state.plainResumeChecked
+    this.setState(prev => {
+      return {
+        plainResumeChecked: !prev.plainResumeChecked
+      };
     });
 
   render() {
-    const { techChecked, plainResumeChecked } = this.state;
+    const { techChecked, plainResumeChecked, code } = this.state;
 
     return (
       <FullPage background={plainResumeChecked ? "white" : "#d8cfaf"}>
@@ -70,7 +74,7 @@ class WorkHistory extends Component {
           </TitleWrapper>
           <CheckboxWrapper>
             <label>
-              <Checkbox  
+              <Checkbox
                 checked={techChecked}
                 onChange={this.handleCheckboxChange}
                 text={"tech only"}
@@ -78,7 +82,6 @@ class WorkHistory extends Component {
             </label>
             <label style={{ marginLeft: "20px" }}>
               <Checkbox
-               
                 checked={plainResumeChecked}
                 onChange={this.handleCheckboxChangeResumeStyle}
                 text={"plain resume"}
@@ -88,12 +91,12 @@ class WorkHistory extends Component {
         </HorizontalCenter>
 
         {this.state.showCode ? (
-          <PrismCode code={this.state.code} />
+          <PrismCode code={code} />
         ) : !this.state.plainResumeChecked ? (
           <FlexRow>
             <FlexElement />
-            <FlexElement minWidth='95'>
-              <CollapsableCard
+            <FlexElement minWidth="95">
+              <CollapsibleCard
                 data={workHistoryData}
                 showOnlyTech={techChecked}
               />

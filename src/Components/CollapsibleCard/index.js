@@ -31,14 +31,14 @@ const SlideOutDownNew = styled(BaseAnimation)`
 const Sub = ({ text }) => (
   <FlexRow>
     <FlexElement />
-    <FlexElement minWidth={"50vw"}>
+    <FlexElement >
       <Subtitle>{text}</Subtitle>
     </FlexElement>
     <FlexElement />
   </FlexRow>
 );
 
-class CollapsableCard extends Component {
+class CollapsibleCard extends Component {
   constructor(props) {
     super(props);
     this.state = { startPosition: -1, animationHasPlayed: false };
@@ -55,8 +55,8 @@ class CollapsableCard extends Component {
         delay={`${index / 20}s`}
         duration={animationHasPlayed ? "0" : ".8s"}
       >
-        <Collapsible trigger={item.company.name} >
-          <Card>
+        <Collapsible trigger={item.company.name}  >
+          <Card >
             <div style={{ height: 12 }} />
             <Sub text={"Description"} />
             <Blurb> {item.company.description}</Blurb>
@@ -106,7 +106,7 @@ class CollapsableCard extends Component {
     );
   }
 }
-export default CollapsableCard;
+export default CollapsibleCard;
 
 //#########
 {

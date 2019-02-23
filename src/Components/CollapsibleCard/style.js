@@ -12,10 +12,11 @@ const Title = styled.section`
 `;
 const Subtitle = styled.section`
   text-align: center;
-  background: #248232;
-  color: white;
+  // background: #248232;
+  color: #001514;
   opacity: 0.8;
   border-radius: 5px;
+  border: .5px solid;
   @media (max-width: 600px) {
     font-size: 20px;
     margin-top: 16px;
@@ -31,7 +32,7 @@ const Blurb = styled.section`
   text-align: left;
   padding: 0;
   width: 80%;
-
+  color: #001514;
   @media (max-width: 600px) {
     font-size: 16px;
     margin-top: 4px;
