@@ -26,6 +26,7 @@ class WorkHistory extends Component {
       techTitle: true,
       techOnly: true,
       showCode: false,
+      hasPlayed: false,
       code: []
     };
   }
@@ -36,12 +37,13 @@ class WorkHistory extends Component {
       const code = await getCode(element);
       arrayOfCode.push(code);
     });
-    this.setState({ code: arrayOfCode });
+    this.setState({ code: arrayOfCode});
   }
   showCode = () =>
     this.setState(prev => {
       return {
-        showCode: !prev.showCode
+        showCode: !prev.showCode,
+        hasPlayed: true
       };
     });
 
@@ -49,19 +51,21 @@ class WorkHistory extends Component {
     this.setState(prev => {
       return {
         techChecked: !prev.techChecked,
-        techTitle: !prev.techTitle
+        techTitle: !prev.techTitle,
+        hasPlayed: true
       };
     });
 
   handleCheckboxChangeResumeStyle = () =>
     this.setState(prev => {
       return {
-        plainResumeChecked: !prev.plainResumeChecked
+        plainResumeChecked: !prev.plainResumeChecked,
+        hasPlayed: true
       };
     });
 
   render() {
-    const { techChecked, plainResumeChecked, code } = this.state;
+    const { techChecked, plainResumeChecked, code, hasPlayed } = this.state;
 
     return (
       <FullPage background={plainResumeChecked ? "white" : "#d8cfaf"}>
@@ -96,10 +100,11 @@ class WorkHistory extends Component {
         ) : !this.state.plainResumeChecked ? (
           <FlexRow>
             <FlexElement />
-            <FlexElement minWidth="95">
+            <FlexElement minWidth="100">
               <CollapsibleCard
                 data={workHistoryData}
                 showOnlyTech={techChecked}
+                hasPlayed={hasPlayed}
               />
             </FlexElement>
             <FlexElement />

@@ -43,15 +43,15 @@ class CollapsibleCard extends Component {
   }
 
   componentDidUpdate() {
-    !this.state.animationHasPlayed &&
-      this.setState({ animationHasPlayed: true });
+    // !this.state.animationHasPlayed &&
+    //   this.setState({ animationHasPlayed: true });
   }
 
   FinishedCard(index, animationHasPlayed, item) {
     return (
       <SlideOutDownNew
-        delay={`${index / 20}s`}
-        duration={animationHasPlayed ? "0" : ".8s"}
+        delay={this.props.hasPlayed ? 0 :`${index / 20}s`}
+        duration={this.props.hasPlayed ? "0" : ".8s"}
       >
         <Collapsible trigger={item.company.name}  >
           <Card >
@@ -87,8 +87,8 @@ class CollapsibleCard extends Component {
 
   render() {
     const { data, showOnlyTech } = this.props;
-    const { animationHasPlayed } = this.state;
-    console.log(this.props);
+    const { animationHasPlayed } = this.props.hasPlayed;
+  
     return (
       <>
         {data.map((item, index) => {

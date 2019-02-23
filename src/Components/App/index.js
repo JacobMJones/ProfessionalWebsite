@@ -8,7 +8,7 @@ import Notes from "../../Pages/Notes";
 import WhatIveBuiltPage from "../../Pages/WhatIveBuilt";
 import WorkHistoryPage from "../../Pages/WorkHistory";
 import LandingPage from "../../Pages/Landing";
-
+import StudiesPage from "../../Pages/Studies"
 class App extends Component {
   constructor(props) {
     super(props);
@@ -34,6 +34,7 @@ class App extends Component {
           <Route exact path={routes.LANDING} component={LandingPage} />
           <Route exact path={routes.PROJECTS} component={ProjectsPage} />
           <Route exact path={routes.TOYS} component={ToysPage} />
+          <Route exact path={routes.STUDIES} component={StudiesPage} />
           <Route exact path={routes.NOTES} component={Notes} />
           <Route
             exact

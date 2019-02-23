@@ -4,5 +4,6 @@ export const WHATIVEBUILT = '/what-ive-built'
 export const PROJECTS = '/projects'
 export const WORKHISTORY = '/work-history'
 export const TOYS = '/toys'
+export const STUDIES = '/studies'
 
 

@@ -6,11 +6,8 @@ class PlainResume extends Component {
     super(props);
     this.state = {};
   }
-  d;
-  render() {
-    let screenWidth = window.innerWidth;
 
-    console.log(this.props.data);
+  render() {
     return (
       <div>
         <HorizontalCenter>
@@ -34,15 +31,11 @@ class PlainResume extends Component {
                       </Title>
                     </div>
                     <div>
-                      <Blurb
-                        marginTop={32}
-                  
-                      >
+                      <Blurb marginTop={32}>
                         {this.props.data[index].company.description}
                       </Blurb>
                       <Title
                         underline={"underline"}
-                        // background={"#d8cfaf"}
                         fontSize={24}
                         marginTop={32}
                         color={"#001514"}
