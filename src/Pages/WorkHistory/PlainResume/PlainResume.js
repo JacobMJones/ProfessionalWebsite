@@ -36,7 +36,7 @@ class PlainResume extends Component {
                     <div>
                       <Blurb
                         marginTop={32}
-                        // marginLeft={screenWidth > 800 ? "-45" : "4"}
+                  
                       >
                         {this.props.data[index].company.description}
                       </Blurb>

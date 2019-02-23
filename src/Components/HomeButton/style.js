@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Home = styled.div`
 
-  @media (max-width: 800px) {
+  @media (max-width: 600px) {
     width:25px
  
     position:absolute;
@@ -10,12 +10,12 @@ const Home = styled.div`
     right:20px;
    
   }
-  @media (min-width: 801px) {
+  @media (min-width: 601px) {
     width: 4vw;  
-    width: 50px;
+    width: 40px;
     position:absolute;
-    bottom:1vh;
-    left:20vw;
+    right:0
+
   }
 `;
 

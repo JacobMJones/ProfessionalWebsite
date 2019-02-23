@@ -4,12 +4,12 @@ const Card = styled.section`
   background: ${props => (props.background ? props.background : "white")}
     no-repeat;
   display: inline-block;
-  @media (max-width: 800px) {
+  @media (max-width: 600px) {
     padding-top: -40px;
     padding-bottom: 64px;
     width: 96vw;
   }
-  @media (min-width: 801px) {
+  @media (min-width: 601px) {
     width: 50vw;
     border-radius: 10px;
   }

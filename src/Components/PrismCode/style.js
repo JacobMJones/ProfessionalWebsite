@@ -6,11 +6,11 @@ const CodePage = styled.div`
 const CodeWrapper = styled.div`
   display: inline-block;
 
-  @media (max-width: 800px) {
+  @media (max-width: 600px) {
     font-size: .7em;
     width: 98vw;
   }
-  @media (min-width: 801px) {
+  @media (min-width: 601px) {
     font-size: 1em;
     width: 70vw;
   }

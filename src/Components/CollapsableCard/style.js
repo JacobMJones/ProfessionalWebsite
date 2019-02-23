@@ -16,12 +16,12 @@ const Subtitle = styled.section`
   color: white;
   opacity: 0.8;
   border-radius: 5px;
-  @media (max-width: 800px) {
+  @media (max-width: 600px) {
     font-size: 20px;
     margin-top: 16px;
     margin-bottom: 16px;
   }
-  @media (min-width: 801px) {
+  @media (min-width: 601px) {
     font-size: 28px;
     margin-top: 24px;
     margin-bottom: 24px;
@@ -32,13 +32,13 @@ const Blurb = styled.section`
   padding: 0;
   width: 80%;
 
-  @media (max-width: 800px) {
+  @media (max-width: 600px) {
     font-size: 16px;
     margin-top: 4px;
     margin-left: 16px;
     width:90%;
   }
-  @media (min-width: 801px) {
+  @media (min-width: 601px) {
     width: 80%;
     word-wrap: break-word;
     font-size: 20px;

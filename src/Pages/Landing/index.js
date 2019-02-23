@@ -70,7 +70,7 @@ class Landing extends Component {
                             }
                           );
                         }}
-                        style={screenSize > 800 ? deskButton : mobileButton}
+                        style={screenSize > 600 ? deskButton : mobileButton}
                       >
                         <ButtonText> {item.title}</ButtonText>
                       </AwesomeButton>
@@ -87,7 +87,7 @@ class Landing extends Component {
                       duration={flipSpeed}
                     >
                       <AwesomeButton
-                        style={screenSize > 800 ? deskButton : mobileButton}
+                        style={screenSize > 600 ? deskButton : mobileButton}
                       >
                         <ButtonText> {item.title}</ButtonText>
                       </AwesomeButton>

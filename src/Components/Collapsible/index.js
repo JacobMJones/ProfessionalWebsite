@@ -212,7 +212,7 @@ class Collapsible extends Component {
           className={triggerClassString.trim()}
           action={this.handleTriggerClick}
           style={
-            window.innerWidth < 800
+            window.innerWidth < 600
               ? { width: "95%", height:'18vh', fontSize: "24px", marginTop: "12px" }
               : { width: "85%", height:'15vh', fontSize: "28px", marginTop: "12px" }
           }

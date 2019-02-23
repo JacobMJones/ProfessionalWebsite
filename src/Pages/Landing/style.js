@@ -54,12 +54,12 @@ marginTop:12;
 const NavButtonWrapper = styled.div`
 flex:1
 text-align:${props => (props.textAlign ? props.textAlign : "right")};
-@media (max-width: 800px) {
+@media (max-width: 600px) {
 margin-top:5em;
 paddingRight: 32
 
 }
-@media (min-width: 801px) {
+@media (min-width: 601px) {
   margin-top:3.5em;
   
 }

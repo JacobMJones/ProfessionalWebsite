@@ -3,7 +3,7 @@ import styled from "styled-components";
 const SearchBox = styled.section`
   margin-top: 20px;
   padding: 0;
-  
+
   height:8vh;
   display: inline-block;
   font-size:32px;
@@ -11,9 +11,9 @@ const SearchBox = styled.section`
 
 
 
-  @media (max-width: 800px) {
+  @media (max-width: 600px) {
     background: white no-repeat scroll 7px 7px;
-    width:${props => (props.hasText ? '90vw' : '16vw')};
+    width:${props => (props.hasText ? '90vw' : '20vw')};
     background-position:${props => (props.hasText ? '10% 50%, 90% 50%' :  '50% 50%, 50% 50%')};
     background-image: url(${props => props.img}),  url(${props => props.img}) ;
     background-size: ${props => (props.hasText ? '25px' : '40px')};
@@ -28,9 +28,9 @@ const SearchBox = styled.section`
           width: 90vw;
         }
   }
-  @media (min-width: 801px) {
+  @media (min-width: 601px) {
     background: white no-repeat scroll 7px 7px;
-    width:${props => (props.hasText ? '50vw' : '5vw')};
+    width:${props => (props.hasText ? '50vw' : '10vw')};
     background-position:${props => (props.hasText ? '10% 50%, 90% 50%' :  '50% 50%, 50% 50%')};
     background-image: url(${props => props.img}),  url(${props => props.img}) ;
     background-size: ${props => (props.hasText ? '30px' : '50px')};
@@ -50,18 +50,3 @@ export { SearchBox };
 // width:${props => (props.hasText ? '50vw' : '5vw')};
 
 
-const Text = styled.div`
-  font-size: ${props => (props.fontSize ? props.fontSize : 6)}em;
-  font-family: "Fira Sans", sans-serif;
- 
-  z-index: 1;
-  transform: translateX(0%);
-  color: gree;
-  transform: translateY(-100%);
-  transition: transform 200ms, color 200ms, font-size 200ms;
-  &:hover {
-    font-size: ${props => (props.fontSize ? props.fontSize : 6)}em;
- background-size: 10px;
-    transform: translate(6%, -105%);
-  }
-`;

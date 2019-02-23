@@ -14,10 +14,10 @@ const Card = styled.section`
   border-radius:4px;
   font-size:20px;
   min-height:20vh;
-  @media (max-width: 800px) {
+  @media (max-width: 600px) {
     width: 80vw;
   }
-  @media (min-width: 801px) {
+  @media (min-width: 601px) {
     width: 50vw;
   }
   // background-Image: url(/images/paper.png)

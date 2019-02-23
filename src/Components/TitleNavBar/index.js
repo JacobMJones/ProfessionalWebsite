@@ -15,13 +15,13 @@ class TitleNavBar extends Component {
     const { title, showCode, flip } = this.props;
     return (
       <FlexRow>
-        <FlexElement textAlign="right">
+        <FlexElement >
           <HomeButton />
         </FlexElement>
         <FlexElementTitle>
           <Title fontSize={3.5}>{title}</Title>
         </FlexElementTitle>
-        <FlexElement textAlign="left">
+        <FlexElement >
           <CodeButton
             functionToCall={() => {
               showCode();

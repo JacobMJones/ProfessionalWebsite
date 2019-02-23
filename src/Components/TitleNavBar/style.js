@@ -8,25 +8,20 @@ text-align:center;
 minWidth:${props => (props.minWidth ? props.minWidth : 0)}vw;
 padding: 10px;
 position:relative;
-  @media (max-width: 800px) {
-    
-    }
-    @media (min-width: 801px) {
-      text-align:${props => (props.textAlign ? props.textAlign : "center")};
-     
-    }
+
 `;
 const FlexElementTitle = styled.section`
 flex:1;
 text-align:center;
-min-width:60vw;
 
-  @media (max-width: 800px) {
+
+  @media (max-width: 600px) {
     // padding-top:${props => (props.paddingTop ? props.paddingTop : 0)}vh;
+    min-width:60vw;
     }
-    @media (min-width: 801px) {
+    @media (min-width: 601px) {
       text-align:${props => (props.textAlign ? props.textAlign : "center")};
-     
+      min-width:40vw;
     }
 `;
 const FlexRow = styled.section`
@@ -48,10 +43,10 @@ position:relative;
   font-weight:bold;
   text-align: ${props => (props.textAlign ? props.textAlign : "center")};
 
-  @media (max-width: 800px) {
+  @media (max-width: 600px) {
     font-size: 46px;
     }
-    @media (min-width: 801px) {
+    @media (min-width: 601px) {
       font-size: ${props => (props.fontSize ? props.fontSize : 3)}em;
      
     }

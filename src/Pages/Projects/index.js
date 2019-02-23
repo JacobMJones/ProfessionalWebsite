@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {
   FullPage,
   HorizontalCenter,
+  TitleWrapper
 } from "./style.js";
 import ProjectCard from "./ProjectCard";
 
@@ -34,13 +35,13 @@ class Projects extends Component {
     return (
       <FullPage background="#d8cfaf">
         <HorizontalCenter>
-          <div style={{ marginTop: 50, marginBottom:50 }}>
+          <TitleWrapper>
             <TitleNavBar
               title="Projects"
               showCode={this.showCode}
               flip={this.state.showCode}
             />
-          </div>
+          </TitleWrapper>
           {!this.state.showCode ? (
             <ProjectCard />
           ) : (

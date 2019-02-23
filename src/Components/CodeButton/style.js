@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Code= styled.div`
-  @media (max-width: 800px) {
+  @media (max-width: 600px) {
     width: 25px
   
  
@@ -10,12 +10,12 @@ const Code= styled.div`
     left:20px;
    
   }
-  @media (min-width: 801px) {
-    width: 50px;
+  @media (min-width: 601px) {
+
+    width: 40px;
     height: auto;
     position:absolute;
-    bottom:1vh;
-    right:20vw;
+ left:0
   }
 `;
 

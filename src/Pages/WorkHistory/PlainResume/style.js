@@ -6,12 +6,12 @@ const HorizontalCenter = styled.section`
 `;
 
 const Card = styled.div`
-@media (max-width: 800px) {
+@media (max-width: 600px) {
   width: 90vw;
   margin-left: 5vw;
   background:${props => (props.background ? props.background : "white")} no-repeat;
 }
-@media (min-width: 801px) {
+@media (min-width: 601px) {
   width: 50vw;
         margin-left: 25vw;
         border-radius: 5px;
@@ -48,10 +48,10 @@ const Blurb = styled.section`
   text-align: ${props => (props.textAlign ? props.textAlign : "left")};
   font-size: ${props => (props.fontSize ? props.fontSize : 18)}px;
   letter-spacing: 0.4px;
-  @media (max-width: 800px) {
+  @media (max-width: 600px) {
    
   }
-  @media (min-width: 801px) {
+  @media (min-width: 601px) {
     width: 40vw;
     left: 25vw;
   }

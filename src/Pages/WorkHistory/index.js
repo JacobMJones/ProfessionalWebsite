@@ -3,80 +3,105 @@ import Checkbox from "../../Components/Checkbox";
 import workHistoryData from "./workHistoryData";
 import CollapsableCard from "../../Components/CollapsableCard";
 import PlainResume from "./PlainResume/PlainResume";
-import TitleNavBar from "../../Components/TitleNavBar"
-import HomeButton from "../../Components/HomeButton";
-import CodeButton from "../../Components/CodeButton";
-import ActionTitle from "../../Components/ActionTitle";
+import TitleNavBar from "../../Components/TitleNavBar";
+import codeData from "../../Constants/codeData";
+import PrismCode from "../../Components/PrismCode";
+import getCode from "../../Functions/getCode.js";
+
 import {
   FlexElement,
   FlexRow,
-  Title,
   HorizontalCenter,
   FullPage,
-  NavButtonWrapper
+  TitleWrapper,
+  CheckboxWrapper
 } from "./style";
 
 class WorkHistory extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      checked: true,
-      checked2: false,
+      techChecked: true,
+      plainResumeChecked: false,
       techTitle: true,
-      techOnly: true
+      techOnly: true,
+      showCode: false,
+      code: []
     };
   }
 
+  async componentDidMount() {
+    console.log("in componenet did mount");
+    let arrayOfCode = [];
+    codeData.WorkHistoryCode.forEach(async function(element) {
+      let code = await getCode(element);
+      arrayOfCode.push(code);
+    });
+    this.setState({ code: arrayOfCode }, () => {
+      console.log("this", this.state);
+    });
+  }
+  showCode = () => {
+    this.setState({ showCode: !this.state.showCode });
+  };
+
   handleCheckboxChange = event =>
     this.setState({
-      checked: !this.state.checked,
+      techChecked: !this.state.techChecked,
       techTitle: !this.state.techTitle
     });
 
   handleCheckboxChangeResumeStyle = event =>
     this.setState({
-      checked2: !this.state.checked2
+      plainResumeChecked: !this.state.plainResumeChecked
     });
 
   render() {
-    const { techTitle, checked, techOnly, checked2 } = this.state;
-    let screenWidth = window.innerWidth;
+    const { techChecked, plainResumeChecked } = this.state;
+
     return (
-      <FullPage background={checked2 ? "white" : "#d8cfaf"}>
+      <FullPage background={plainResumeChecked ? "white" : "#d8cfaf"}>
         <HorizontalCenter>
-          <div style={{marginTop:120}}>
-          <TitleNavBar title={checked ? "Tech Jobs" : "All Jobs"} />
-         
-          <div style={{height:'8px'}}/>
-          </div>
-          <label>
-            <Checkbox
-              className="yo"
-              checked={checked}
-              onChange={this.handleCheckboxChange}
-              text={"tech only"}
+          <TitleWrapper>
+            <TitleNavBar
+              title={techChecked ? "Tech Jobs" : "All Jobs"}
+              showCode={this.showCode}
             />
-          </label>
-          <label style={{ marginLeft: "20px" }}>
-            <Checkbox
-              className="yo2"
-              checked={checked2}
-              onChange={this.handleCheckboxChangeResumeStyle}
-              text={"plain resume"}
-            />
-          </label>
+          </TitleWrapper>
+          <CheckboxWrapper>
+            <label>
+              <Checkbox  
+                checked={techChecked}
+                onChange={this.handleCheckboxChange}
+                text={"tech only"}
+              />
+            </label>
+            <label style={{ marginLeft: "20px" }}>
+              <Checkbox
+               
+                checked={plainResumeChecked}
+                onChange={this.handleCheckboxChangeResumeStyle}
+                text={"plain resume"}
+              />
+            </label>
+          </CheckboxWrapper>
         </HorizontalCenter>
 
-        {!this.state.checked2 ? (
+        {this.state.showCode ? (
+          <PrismCode code={this.state.code} />
+        ) : !this.state.plainResumeChecked ? (
           <FlexRow>
             <FlexElement />
-            <FlexElement style={{ minWidth: "95vw", margin: "0 auto" }}>
-              <CollapsableCard data={workHistoryData} showOnlyTech={checked} />
+            <FlexElement minWidth='95'>
+              <CollapsableCard
+                data={workHistoryData}
+                showOnlyTech={techChecked}
+              />
             </FlexElement>
             <FlexElement />
           </FlexRow>
         ) : (
-          <PlainResume data={workHistoryData} showOnlyTech={checked} />
+          <PlainResume data={workHistoryData} showOnlyTech={techChecked} />
         )}
       </FullPage>
     );
