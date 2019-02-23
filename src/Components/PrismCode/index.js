@@ -8,6 +8,7 @@ class PrismCode extends Component {
   constructor(props) {
     super(props);
   }
+  
   componentDidMount() {
     Prism.highlightAll();
   }

@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { FlexElement, Title, FlexElementTitle, FlexRow } from "./style.js";
-
 import HomeButton from "../../Components/HomeButton";
 import CodeButton from "../../Components/CodeButton";
-
 import "./style.js";
 
 class TitleNavBar extends Component {
@@ -15,13 +13,13 @@ class TitleNavBar extends Component {
     const { title, showCode, flip } = this.props;
     return (
       <FlexRow>
-        <FlexElement >
+        <FlexElement>
           <HomeButton />
         </FlexElement>
         <FlexElementTitle>
           <Title fontSize={3.5}>{title}</Title>
         </FlexElementTitle>
-        <FlexElement >
+        <FlexElement>
           <CodeButton
             functionToCall={() => {
               showCode();

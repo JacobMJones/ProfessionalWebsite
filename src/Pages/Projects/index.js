@@ -1,31 +1,24 @@
 import React, { Component } from "react";
-import {
-  FullPage,
-  HorizontalCenter,
-  TitleWrapper
-} from "./style.js";
+import { FullPage, HorizontalCenter, TitleWrapper } from "./style.js";
 import ProjectCard from "./ProjectCard";
-
 import getCode from "../../Functions/getCode.js";
 import PrismCode from "../../Components/PrismCode";
 import "../../Theme/prism.css";
 import codeData from "../../Constants/codeData";
 import TitleNavBar from "../../Components/TitleNavBar";
+
 class Projects extends Component {
   constructor(props) {
     super(props);
     this.state = { showCode: false };
   }
-
-  async componentDidMount() {
-    let arrayOfCode = [];
+  componentDidMount() {
+    const arrayOfCode = [];
     codeData.ProjectsCode.forEach(async function(element) {
-      let code = await getCode(element);
+      const code = await getCode(element);
       arrayOfCode.push(code);
     });
-    this.setState({ code: arrayOfCode }, () => {
-      console.log(this.state);
-    });
+    this.setState({ code: arrayOfCode });
   }
   showCode = () => {
     this.setState({ showCode: !this.state.showCode });

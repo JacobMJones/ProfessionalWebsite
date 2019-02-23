@@ -30,10 +30,10 @@ class WorkHistory extends Component {
     };
   }
 
-  async componentDidMount() {
-    let arrayOfCode = [];
+  componentDidMount() {
+    const arrayOfCode = [];
     codeData.WorkHistoryCode.forEach(async function(element) {
-      let code = await getCode(element);
+      const code = await getCode(element);
       arrayOfCode.push(code);
     });
     this.setState({ code: arrayOfCode });
@@ -53,7 +53,7 @@ class WorkHistory extends Component {
       };
     });
 
-  handleCheckboxChangeResumeStyle = event =>
+  handleCheckboxChangeResumeStyle = () =>
     this.setState(prev => {
       return {
         plainResumeChecked: !prev.plainResumeChecked
@@ -70,6 +70,7 @@ class WorkHistory extends Component {
             <TitleNavBar
               title={techChecked ? "Tech Jobs" : "All Jobs"}
               showCode={this.showCode}
+              flip={this.state.showCode}
             />
           </TitleWrapper>
           <CheckboxWrapper>

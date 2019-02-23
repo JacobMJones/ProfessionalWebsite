@@ -14,7 +14,8 @@ import YouTube from "react-youtube";
 import ProjectCardData from "../projectsData";
 
 const opts = {
-  width: "85%"
+  width: "640",
+  height:'400'
 };
 
 class ProjectCard extends Component {
@@ -49,7 +50,7 @@ class ProjectCard extends Component {
                 {item.videoUrl && (
                   <YouTube videoId={item.videoUrl} opts={opts} />
                 )}
-                <Divider />
+                <Divider height={8} />
               </Card>
               <Divider />
             </>

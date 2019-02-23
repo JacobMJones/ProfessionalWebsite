@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import Accordion from "../Accordion";
 import Collapsible from "../Collapsible";
 import {
   Blurb,
   Subtitle,
   Card,
-  FlexColumn,
   FlexElement,
   FlexRow
 } from "./style";
@@ -89,7 +87,6 @@ class CollapsibleCard extends Component {
 
   render() {
     const { data, showOnlyTech } = this.props;
-    const windowWidth = window.innerWidth;
     const { animationHasPlayed } = this.state;
     console.log(this.props);
     return (
@@ -108,27 +105,3 @@ class CollapsibleCard extends Component {
 }
 export default CollapsibleCard;
 
-//#########
-{
-  /* <Accordion onTriggerClick={() => {}}>
-          {data.map((item, index) => {
-            return (
-              <div data-trigger={item.company.name}>
-                <Subtitle>Description</Subtitle>
-                <Blurb> {item.company.description}</Blurb>
-                <Subtitle>Role</Subtitle>
-                {item.role.map((item, index) => {
-                  return <Blurb>{item}</Blurb>;
-                })}
-                <Subtitle>Tech</Subtitle>
-                <Blurb>
-                  {" "}
-                  {item.tech.map((item, index) => {
-                    return <div>{item}</div>;
-                  })}
-                </Blurb>
-              </div>
-            );
-          })}
-        </Accordion> */
-}

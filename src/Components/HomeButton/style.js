@@ -4,7 +4,6 @@ const Home = styled.div`
 
   @media (max-width: 600px) {
     width:25px
- 
     position:absolute;
     bottom:20px;
     right:20px;
