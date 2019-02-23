@@ -27,7 +27,12 @@ margin-top:16px;
 `;
 
 const Divider = styled.div`
-height: ${props =>(props.height ? props.height : 2)}vh;
+
+height:2vh;
+@media (min-width: 601px){
+  height: ${props =>(props.height ? props.height : 2)}vh;
+}
+
 `;
 const Title = styled.section`
   margin-top: 32px;

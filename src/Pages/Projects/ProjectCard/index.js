@@ -13,11 +13,6 @@ import {
 import YouTube from "react-youtube";
 import ProjectCardData from "../projectsData";
 
-const opts = {
-  width: "640",
-  height:'400'
-};
-
 class ProjectCard extends Component {
   constructor(props) {
     super(props);
@@ -48,7 +43,14 @@ class ProjectCard extends Component {
                   <Divider />
                 </CardWrapper>
                 {item.videoUrl && (
-                  <YouTube videoId={item.videoUrl} opts={opts} />
+                  <YouTube
+                    videoId={item.videoUrl}
+                    opts={
+                      window.innerWidth > 600
+                        ? { width: 640, height: 400 }
+                        : { width: 320, height: 200 }
+                    }
+                  />
                 )}
                 <Divider height={8} />
               </Card>
