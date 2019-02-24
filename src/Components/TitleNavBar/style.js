@@ -1,34 +1,27 @@
 import styled from "styled-components";
 
-
-
 const FlexElement = styled.section`
-flex:1;
-text-align:center;
-minWidth:${props => (props.minWidth ? props.minWidth : 0)}vw;
-padding: 10px;
-position:relative;
-
+  flex: 1;
+  text-align: center;
+  minwidth: ${props => (props.minWidth ? props.minWidth : 0)}vw;
+  padding: 10px;
+  position: relative;
 `;
 const FlexElementTitle = styled.section`
-flex:1;
-text-align:center;
-
+  flex: 1;
+  text-align: center;
 
   @media (max-width: 600px) {
-    // padding-top:${props => (props.paddingTop ? props.paddingTop : 0)}vh;
-    min-width:60vw;
-    }
-    @media (min-width: 601px) {
-      text-align:${props => (props.textAlign ? props.textAlign : "center")};
-      min-width:40vw;
-    }
+    min-width: 60vw;
+  }
+  @media (min-width: 601px) {
+    text-align: ${props => (props.textAlign ? props.textAlign : "center")};
+    min-width: 40vw;
+  }
 `;
 const FlexRow = styled.section`
- display:flex;
- flex-direction:row;
-
- 
+  display: flex;
+  flex-direction: row;
 `;
 const Title = styled.section`
 position:relative;
@@ -37,13 +30,14 @@ position:relative;
   color: ${props => (props.color ? props.color : " #001514")}
   background: ${props => (props.background ? props.background : "transparent")}
   display: inline-block;
-  margin-top: ${props => (props.marginTop ? props.marginTop : 0 )}vh;
+  margin-top: ${props => (props.marginTop ? props.marginTop : 0)}vh;
 
   font-family: "Fira Sans", sans-serif;
   font-weight:bold;
   text-align: ${props => (props.textAlign ? props.textAlign : "center")};
 
   @media (max-width: 600px) {
+  
     font-size: 46px;
     }
     @media (min-width: 601px) {
@@ -54,10 +48,4 @@ position:relative;
 `;
 
 const Brace = styled.hr``;
-export {
-  Brace,
-  FlexElement,
-  FlexRow,
-  FlexElementTitle,
-  Title
-};
+export { Brace, FlexElement, FlexRow, FlexElementTitle, Title };

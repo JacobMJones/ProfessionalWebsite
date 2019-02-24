@@ -47,8 +47,8 @@ class ProjectCard extends Component {
                     videoId={item.videoUrl}
                     opts={
                       window.innerWidth > 600
-                        ? { width: 640, height: 400 }
-                        : { width: 320, height: 200 }
+                        ? { width: '64%' }
+                        : { width: '95%'}
                     }
                   />
                 )}

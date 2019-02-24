@@ -9,7 +9,7 @@ module.exports = [
     }
   },
   {
-    name: "bind() vs. arrow function with 'this' ",
+    name: "bind() vs. arrow",
     blurb:
       "bind() is a method that has its 'this' keyword set to the provided value. The value of 'this' inside an arrow function is always inherited from the enclosing scope.",
     link: {

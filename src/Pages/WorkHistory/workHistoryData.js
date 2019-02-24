@@ -13,10 +13,10 @@ module.exports = [
       "Managed state using React's Context API",
       "Procedurally generated rehab sessions for users from a data object",
       "Created a user dashboard that reflected user progress and rights",
-      "Created and maintained a noSQL database on firebase",
+      "Created and maintained a noSQL database on Firebase",
       "Deployed cloud functions for credit card processing, authentication, and tracking user progress",
       "Created and maintained a standard corporate landing page",
-      "Deployed a successful SEO strategy for an SPA, working with meta tags, prerendering, schema tags, and  the Google Search Console",
+      "Deployed a successful SEO strategy for an SPA, working with meta tags, pre-rendering, schema tags, and  the Google Search Console",
     ],
     link: {
       url: "www.phyxable.com"

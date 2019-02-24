@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import notesData from "./notesData";
+import notesData from "../../Constants/notesData.js"
 import Search from "../../Components/Search/index";
 import List from "../../Components/List"
 import {

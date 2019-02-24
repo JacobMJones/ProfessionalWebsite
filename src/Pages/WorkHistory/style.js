@@ -25,13 +25,13 @@ const FlexElement = styled.section`
     @media (min-width: 601px) {
       
       margin-left:${props => (props.marginLeft ? props.marginLeft : 0)}vw
-      min-width: ${props => (props.minWidth ? props.minWidth - 30 : 0)}vw;
+      min-width: ${props => (props.minWidth ? props.minWidth - 10 : 0)}vw;
     }
 `;
 
 const TitleWrapper = styled.div`
   @media (max-width: 600px) {
-    margin-top: 120px;
+    margin-top: 100px;
     margin-bottom: 30px;
   }
   @media (min-width: 601px) {

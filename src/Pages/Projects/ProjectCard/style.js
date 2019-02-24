@@ -10,7 +10,7 @@ const Card = styled.section`
     width: 96vw;
   }
   @media (min-width: 601px) {
-    width: 50vw;
+    width: 64vw;
     border-radius: 10px;
   }
 `;

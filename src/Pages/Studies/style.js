@@ -60,6 +60,7 @@ const HorizontalCenter = styled.section`
 
   @media (max-width: 600px) {
     margin-top: -10vh;
+    margin-bottom: 12vh;
   }
   @media (min-width: 601px) {
     margin-top: -1.2vh;

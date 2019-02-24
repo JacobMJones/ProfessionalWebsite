@@ -18,7 +18,9 @@ const components = {
   GetCode:
     "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Functions/getCode.js",
   PrismCode:
-    "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Components/PrismCode/index.js"
+    "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Components/PrismCode/index.js",
+  Studies:
+    "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Pages/Studies/index.js"
 };
 
 const {
@@ -30,10 +32,12 @@ const {
   Collapsible,
   CollapsibleCard,
   GetCode,
-  PrismCode
+  PrismCode,
+  Studies
 } = components;
 
 const ProjectsCode = [Projects, ProjectCard, PrismCode];
+const StudiesCode = [Projects, ProjectCard, PrismCode];
 const WorkHistoryCode = [
   WorkHistory,
   GetCode,
@@ -42,4 +46,4 @@ const WorkHistoryCode = [
   CollapsibleCard,
   Collapsible
 ];
-export default { ProjectsCode, WorkHistoryCode };
+export default { ProjectsCode, WorkHistoryCode, StudiesCode };

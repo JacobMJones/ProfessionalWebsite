@@ -13,24 +13,23 @@ import {
   HorizontalCenter,
   FullPage,
   TitleWrapper,
-
-  ButtonText,
+  ButtonText
 } from "./style";
 
 const deskButton = {
-    width: "40vw",
-    height: "20vh",
-    marginTop: "20px"
-  };
-  const mobileButton = {
-    width: "80vw",
-    height: "20vh",
-    marginTop: "12px"
-  };
+  width: "40vw",
+  height: "20vh",
+  marginTop: "20px"
+};
+const mobileButton = {
+  width: "80vw",
+  height: "20vh",
+  marginTop: "12px"
+};
 class Studies extends Component {
   constructor(props) {
     super(props);
-    this.state = {     
+    this.state = {
       showCode: false,
       code: []
     };
@@ -38,7 +37,7 @@ class Studies extends Component {
 
   componentDidMount() {
     const arrayOfCode = [];
-    codeData.WorkHistoryCode.forEach(async function(element) {
+    codeData.StudiesCode.forEach(async function(element) {
       const code = await getCode(element);
       arrayOfCode.push(code);
     });
@@ -51,9 +50,6 @@ class Studies extends Component {
       };
     });
 
-
-
-
   render() {
     const { code } = this.state;
     const screenSize = window.innerWidth;
@@ -61,8 +57,8 @@ class Studies extends Component {
     const flipSpeed = "1s";
     const { animationDirection } = this.state;
     if (this.state.redirect) {
-        return <Redirect to={this.state.url} push />;
-      }
+      return <Redirect to={this.state.url} push />;
+    }
     return (
       <FullPage>
         <HorizontalCenter>
@@ -73,16 +69,16 @@ class Studies extends Component {
               flip={this.state.showCode}
             />
           </TitleWrapper>
-         
         </HorizontalCenter>
         <HorizontalCenter>
-        {studiesButtonData.map((item, index) => {
+          {this.state.showCode ? (
+            <PrismCode code={code} />
+          ) : (
+            <>
+              {studiesButtonData.map((item, index) => {
                 return (
                   <FlexElement key={`landing-button${index}`}>
-                    <FlipInX
-                      direction={animationDirection}
-                      duration={0}
-                    >
+                    <FlipInX direction={animationDirection} duration={0}>
                       <AwesomeButton
                         action={() => {
                           this.setState(
@@ -93,7 +89,7 @@ class Studies extends Component {
                                   url: item.path,
                                   redirect: true
                                 });
-                              },0);
+                              }, 0);
                             }
                           );
                         }}
@@ -105,12 +101,9 @@ class Studies extends Component {
                   </FlexElement>
                 );
               })}
-                 </HorizontalCenter>
-        {/* {this.state.showCode ? (
-          <PrismCode code={code} />
-        ) :
-        ) 
-        */}
+            </>
+          )}
+        </HorizontalCenter>
       </FullPage>
     );
   }

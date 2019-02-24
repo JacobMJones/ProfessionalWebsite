@@ -213,7 +213,7 @@ class Collapsible extends Component {
           action={this.handleTriggerClick}
           style={
             window.innerWidth < 600
-              ? { width: "95%", height:'18vh', fontSize: "24px", marginTop: "12px" }
+              ? { width: "95%", height:'120px', fontSize: "24px", marginTop: "12px" }
               : { width: "85%", height:'15vh', fontSize: "28px", marginTop: "12px" }
           }
           onKeyPress={event => {
