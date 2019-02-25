@@ -8,26 +8,28 @@ import {
   CardWrapper,
   Line,
   LinkWrapper,
-  Divider
+  Divider,
+  Icon
 } from "./style";
 import YouTube from "react-youtube";
-import ProjectCardData from "../projectsData";
 
-class ProjectCard extends Component {
+
+class Cards extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
+    const data = this.props.data
     return (
       <HorizontalCenter>
-        {ProjectCardData.map((item, index) => {
-          const color = 1 === index % 2 ? "white" : "#ffeddf";
+        {data.map((item, index) => {
+          const color = 1 === index % 2 ? "white" : "#efd469";
           return (
             <>
               <Card background={color}>
                 <CardWrapper>
-                  <Title>{item.title}</Title>
+                  <Title>{item.title}  <Icon as='img' src={item.image}/></Title>
                   <Line as="hr" />
                   <Blurb>
                     <b> {item.blurb[0]}</b>
@@ -62,4 +64,4 @@ class ProjectCard extends Component {
     );
   }
 }
-export default ProjectCard;
+export default Cards;

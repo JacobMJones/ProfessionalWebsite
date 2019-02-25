@@ -4,10 +4,11 @@ import getCode from "../../Functions/getCode.js";
 import PrismCode from "../../Components/PrismCode";
 import "../../Theme/prism.css";
 import codeData from "../../Constants/codeData";
-import projectData from './projectsData'
+import educationData from "./EducationData"
 import TitleNavBar from "../../Components/TitleNavBar";
-import Cards from "../../Components/Cards"
-class Projects extends Component {
+import EducationCard from './EducationCard'
+import Cards from '../../Components/Cards'
+class FormalEducation extends Component {
   constructor(props) {
     super(props);
     this.state = { showCode: false };
@@ -26,17 +27,19 @@ class Projects extends Component {
 
   render() {
     return (
-      <FullPage background="#829356">
+      <FullPage background="#CD594A">
         <HorizontalCenter>
           <TitleWrapper>
             <TitleNavBar
-              title="Projects"
+              title="Formal Education"
+              long={true}
               showCode={this.showCode}
               flip={this.state.showCode}
+              backArrow={true}
             />
           </TitleWrapper>
           {!this.state.showCode ? (
-          <Cards data={projectData}/>
+            <Cards data={educationData}/>
           ) : (
             <PrismCode code={this.state.code} />
           )}
@@ -45,4 +48,4 @@ class Projects extends Component {
     );
   }
 }
-export default Projects;
+export default FormalEducation;

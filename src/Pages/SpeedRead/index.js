@@ -1,20 +1,32 @@
 import React, { Component } from "react";
 import Prism from "prismjs";
 import PrismJsx from "prismjs/components/prism-jsx.min";
+import {
+  FullPage,
+  HorizontalCenter,
+  TitleWrapper,
+  FlexColumn,
+  FlexElement,
+  FlexRow,
+  AllCenter
+} from "./style.js";
+import { AwesomeButton } from "react-awesome-button";
+import TitleNavBar from "../../Components/TitleNavBar";
 import "../../Theme/prism.css";
-import {} from "./style";
+
 import notesData from "../../Constants/notesData.js";
+
 class SpeedRead extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isShowingWords: false,
       hasShownTitle: false,
       wordToShow: "",
-      textToShow: ["hello", "my", "friend"],
-      wordIndex: -1,
+      textToShow: [],
+      wordIndex: -4,
       noteIndex: 0,
-      speed: 300,
-      counter: null
+      speed: 200
     };
   }
 
@@ -42,59 +54,134 @@ class SpeedRead extends Component {
 
     const word = textToShow[noteIndex].blurb[this.state.wordIndex];
     if (wordIndex !== textToShow[noteIndex].blurb.length) {
-      if (wordIndex === -1) {
+      if (wordIndex < 0) {
         this.setState(prevState => ({
           showTitle: true,
           wordToShow: textToShow[noteIndex].title,
-          wordIndex:0
+          wordIndex: prevState.wordIndex + 1
         }));
       } else {
         this.setState(prevState => ({
           wordIndex: prevState.wordIndex + 1,
           wordToShow: word,
-          showTitle: false,
+          showTitle: false
         }));
       }
     } else {
       this.setState(prevState => ({
         noteIndex: prevState.noteIndex + 1,
         showTitle: false,
-        wordIndex: -1,
-    
+        wordIndex: -4
       }));
     }
   };
 
   startCountDown = () => {
-    this.timerID = setInterval(() => this.showWord(), 300);
+    this.timerID = setInterval(() => this.showWord(), this.state.speed);
+    this.setState({ isShowingWords: true });
   };
 
   stopCountDown = () => {
     clearInterval(this.timerID);
     this.prepareText();
-    this.setState({ wordIndex: -1, noteIndex: 0, wordToShow: "waiting...", showTitle:false });
+    this.setState({
+      wordIndex: -4,
+      noteIndex: 0,
+      wordToShow: "Let's learn!",
+      showTitle: false,
+      isShowingWords: false
+    });
+  };
+  sliderChanged = e => {
+    this.setState({ speed: parseInt(e.target.value) });
   };
 
   render() {
-    const { wordToShow, showTitle } = this.state;
+    const { wordToShow, showTitle, isShowingWords } = this.state;
     return (
-      <div>
-        <div style={showTitle ? {fontSize:40} : {fontSize:20}}>{wordToShow}</div>
-        <button
-          onClick={() => {
-            this.startCountDown();
-          }}
-        >
-          Begin
-        </button>
-        <button
-          onClick={() => {
-            this.stopCountDown();
-          }}
-        >
-          Stop
-        </button>
-      </div>
+      <FullPage background={isShowingWords ? "white" : "#cd594a"}>
+        <HorizontalCenter>
+          <TitleWrapper>
+            {!isShowingWords ? (
+              <TitleNavBar
+                title="Speed"
+                showCode={this.showCode}
+                flip={this.state.showCode}
+                color={"white"}
+              />
+            ) : (
+              <div
+                style={
+                  window.innerWidth < 601
+                    ? { minHeight: "16.5vh" }
+                    : { minHeight: "6.2vh" }
+                }
+              />
+            )}
+          </TitleWrapper>
+
+          <FlexColumn>
+            <FlexElement minHeight={window.innerWidth < 600 ? 30 : 60}>
+              <AllCenter>
+                <div
+                  style={
+                    showTitle
+                      ? { fontSize: 50, color: "green" }
+                      : { fontSize: 50 }
+                  }
+                >
+                  {wordToShow}
+                </div>
+              </AllCenter>
+            </FlexElement>
+            <FlexElement>
+              <div style={{ width: "100vw", marginTop:'50px' }}>
+                {isShowingWords ? (
+                  <AwesomeButton
+                    style={
+                      window.innerWidth > 600
+                        ? { width: "200px", marginLeft: -32 }
+                        : { width: "200px" }
+                    }
+                    action={() => {
+                      this.stopCountDown();
+                    }}
+                  >
+                    Stop
+                  </AwesomeButton>
+                ) : (
+                  <AwesomeButton
+                    style={
+                      window.innerWidth > 600
+                        ? { width: "200px", marginLeft: -32 }
+                        : { width: "200px" }
+                    }
+                    action={() => {
+                      this.startCountDown();
+                    }}
+                  >
+                    Start
+                  </AwesomeButton>
+                )}
+              </div>
+            </FlexElement>
+            <FlexElement>
+              {!isShowingWords && (
+                <input
+                  className="slider"
+                  type="range"
+                  min="100"
+                  max="300"
+                  value={this.state.speed}
+                  onChange={this.sliderChanged}
+                  step="1"
+                  style={{ direction: "rtl", width: "250px" }}
+                />
+              )}
+            </FlexElement>
+          </FlexColumn>
+        </HorizontalCenter>
+      </FullPage>
     );
   }
 }

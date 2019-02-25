@@ -5,6 +5,7 @@ const FlexElement = styled.section`
   text-align: center;
   minwidth: ${props => (props.minWidth ? props.minWidth : 0)}vw;
   padding: 10px;
+  
   position: relative;
 `;
 const FlexElementTitle = styled.section`
@@ -22,12 +23,13 @@ const FlexElementTitle = styled.section`
 const FlexRow = styled.section`
   display: flex;
   flex-direction: row;
+  
 `;
 const Title = styled.section`
 position:relative;
 
   border-radius: ${props => (props.borderRadius ? props.borderRadius : 0)}  
-  color: ${props => (props.color ? props.color : " #001514")}
+  color: ${props => (props.color ? props.color : "white")}
   background: ${props => (props.background ? props.background : "transparent")}
   display: inline-block;
   margin-top: ${props => (props.marginTop ? props.marginTop : 0)}vh;

@@ -41,7 +41,7 @@ position:relative;
 const Blurb = styled.section`
   
  
-  color: ${props => (props.color ? props.color : " #001514")}
+  color: ${props => (props.color ? props.color : "  #001514")}
   background: ${props => (props.background ? props.background : "transparent")};
   margin-top: ${props => (props.marginTop ? props.marginTop : 0)}px;
   margin-left: ${props => (props.marginLeft ? props.marginLeft : 5)}%;

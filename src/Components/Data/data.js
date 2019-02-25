@@ -11,11 +11,11 @@ class Data {
       // { title: "Toys", path: "/toys" }
     ];
     this.studiesButtonData = [
-     
-     
-      { title: "Notes", path: "/notes" },
-      { title: "Speed Read", path: "/speed-read" },
+      { title: "Formal", path: "/formal-education" },
       { title: "Tutorials", path: "/tutorials" },
+      { title: "Notes", path: "/notes" },
+     
+    
       
     ];
   }

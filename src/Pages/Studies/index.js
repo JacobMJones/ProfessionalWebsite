@@ -60,13 +60,14 @@ class Studies extends Component {
       return <Redirect to={this.state.url} push />;
     }
     return (
-      <FullPage>
+      <FullPage background='#829356'>
         <HorizontalCenter>
           <TitleWrapper>
             <TitleNavBar
               title="Studies"
               showCode={this.showCode}
               flip={this.state.showCode}
+             
             />
           </TitleWrapper>
         </HorizontalCenter>
@@ -95,7 +96,7 @@ class Studies extends Component {
                         }}
                         style={screenSize > 600 ? deskButton : mobileButton}
                       >
-                        <ButtonText> {item.title}</ButtonText>
+                        <ButtonText  color="#093145"> {item.title}</ButtonText>
                       </AwesomeButton>
                     </FlipInX>
                   </FlexElement>
@@ -104,6 +105,7 @@ class Studies extends Component {
             </>
           )}
         </HorizontalCenter>
+        <div style={{height:200}}/>
       </FullPage>
     );
   }

@@ -68,13 +68,14 @@ class WorkHistory extends Component {
     const { techChecked, plainResumeChecked, code, hasPlayed } = this.state;
 
     return (
-      <FullPage background={plainResumeChecked ? "white" : "#d8cfaf"}>
+      <FullPage background={plainResumeChecked ? "white" : "#829356"}>
         <HorizontalCenter>
           <TitleWrapper>
             <TitleNavBar
               title={techChecked ? "Tech Jobs" : "All Jobs"}
               showCode={this.showCode}
               flip={this.state.showCode}
+             color={plainResumeChecked ? '#093145' : 'white'}
             />
           </TitleWrapper>
           <CheckboxWrapper>
@@ -112,6 +113,7 @@ class WorkHistory extends Component {
         ) : (
           <PlainResume data={workHistoryData} showOnlyTech={techChecked} />
         )}
+      <div style={{height:100}}/>
       </FullPage>
     );
   }

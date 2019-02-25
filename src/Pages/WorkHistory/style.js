@@ -4,6 +4,8 @@ const FullPage = styled.section`
   background: ${props => (props.background ? props.background : "transparent")};
   width: 100%;
   overflow-x: hidden;
+  height: 100%;
+ 
 `;
 
 const FlexRow = styled.section`

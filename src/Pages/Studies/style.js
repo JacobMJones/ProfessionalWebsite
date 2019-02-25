@@ -4,6 +4,7 @@ const FullPage = styled.section`
   background: ${props => (props.background ? props.background : "transparent")};
   width: 100%;
   overflow: hidden;
+  height:100%;
 `;
 
 const FlexRow = styled.section`
@@ -29,7 +30,7 @@ const FlexElement = styled.section`
     }
 `;
 const ButtonText = styled.section`
-  color: white;
+  color:${props => (props.color ? props.color : 'white')};
   font-size: 32px;
   letter-spacing: 2px;
 `;
@@ -59,8 +60,8 @@ const HorizontalCenter = styled.section`
   background: ${props => (props.background ? props.background : "transparent")};
 
   @media (max-width: 600px) {
-    margin-top: -10vh;
-    margin-bottom: 12vh;
+    margin-top: -12vh;
+    margin-bottom: 14vh;
   }
   @media (min-width: 601px) {
     margin-top: -1.2vh;

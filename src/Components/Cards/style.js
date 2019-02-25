@@ -25,7 +25,14 @@ margin-bottom:12px
 const LinkWrapper = styled.div`
 margin-top:16px;
 `;
+const Icon = styled.section`
+  width:50px;
+  right: 5px;
+  top: -20px
 
+margin-top:-16px;
+position: absolute;
+`;
 const Divider = styled.div`
 
 height:2vh;
@@ -35,6 +42,7 @@ height:2vh;
 
 `;
 const Title = styled.section`
+position: relative;
   margin-top: 32px;
   font-weight: ${props => (props.fontWeight ? props.fontWeight : 300)}px;
   font-size: ${props => (props.fontSize ? props.fontSize : 28)}px;
@@ -57,4 +65,4 @@ const StyledLink = styled.section`
 const HorizontalCenter = styled.section`
   text-align: center;
 `;
-export { Card, Title, StyledLink, Blurb, HorizontalCenter, CardWrapper, Line, LinkWrapper, Divider };
+export { Card, Title, StyledLink, Blurb, HorizontalCenter, CardWrapper, Line, LinkWrapper, Divider, Icon };

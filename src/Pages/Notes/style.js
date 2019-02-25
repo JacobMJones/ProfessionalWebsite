@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 const FullPage = styled.section`
-  background: ${props => (props.background ? props.background : "#d8cfaf")};
+  background: ${props => (props.background ? props.background : "#cd594a")};
   overflow-x: hidden;
+  height:100%;
 `;
 const HorizontalCenter = styled.section`
   text-align: ${props => (props.textAlign ? props.textAlign : "center")};
@@ -25,4 +26,14 @@ text-decoration: ${props => (props.underline ? props.underline : 'none')}
   @media (min-width: 801px) {
   }
 `;
-export { FullPage, HorizontalCenter, Title };
+const TitleWrapper = styled.div`
+  @media (max-width: 600px) {
+    margin-top:  40px;
+
+  }
+  @media (min-width: 601px) {
+    margin-top: 80px;
+    margin-bottom: 50px;
+  }
+`;
+export { FullPage, HorizontalCenter, Title, TitleWrapper };

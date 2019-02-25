@@ -88,7 +88,7 @@ module.exports = [
     company: {
       name: "Bank of Montreal",
       description:
-        "After passing my Microsoft Certified System Engineer certifications, I worked at the Bank of Montreal with the on-site network and desktop support team at the bank'shead office."
+        "After passing my Microsoft Certified System Engineer certifications, I worked at the Bank of Montreal with the on-site network and desktop support team at the bank's head office."
     },
     role: [
       "Provided desktop and network support for executives and the board of directors.",

@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import notesData from "../../Constants/notesData.js"
 import Search from "../../Components/Search/index";
 import List from "../../Components/List"
+import TitleNavBar from "../../Components/TitleNavBar";
 import {
   FullPage,
   HorizontalCenter,
   Title,
+  TitleWrapper
 } from "./style.js";
 
 
@@ -28,9 +30,16 @@ class Notes extends Component {
   };
   render() {
     return (
-      <FullPage overflowY={'none'}>
+      <FullPage>
         <HorizontalCenter>
-          {/* <Title marginTop={56}>My Notes</Title> */}
+        <TitleWrapper>
+            <TitleNavBar
+              title="My Notes"
+              showCode={this.showCode}
+              flip={this.state.showCode}
+              backArrow={true}
+            />
+          </TitleWrapper>
           <br/>
           <Search list={notesData} filterList={this.filterList}/>
           <br/>  <br/>

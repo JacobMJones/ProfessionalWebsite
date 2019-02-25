@@ -13,7 +13,7 @@ class PlainResume extends Component {
         <HorizontalCenter>
           <div style={{ height: 64 }} />
           {this.props.data.map((item, index) => {
-            const color = 1 === index % 2 ? "#ffeddf" : "white";
+            const color = 1 === index % 2 ? "#efd469" : "white";
             if (item.tech || !this.props.showOnlyTech) {
               return (
                 <div>
@@ -24,7 +24,7 @@ class PlainResume extends Component {
                         marginLeft={8}
                         fontSize={32}
                         color={"white"}
-                        background={"#248232"}
+                        background={"#829356"}
                         borderRadius="5px"
                       >
                         {this.props.data[index].company.name}

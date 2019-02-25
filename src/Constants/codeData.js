@@ -36,8 +36,8 @@ const {
   Studies
 } = components;
 
-const ProjectsCode = [Projects, ProjectCard, PrismCode];
-const StudiesCode = [Projects, ProjectCard, PrismCode];
+const ProjectsCode = [Projects, ProjectCard, TitleNavBar, PrismCode];
+const StudiesCode = [Studies, GetCode, TitleNavBar, PrismCode];
 const WorkHistoryCode = [
   WorkHistory,
   GetCode,

@@ -14,7 +14,7 @@ const Title = styled.section`
 position:relative;
 
   border-radius: ${props => (props.borderRadius ? props.borderRadius : 0)}  
-  color: ${props => (props.color ? props.color : " #001514")}
+  color: ${props => (props.color ? props.color : " white")}
   background: ${props => (props.background ? props.background : "transparent")}
   display: inline-block;
   margin-top: ${props => (props.marginTop ? props.marginTop : 7)}vh;
@@ -25,13 +25,21 @@ position:relative;
 
 `;
 const FullPage = styled.section`
-  background: ${props => (props.background ? props.background : "#d8cfaf")};
+  background: ${props => (props.background ? props.background : "#093145")};
   overflow: hidden;
 `;
 const ButtonText = styled.section`
-  color: white;
-  font-size: 32px;
+  color: #093145;
+ ;
+  @media (max-width: 600px) {
+    font-size: 30px;
+    letter-spacing: 2px;
+    
+    }
+    @media (min-width: 601px) {
+      font-size: 40px;
   letter-spacing: 2px;
+    }
 `;
 const HorizontalCenter = styled.section`
   text-align: ${props => (props.textAlign ? props.textAlign : "center")};

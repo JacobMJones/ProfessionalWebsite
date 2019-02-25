@@ -18,7 +18,7 @@ module.exports = [
     title: "The Light Machine",
     blurb: [
       "C#, Blender, Unity, Photoshop.",
-      "The Light Machine was a way to learn about state machines, raycasting, 3D modelling, and various game design patterns. In creating this game I greatly expanded my knowledge of C# and OOP. What's more, it showed me the tremendous amount of work that is involved in creating a proper video game. Building this game was a way of discovering if I wanted to become a professional programmer."
+      "The Light Machine was a way to learn about state machines, raycasting, 3D modelling, and various game design patterns. In creating this game I greatly expanded my knowledge of C# and OOP. What's more, it showed me the tremendous amount of work that is involved in creating a proper video game. Building this game was a way of exploring if I wanted to become a professional programmer."
     ],
     videoUrl: "CVgfVOT604k",
     webUrl: "https://newmechanics.itch.io/the-light-machine"
@@ -36,7 +36,7 @@ module.exports = [
     title: "English Phonics Trainer",
     blurb: [
       "C#, Blender, Unity, Photoshop.",
-      "The English Phonics Trainer was a personal project I created for both my students who were learning English phonics and also for their parents, who spoke little to no English. In addition to the game, it also generated tests parents could give their children at home. The greatest challenge of this project was the QA process, specifically getting the application to look good on various phone sizes. It currently has over 500 active users! Which is awesome considering it was just supposed to be for my class."
+      "The English Phonics Trainer was a personal project I created for both my students who were learning English phonics and also for their parents, who spoke little to no English. In addition to the game, it also generated tests parents could give their children at home. The greatest challenge of this project was the QA process, specifically getting the application to look good on various phone sizes. It currently has over 500 active users! Which is awesome considering it had only been created for my class."
     ],
     webUrl: "https://bit.ly/2GKr8Ae"
   }

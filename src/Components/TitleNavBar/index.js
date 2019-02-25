@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { FlexElement, Title, FlexElementTitle, FlexRow } from "./style.js";
 import HomeButton from "../../Components/HomeButton";
 import CodeButton from "../../Components/CodeButton";
+import BackButton from "../../Components/BackButton";
 import "./style.js";
 
 class TitleNavBar extends Component {
@@ -10,14 +11,15 @@ class TitleNavBar extends Component {
   }
 
   render() {
-    const { title, showCode, flip } = this.props;
+    const { title, showCode, flip, color, long, backArrow } = this.props;
+    console.log(this.props);
     return (
       <FlexRow>
-        <FlexElement>
-          <HomeButton />
-        </FlexElement>
+        <FlexElement>{backArrow ? <BackButton /> : <HomeButton />}</FlexElement>
         <FlexElementTitle>
-          <Title fontSize={3.5}>{title}</Title>
+          <Title color={color} fontSize={3.5}>
+            {title}
+          </Title>
         </FlexElementTitle>
         <FlexElement>
           <CodeButton

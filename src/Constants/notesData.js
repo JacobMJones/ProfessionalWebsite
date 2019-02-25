@@ -103,9 +103,7 @@ module.exports = [
     }
   }
 
-  // { name: "React", value: "AF" },
-  // { name: "React Router", value: "AS" },
-  // { name: "Web Sockets", value: "AL" }
+  
 ];
 
 //lambdas
@@ -118,3 +116,4 @@ module.exports = [
 //.attrs() attributes
 //hideVisually
 //webpack
+//PropTypes

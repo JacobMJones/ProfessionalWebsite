@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const ListBackground = styled.section`
 
-  background: ${props => (props.background ? props.background : "#d8cfaf")};
+  background: ${props => (props.background ? props.background : "#cd594a")};
 
 `;
 
