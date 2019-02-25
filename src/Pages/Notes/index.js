@@ -1,16 +1,13 @@
 import React, { Component } from "react";
-import notesData from "../../Constants/notesData.js"
+import notesData from "../../Constants/notesData.js";
 import Search from "../../Components/Search/index";
-import List from "../../Components/List"
+import List from "../../Components/List";
 import TitleNavBar from "../../Components/TitleNavBar";
-import {
-  FullPage,
-  HorizontalCenter,
-  Title,
-  TitleWrapper
-} from "./style.js";
-
-
+import codeData from "../../Constants/codeData";
+import getCode from "../../Functions/getCode.js";
+import { FullPage, HorizontalCenter, Title, TitleWrapper } from "./style.js";
+import PrismCode from "../../Components/PrismCode";
+import "../../Theme/prism.css";
 class Notes extends Component {
   constructor(props) {
     super(props);
@@ -28,11 +25,22 @@ class Notes extends Component {
     });
     this.setState({ items: updatedList });
   };
+  componentDidMount() {
+    const arrayOfCode = [];
+    codeData.NotesCode.forEach(async function(element) {
+      const code = await getCode(element);
+      arrayOfCode.push(code);
+    });
+    this.setState({ code: arrayOfCode });
+  }
+  showCode = () => {
+    this.setState({ showCode: !this.state.showCode });
+  };
   render() {
     return (
       <FullPage>
         <HorizontalCenter>
-        <TitleWrapper>
+          <TitleWrapper>
             <TitleNavBar
               title="My Notes"
               showCode={this.showCode}
@@ -40,10 +48,14 @@ class Notes extends Component {
               backArrow={true}
             />
           </TitleWrapper>
-          <br/>
-          <Search list={notesData} filterList={this.filterList}/>
-          <br/>  <br/>
-          <List items={this.state.items} />
+          <br />
+          <Search list={notesData} filterList={this.filterList} />
+          <br /> <br />
+          {!this.state.showCode ? (
+            <List items={this.state.items} />
+          ) : (
+            <PrismCode code={this.state.code} />
+          )}
         </HorizontalCenter>
       </FullPage>
     );

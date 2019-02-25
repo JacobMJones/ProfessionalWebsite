@@ -1,13 +1,9 @@
 import React, { Component } from "react";
-import { FullPage, HorizontalCenter, TitleWrapper } from "./style.js";
 import getCode from "../../Functions/getCode.js";
-import PrismCode from "../../Components/PrismCode";
-import "../../Theme/prism.css";
 import codeData from "../../Constants/codeData";
-import educationData from "./EducationData"
-import TitleNavBar from "../../Components/TitleNavBar";
-import EducationCard from './EducationCard'
-import Cards from '../../Components/Cards'
+import educationData from "./EducationData";
+import NoteBasedPage from "../../Components/NoteBasedPage";
+
 class FormalEducation extends Component {
   constructor(props) {
     super(props);
@@ -15,7 +11,7 @@ class FormalEducation extends Component {
   }
   componentDidMount() {
     const arrayOfCode = [];
-    codeData.ProjectsCode.forEach(async function(element) {
+    codeData.FormalEducationCode.forEach(async function(element) {
       const code = await getCode(element);
       arrayOfCode.push(code);
     });
@@ -27,24 +23,12 @@ class FormalEducation extends Component {
 
   render() {
     return (
-      <FullPage background="#CD594A">
-        <HorizontalCenter>
-          <TitleWrapper>
-            <TitleNavBar
-              title="Formal Education"
-              long={true}
-              showCode={this.showCode}
-              flip={this.state.showCode}
-              backArrow={true}
-            />
-          </TitleWrapper>
-          {!this.state.showCode ? (
-            <Cards data={educationData}/>
-          ) : (
-            <PrismCode code={this.state.code} />
-          )}
-        </HorizontalCenter>
-      </FullPage>
+      <NoteBasedPage
+        title={"Formal Education"}
+        code={this.state.code}
+        data={educationData}
+        backgroundColor="#cd594a"
+      />
     );
   }
 }

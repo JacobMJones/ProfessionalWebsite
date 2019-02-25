@@ -1,11 +1,12 @@
 const components = {
   Projects:
     "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Pages/Projects/index.js",
-
-  ProjectCard:
-    "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Pages/Projects/ProjectCard/index.js",
+  Cards:
+    "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Components/Cards/index.js",
   WorkHistory:
     "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Pages/WorkHistory/index.js",
+  Notes:
+    "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Pages/Notes/index.js",
 
   CheckBox:
     "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Components/Checkbox/index.js",
@@ -20,12 +21,14 @@ const components = {
   PrismCode:
     "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Components/PrismCode/index.js",
   Studies:
-    "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Pages/Studies/index.js"
+    "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Pages/Studies/index.js",
+  FormalEducation:
+    "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Pages/FormalEducation/index.js"
 };
 
 const {
   Projects,
-  ProjectCard,
+  Cards,
   WorkHistory,
   TitleNavBar,
   CheckBox,
@@ -33,11 +36,15 @@ const {
   CollapsibleCard,
   GetCode,
   PrismCode,
-  Studies
+  Studies,
+  FormalEducation,
+  Notes,
 } = components;
 
-const ProjectsCode = [Projects, ProjectCard, TitleNavBar, PrismCode];
+const ProjectsCode = [Projects, Cards, TitleNavBar, PrismCode];
 const StudiesCode = [Studies, GetCode, TitleNavBar, PrismCode];
+const NotesCode = [Notes, GetCode, TitleNavBar, PrismCode];
+const FormalEducationCode = [FormalEducation, Cards, TitleNavBar, PrismCode];
 const WorkHistoryCode = [
   WorkHistory,
   GetCode,
@@ -46,4 +53,10 @@ const WorkHistoryCode = [
   CollapsibleCard,
   Collapsible
 ];
-export default { ProjectsCode, WorkHistoryCode, StudiesCode };
+export default {
+  ProjectsCode,
+  WorkHistoryCode,
+  StudiesCode,
+  FormalEducationCode,
+  NotesCode
+};
