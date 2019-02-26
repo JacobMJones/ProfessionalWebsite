@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { FullPage, HorizontalCenter, TitleWrapper } from "./style.js";
+import { FullPage, HorizontalCenter, TitleWrapper, Blurb } from "./style.js";
 import getCode from "../../Functions/getCode.js";
 import PrismCode from "../../Components/PrismCode";
 import "../../Theme/prism.css";
 
 import TitleNavBar from "../../Components/TitleNavBar";
-import Cards from "../../Components/Cards"
+import Cards from "../../Components/Cards";
 
 class NoteBasedPage extends Component {
   constructor(props) {
@@ -29,8 +29,9 @@ class NoteBasedPage extends Component {
               backArrow={this.props.backArrow}
             />
           </TitleWrapper>
+          {this.props.blurb && <Blurb>{this.props.blurb}</Blurb>}
           {!this.state.showCode ? (
-          <Cards data={this.props.data}/>
+            <Cards data={this.props.data} />
           ) : (
             <PrismCode code={this.props.code} />
           )}

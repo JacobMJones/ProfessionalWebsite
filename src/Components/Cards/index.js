@@ -51,7 +51,7 @@ class Cards extends Component {
                  {item.webUrl && (
                     <LinkWrapper>
                       <StyledLink as="a" href={item.webUrl}>
-                        Homepage
+                        web page
                       </StyledLink>
                     </LinkWrapper>
                   )}

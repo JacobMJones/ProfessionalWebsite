@@ -23,10 +23,11 @@ class Tutorials extends Component {
       <NoteBasedPage
         title={"Tutorials"}
         code={this.state.code}
-        data={projectData}
-        backgroundColor="#829356"
+        data={tutorialsData}
+        backgroundColor="#cd594a"
+        blurb="I have gone through countless articles and tutorials. The lessons below are the ones that have influenced me the most."   
       />
     );
   }
 }
-export default Projects;
+export default Tutorials;

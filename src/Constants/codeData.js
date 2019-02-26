@@ -27,7 +27,8 @@ const components = {
   FormalEducation:
     "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Pages/FormalEducation/index.js",
   NoteBasedPage:
-    "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Components/NoteBasedPage/index.js"
+    "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Components/NoteBasedPage/index.js",
+Tutorials:"https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Pages/Tutorials/index.js",
 };
 
 const {
@@ -43,12 +44,14 @@ const {
   Studies,
   FormalEducation,
   Notes,
-  NoteBasedPage
+  NoteBasedPage,
+  Tutorials,
 } = components;
 
 const ProjectsCode = [Projects, NoteBasedPage, TitleNavBar, PrismCode];
 const StudiesCode = [Studies, GetCode, TitleNavBar, PrismCode];
 const NotesCode = [Notes, GetCode, TitleNavBar, PrismCode];
+const TutorialsCode = [Tutorials, NoteBasedPage]
 const FormalEducationCode = [
   FormalEducation,
   NoteBasedPage,
@@ -68,5 +71,6 @@ export default {
   WorkHistoryCode,
   StudiesCode,
   FormalEducationCode,
-  NotesCode
+  NotesCode,
+  TutorialsCode,
 };

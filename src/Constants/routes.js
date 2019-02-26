@@ -7,5 +7,4 @@ export const TOYS = '/toys'
 export const SPEEDREAD = '/speed-read'
 export const STUDIES = '/studies'
 export const FORMALEDUCATION = '/formal-education'
-
 export const TUTORIALS = '/tutorials'
