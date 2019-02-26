@@ -28,6 +28,7 @@ class FormalEducation extends Component {
         code={this.state.code}
         data={educationData}
         backgroundColor="#cd594a"
+        backArrow={true}
       />
     );
   }

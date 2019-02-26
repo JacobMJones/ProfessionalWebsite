@@ -113,7 +113,7 @@ class WorkHistory extends Component {
         ) : (
           <PlainResume data={workHistoryData} showOnlyTech={techChecked} />
         )}
-      <div style={{height:100}}/>
+      {/* <div style={{height:'21vh'}}/> */}
       </FullPage>
     );
   }

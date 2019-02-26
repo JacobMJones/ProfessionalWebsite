@@ -5,7 +5,6 @@ const FullPage = styled.section`
   width: 100%;
   overflow-x: hidden;
   height: 100%;
- 
 `;
 
 const FlexRow = styled.section`
@@ -14,6 +13,20 @@ const FlexRow = styled.section`
   height: 100%;
   width: 100%;
   justify-contents: ${props => (props.justify ? props.justify : "center")};
+
+  @media (max-width: 600px) {
+    margin-bottom: 10vh;
+  }
+  @media (min-width: 601px) {
+    margin-bottom: 10vh;
+  }
+  @media (max-width: 601px) and (min-height: 900px) {
+    margin-bottom: 23vh;
+  }
+
+  @media (min-width: 1000px) {
+    margin-bottom: 17vh;
+  }
 `;
 
 const FlexElement = styled.section`

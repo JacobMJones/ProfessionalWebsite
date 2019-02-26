@@ -23,7 +23,7 @@ margin-bottom:12px
 `;
 
 const LinkWrapper = styled.div`
-margin-top:16px;
+margin-top:64px;
 `;
 const Icon = styled.section`
   width:50px;

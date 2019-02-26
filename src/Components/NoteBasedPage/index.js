@@ -26,6 +26,7 @@ class NoteBasedPage extends Component {
               title={this.props.title}
               showCode={this.showCode}
               flip={this.state.showCode}
+              backArrow={this.props.backArrow}
             />
           </TitleWrapper>
           {!this.state.showCode ? (

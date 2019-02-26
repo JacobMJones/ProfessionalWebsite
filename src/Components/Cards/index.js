@@ -35,13 +35,7 @@ class Cards extends Component {
                     <b> {item.blurb[0]}</b>
                     <br /> {item.blurb[1]}
                   </Blurb>
-                  {item.webUrl && (
-                    <LinkWrapper>
-                      <StyledLink as="a" href={item.webUrl}>
-                        Homepage
-                      </StyledLink>
-                    </LinkWrapper>
-                  )}
+                 
                   <Divider />
                 </CardWrapper>
                 {item.videoUrl && (
@@ -54,6 +48,13 @@ class Cards extends Component {
                     }
                   />
                 )}
+                 {item.webUrl && (
+                    <LinkWrapper>
+                      <StyledLink as="a" href={item.webUrl}>
+                        Homepage
+                      </StyledLink>
+                    </LinkWrapper>
+                  )}
                 <Divider height={8} />
               </Card>
               <Divider />
