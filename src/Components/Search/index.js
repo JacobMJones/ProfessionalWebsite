@@ -9,10 +9,6 @@ class Search extends React.Component {
   wordCount = e => {
     var currentTextCount = e.target.value.length;
 
-    const hasText = () => {
-      if (currentTextCount > 0) return true;
-    };
-
     this.setState({ hasText: currentTextCount }, () => {
       console.log(this.state);
     });

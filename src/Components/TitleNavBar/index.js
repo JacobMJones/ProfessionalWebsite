@@ -18,7 +18,6 @@ class TitleNavBar extends Component {
       color,
       backArrow,
       contactInfo,
-      showContact
     } = this.props;
     return (
       <FlexRow>
@@ -46,5 +45,3 @@ class TitleNavBar extends Component {
   }
 }
 export default TitleNavBar;
-// position: ${props => (props.contact ? 'static' : 'absolute')};
-// left: 0
