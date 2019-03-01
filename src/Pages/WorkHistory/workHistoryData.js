@@ -1,9 +1,9 @@
 module.exports = [
   {
     company: {
-      name: "Phyxable",
+      name: ['Phyxable', 'React Developer'],
       description:
-        "Phyxable is a MedTech startup that provides video instruction for physical rehabilitation."
+        "Phyxable is a MedTech startup that provides video instruction for physical rehabilitation. I was one of two developers at the company. I was in charge of making the web version of the company's MVP and also various IT duties related to hosting. I worked the with the mobile developer to build a shared backend. "
     },
     tech: ["React", "Firebase", "Photoshop"],
     role: [
@@ -25,8 +25,8 @@ module.exports = [
 
   {
     company: {
-      name: "Falconridge Oil",
-      description: "Falconridge manufactures equipment for the oil and gas industry."
+      name: ['Falconridge Oil', 'Unity3d Developer'], 
+      description: "Falconridge manufactures equipment for the oil and gas industry. I was hired for a month long contract to create promotional videos and interactive content in Unity."
     },
     role: [
       "Created 3D animations for investor focused videos using Blender to demonstrate various aspects of the company's main product.",
@@ -40,7 +40,7 @@ module.exports = [
 
   {
     company: {
-      name: "Computer Camp",
+      name: ["Computer Camp", "Teacher"],
       description:
         "Computer Adventure Camp was a summertime programming and computer literacy camp in Tainan, Taiwan. "
     },
@@ -55,7 +55,7 @@ module.exports = [
   },
   {
     company: {
-      name: "TBIEA",
+      name: ["TBIEA", "English Teacher"],
       description:
         "The Tainan Bilingual International Education Association is an alternative bilingual elementary school in southern Taiwan. "
     },
@@ -70,7 +70,7 @@ module.exports = [
   },
   {
     company: {
-      name: "Teacher and writer",
+      name: ["Teacher and writer"],
       description:
         "I lived and worked in Taipei, Taiwan, from 2006 until 2014. In that time I taught English and had various writing jobs."
     },
@@ -86,7 +86,7 @@ module.exports = [
   },
   {
     company: {
-      name: "Bank of Montreal",
+      name: ["Bank of Montreal", "Tech Support"],
       description:
         "After passing my Microsoft Certified System Engineer certifications, I worked at the Bank of Montreal with the on-site network and desktop support team at the bank's head office."
     },

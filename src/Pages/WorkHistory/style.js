@@ -18,14 +18,14 @@ const FlexRow = styled.section`
     margin-bottom: 10vh;
   }
   @media (min-width: 601px) {
-    margin-bottom: 10vh;
+    margin-bottom: 11vh;
   }
   @media (max-width: 601px) and (min-height: 900px) {
-    margin-bottom: 23vh;
+    margin-bottom: 25vh;
   }
 
   @media (min-width: 1000px) {
-    margin-bottom: 17vh;
+    margin-bottom: 18vh;
   }
 `;
 

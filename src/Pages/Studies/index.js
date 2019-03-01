@@ -16,6 +16,8 @@ import {
   ButtonText
 } from "./style";
 
+
+//these inline styles are needed to work with Awesome Button
 const deskButton = {
   width: "40vw",
   height: "20vh",
@@ -26,6 +28,8 @@ const mobileButton = {
   height: "20vh",
   marginTop: "12px"
 };
+
+
 class Studies extends Component {
   constructor(props) {
     super(props);
@@ -54,7 +58,6 @@ class Studies extends Component {
     const { code } = this.state;
     const screenSize = window.innerWidth;
     const { studiesButtonData } = this.props.data;
-    const flipSpeed = "1s";
     const { animationDirection } = this.state;
     if (this.state.redirect) {
       return <Redirect to={this.state.url} push />;

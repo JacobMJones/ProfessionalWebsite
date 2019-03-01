@@ -5,9 +5,11 @@ import List from "../../Components/List";
 import TitleNavBar from "../../Components/TitleNavBar";
 import codeData from "../../Constants/codeData";
 import getCode from "../../Functions/getCode.js";
-import { FullPage, HorizontalCenter, Title, TitleWrapper } from "./style.js";
+import { FullPage, HorizontalCenter,TitleWrapper, BottomBuffer } from "./style.js";
 import PrismCode from "../../Components/PrismCode";
 import "../../Theme/prism.css";
+
+
 class Notes extends Component {
   constructor(props) {
     super(props);
@@ -57,6 +59,7 @@ class Notes extends Component {
             <PrismCode code={this.state.code} />
           )}
         </HorizontalCenter>
+        <BottomBuffer/>
       </FullPage>
     );
   }

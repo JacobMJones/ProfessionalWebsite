@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {Code} from './style'
 
-class CodeButton extends Component {
+class CallFunctionButton extends Component {
   constructor(props) {
     super(props);
  
@@ -20,4 +20,4 @@ class CodeButton extends Component {
     );
   }
 }
-export default CodeButton;
+export default CallFunctionButton;

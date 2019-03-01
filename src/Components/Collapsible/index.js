@@ -1,4 +1,6 @@
 // mostly from https://github.com/glennflanagan/react-collapsible
+// the library was no longer being maintained, added some fixes and integrated Awesome Button into 
+// the code base
 import { AwesomeButton } from "react-awesome-button";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
@@ -224,7 +226,9 @@ class Collapsible extends Component {
           }}
           tabIndex={this.props.tabIndex && this.props.tabIndex}
         >
-          {trigger}
+          {trigger[0]}
+          <br/>
+        <div style={{fontSize:20}}><em> {trigger[1]}</em></div> 
         </AwesomeButton>
 
         {this.renderNonClickableTriggerElement()}

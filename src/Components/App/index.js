@@ -5,7 +5,6 @@ import * as routes from "../../Constants/routes";
 import ProjectsPage from "../../Pages/Projects";
 import ToysPage from "../../Pages/Toys";
 import Notes from "../../Pages/Notes";
-import WhatIveBuiltPage from "../../Pages/WhatIveBuilt";
 import WorkHistoryPage from "../../Pages/WorkHistory";
 import LandingPage from "../../Pages/Landing";
 import SpeedReadPage from '../../Pages/SpeedRead'
@@ -43,11 +42,6 @@ class App extends Component {
           <Route exact path={routes.FORMALEDUCATION} component={FormalEducation} />
           <Route exact path={routes.NOTES} component={Notes} />
           <Route exact path={routes.SPEEDREAD} component={SpeedReadPage} />
-          <Route
-            exact
-            path={routes.WHATIVEBUILT}
-            component={WhatIveBuiltPage}
-          />
           <Route exact path={routes.WORKHISTORY} component={WorkHistoryPage} />
         </div>
       </Router>

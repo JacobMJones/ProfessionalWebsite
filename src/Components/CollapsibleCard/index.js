@@ -1,18 +1,12 @@
 import React, { Component } from "react";
 import Collapsible from "../Collapsible";
-import {
-  Blurb,
-  Subtitle,
-  Card,
-  FlexElement,
-  FlexRow
-} from "./style";
+import { Blurb, Subtitle, Card, FlexElement, FlexRow } from "./style";
 import "./styles.css";
 import styled, { keyframes } from "styled-components";
 
 import { BaseAnimation } from "animate-css-styled-components";
 
-const SlideOutDownAnimation = keyframes`
+const SlideInLeftAnimation = keyframes`
 from {
   transform: translate3d(150%, 0, 0);
 }
@@ -22,14 +16,14 @@ to {
 }
 `;
 
-const SlideOutDownNew = styled(BaseAnimation)`
-  animation-name: ${SlideOutDownAnimation};
+const SlideInLeft = styled(BaseAnimation)`
+  animation-name: ${SlideInLeftAnimation};
 `;
 
 const Sub = ({ text }) => (
   <FlexRow>
     <FlexElement />
-    <FlexElement >
+    <FlexElement>
       <Subtitle>{text}</Subtitle>
     </FlexElement>
     <FlexElement />
@@ -42,19 +36,14 @@ class CollapsibleCard extends Component {
     this.state = { startPosition: -1, animationHasPlayed: false };
   }
 
-  componentDidUpdate() {
-    // !this.state.animationHasPlayed &&
-    //   this.setState({ animationHasPlayed: true });
-  }
-
-  FinishedCard(index, animationHasPlayed, item) {
+  FinishedCard(index, item) {
     return (
-      <SlideOutDownNew
-        delay={this.props.hasPlayed ? 0 :`${index / 20}s`}
+      <SlideInLeft
+        delay={this.props.hasPlayed ? 0 : `${index / 20}s`}
         duration={this.props.hasPlayed ? "0" : ".8s"}
       >
-        <Collapsible trigger={item.company.name}  >
-          <Card >
+        <Collapsible trigger={item.company.name}>
+          <Card>
             <div style={{ height: 12 }} />
             <Sub text={"Description"} />
             <Blurb> {item.company.description}</Blurb>
@@ -63,45 +52,43 @@ class CollapsibleCard extends Component {
             {item.role.map((item, index) => {
               return (
                 <Blurb>
-                  <li style={{marginTop:'12px'}}>{item}</li>
+                  <li style={{ marginTop: "12px" }}>{item}</li>
                 </Blurb>
               );
             })}
 
             {item.tech && (
               <div>
-                <Sub text={"Tech"}/>
+                <Sub text={"Tech"} />
                 <Blurb>
-                  {item.tech.map((item, index) => {
-                    return <li>{item}</li>;
-                  })}
+                  {item.tech.map(item => (
+                    <li>{item}</li>
+                  ))}
                 </Blurb>
               </div>
             )}
-            <div style={{height:'40px'}}/>
+            <div style={{ height: "40px" }} />
           </Card>
         </Collapsible>
-      </SlideOutDownNew>
+      </SlideInLeft>
     );
   }
 
   render() {
     const { data, showOnlyTech } = this.props;
-    const { animationHasPlayed } = this.props.hasPlayed;
-  
+
     return (
       <>
         {data.map((item, index) => {
           if (!showOnlyTech) {
-            return this.FinishedCard(index, animationHasPlayed, item);
+            return this.FinishedCard(index, item);
           } else if (item.tech) {
-            return this.FinishedCard(index, animationHasPlayed, item);
+            return this.FinishedCard(index, item);
           }
         })}
-        <div style={{height:'40px'}}/>
+        <div style={{ height: "40px" }} />
       </>
     );
   }
 }
 export default CollapsibleCard;
-

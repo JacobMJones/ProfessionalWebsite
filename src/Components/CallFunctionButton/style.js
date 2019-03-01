@@ -7,8 +7,8 @@ const Code = styled.div`
   @media (min-width: 601px) {
     width: 40px;
     height: auto;
-    position: absolute;
-    left: 0;
+     position: absolute;
+     left: 0;
   }
 `;
 

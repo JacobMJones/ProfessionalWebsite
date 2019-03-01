@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { FlexElement, Title, FlexElementTitle, FlexRow } from "./style.js";
 import HomeButton from "../../Components/HomeButton";
-import CodeButton from "../../Components/CodeButton";
+import CallFunctionButton from "../../Components/CallFunctionButton";
 import BackButton from "../../Components/BackButton";
 import "./style.js";
 
@@ -11,26 +11,40 @@ class TitleNavBar extends Component {
   }
 
   render() {
-    const { title, showCode, flip, color, long, backArrow } = this.props;
-    console.log(this.props);
+    const {
+      title,
+      showCode,
+      flip,
+      color,
+      backArrow,
+      contactInfo,
+      showContact
+    } = this.props;
     return (
       <FlexRow>
-        <FlexElement>{backArrow ? <BackButton /> : <HomeButton />}</FlexElement>
-        <FlexElementTitle>
+        <FlexElement>
+          {contactInfo ? <></> : backArrow ? <BackButton /> : <HomeButton />}
+        </FlexElement>
+        <FlexElementTitle contactInfo={contactInfo}>
           <Title color={color} fontSize={3.5}>
             {title}
           </Title>
         </FlexElementTitle>
         <FlexElement>
-          <CodeButton
-            functionToCall={() => {
-              showCode();
-            }}
-            image={flip ? "images/page.png" : "/images/code.png"}
-          />
+          {!contactInfo && (
+            <CallFunctionButton
+              style={{position:'absolute', left:0 }}
+              functionToCall={() => {
+                showCode();
+              }}
+              image={flip ? "images/page.png" : "/images/code.png"}
+            />
+          )}
         </FlexElement>
       </FlexRow>
     );
   }
 }
 export default TitleNavBar;
+// position: ${props => (props.contact ? 'static' : 'absolute')};
+// left: 0

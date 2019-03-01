@@ -5,7 +5,7 @@ const FlexElement = styled.section`
   text-align: center;
   minwidth: ${props => (props.minWidth ? props.minWidth : 0)}vw;
   padding: 10px;
-  
+
   position: relative;
 `;
 const FlexElementTitle = styled.section`
@@ -13,7 +13,7 @@ const FlexElementTitle = styled.section`
   text-align: center;
 
   @media (max-width: 600px) {
-    min-width: 60vw;
+    min-width: ${props => (props.contactInfo ? 90 : 60)}vw;
   }
   @media (min-width: 601px) {
     text-align: ${props => (props.textAlign ? props.textAlign : "center")};
@@ -23,7 +23,6 @@ const FlexElementTitle = styled.section`
 const FlexRow = styled.section`
   display: flex;
   flex-direction: row;
-  
 `;
 const Title = styled.section`
 position:relative;

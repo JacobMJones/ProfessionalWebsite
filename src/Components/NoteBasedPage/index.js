@@ -14,7 +14,11 @@ class NoteBasedPage extends Component {
   }
 
   showCode = () => {
-    this.setState({ showCode: !this.state.showCode });
+    this.setState(prevState => {
+      return {
+        showCode: !prevState.showCode
+      };
+    });
   };
 
   render() {

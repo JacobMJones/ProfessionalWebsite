@@ -5,8 +5,8 @@ class Data {
     this.landingButtonData = [
      
       // { title: "Skills", path: "/what-ive-built" },
-      { title: "Projects", path: "/projects" },
       { title: "Work History", path: "/work-history" },
+      { title: "Projects", path: "/projects" },
       { title: "Studies", path: "/studies" },
       // { title: "Toys", path: "/toys" }
     ];

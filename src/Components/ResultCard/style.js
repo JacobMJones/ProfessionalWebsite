@@ -20,7 +20,7 @@ const Card = styled.section`
   @media (min-width: 601px) {
     width: 50vw;
   }
-  // background-Image: url(/images/paper.png)
+ 
 
 `;
 
