@@ -9,12 +9,40 @@ import {
   FlexColumn
 } from "./style.js";
 
+const contactInfo = [
+  { text: "mrjacobtaiwan@gmail.com", image: "/images/Contact/email.svg" },
+  { text: "647 649-8747", image: "/images/Contact/phone.png" },
+  {
+    text: "JacobMJones",
+    image: "/images/Contact/github.svg",
+    href: "https://github.com/JacobMJones"
+  },
+  {
+    text: "jacob-jones-139750168",
+    image: "images/Contact/linkedin.png",
+    href: "https://www.linkedin.com/in/jacob-jones-139750168"
+  }
+];
 class Contact extends Component {
   constructor(props) {
     super(props);
     this.state = { showCode: false };
   }
 
+  makeAContact = (text, image, url) => {
+    return (
+      <FlexElement>
+        <FlexRow>
+          <FlexElement maxWidth="50px">
+            <Image as="img" src={image} />
+          </FlexElement>
+          <FlexElement>
+            <Text  as="a" href={url}>{text}</Text>
+          </FlexElement>
+        </FlexRow>
+      </FlexElement>
+    );
+  };
   render() {
     return (
       <div style={{ height: "100%", width: "100%" }}>
@@ -22,54 +50,9 @@ class Contact extends Component {
           <FlexElement maxWidth="2wv" />
           <FlexElement minWidth="80%">
             <FlexColumn>
-              <FlexElement>
-                <FlexRow>
-                  <FlexElement maxWidth="50px">
-                    <Image as="img" src="/images/Contact/email.svg" />
-                  </FlexElement>
-                  <FlexElement >
-                    <Text>mrjacobtaiwan@gmail.com</Text>
-                  </FlexElement>
-                </FlexRow>
-              </FlexElement>
-              <FlexElement>
-                <FlexRow>
-                  <FlexElement maxWidth="50px">
-                    <Image as="img" src="/images/Contact/phone.png" />
-                  </FlexElement>
-                  <FlexElement >
-                    <Text>647 649-8747</Text>
-                  </FlexElement>
-                </FlexRow>
-              </FlexElement>
-              <FlexElement>
-                <FlexRow>
-                  <FlexElement maxWidth="50px">
-                    <Image as="img" src="/images/Contact/github.svg" />
-                  </FlexElement>
-                  <FlexElement>
-                    <Text as="a" href="https://github.com/JacobMJones">
-                      JacobMJones
-                    </Text>
-                  </FlexElement>
-                </FlexRow>
-              </FlexElement>
-              <FlexElement>
-                <FlexRow>
-                  <FlexElement maxWidth="50px">
-                    <Image as="img" src="/images/Contact/linkedin.png" />
-                  </FlexElement>
-                  <FlexElement>
-                    <Text
-                      as="a"
-                      href="https://www.linkedin.com/in/jacob-jones-139750168"
-                    >
-                      jacob-jones-139750168
-                    </Text>
-                  </FlexElement>
-                </FlexRow>
-              </FlexElement>
-              <FlexElement />
+              {contactInfo.map((item, index) => {
+                return this.makeAContact(item.text, item.image, item.href);
+              })}
             </FlexColumn>
           </FlexElement>
           <FlexElement maxWidth="2wv" />
