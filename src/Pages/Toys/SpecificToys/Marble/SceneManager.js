@@ -2,16 +2,16 @@ import * as THREE from 'three';
 import SceneSubject from './SceneSubject';
 import GeneralLights from './GeneralLights';
 
-export default (canvas, options) => {
-    console.log(options, canvas)
+export default (canvas, canvasOptions) => {
+   console.log('canvas options', canvasOptions)
     var raycaster = new THREE.Raycaster(); 
     var mouse = new THREE.Vector2();
     const clock = new THREE.Clock();
     const origin = new THREE.Vector3(0,0,0);
 
     const canvasDimensions = {
-        width: options.width,
-        height: options.height
+        width: canvasOptions.width,
+        height: canvasOptions.height
     }
 
     const mousePosition = {
@@ -20,7 +20,7 @@ export default (canvas, options) => {
     }
 
     const scene = buildScene();
-    scene.background = new THREE.Color( options.backgroundColor);
+//    scene.background = new THREE.Color( canvasOptions.backgroundColor);
     const renderer = buildRender(canvasDimensions);
     const camera = buildCamera(canvasDimensions);
     const sceneSubjects = createSceneSubjects(scene);

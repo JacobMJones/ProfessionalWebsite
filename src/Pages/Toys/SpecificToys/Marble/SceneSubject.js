@@ -3,16 +3,9 @@ import alphaTexture from './Images/clean-grey-gradient.jpg';
 
 
 export default scene => {    
-    var geometry = new THREE.SphereGeometry(5);
-    var material = new THREE.MeshBasicMaterial( { color:'red'} );
-    var cube = new THREE.Mesh( geometry, material );
-    scene.add( cube );
-
-
-
     const group = new THREE.Group();
-   
-    const subjectGeometry = deformGeometry(new THREE.IcosahedronGeometry(12, 5));
+
+    const subjectGeometry = deformGeometry(new THREE.IcosahedronGeometry(14, 5));
     
     const subjectMaterial = new THREE.MeshStandardMaterial({ color: "transparent", transparent: true, side: THREE.DoubleSide, alphaTest: 0.1 });
     subjectMaterial.alphaMap = new THREE.TextureLoader().load(alphaTexture);
@@ -21,9 +14,10 @@ export default scene => {
     subjectMaterial.alphaMap.repeat.y = 5;
 
     const subjectMesh = new THREE.Mesh(subjectGeometry, subjectMaterial);
-
-    
+        
+   
     group.add(subjectMesh);
+    // group.add(subjectWireframe);
     scene.add(group);
 
     group.rotation.z = Math.PI/2;
@@ -39,15 +33,18 @@ export default scene => {
 
         return geometry;
     }
-function onClick (){
-    console.log('clk');
-}
+
     function update(time) {
         const angle = time*speed;
-        group.rotation.y = angle;
-        subjectMaterial.alphaMap.offset.y = 0.55 + time * textureOffsetSpeed;
-        const scale = (Math.sin(angle*8)+6.4)/5;
 
+        group.rotation.y = angle;
+
+        subjectMaterial.alphaMap.offset.y = 0.55 + time * textureOffsetSpeed;
+
+        // subjectWireframe.material.color.setHSL( Math.sin(angle*2), 0.5, 0.5 );
+        
+        const scale = (Math.sin(angle*8)+6.4)/5;
+        // subjectWireframe.scale.set(scale, scale, scale)
     }
 
     return {

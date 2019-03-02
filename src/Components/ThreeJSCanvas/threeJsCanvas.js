@@ -1,7 +1,7 @@
-export default (container, SceneManager, options) => {
+export default (container, SceneManager, canvasOptions) => {
   
   const canvas = createCanvas(document, container);
-  const sceneManager = new SceneManager(canvas, options);
+  const sceneManager = new SceneManager(canvas, canvasOptions);
 
   let canvasHalfWidth;
   let canvasHalfHeight;
@@ -23,8 +23,8 @@ export default (container, SceneManager, options) => {
   }
 
   function resizeCanvas() {
-    canvas.style.width = options.width;
-    canvas.style.height = options.height;
+    canvas.style.width = canvasOptions.width;
+    canvas.style.height = canvasOptions.height;
 
     // canvas.width = canvas.offsetWidth;
     // canvas.height = canvas.offsetHeight;
