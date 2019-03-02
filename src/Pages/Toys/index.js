@@ -1,64 +1,36 @@
 import React, { Component } from "react";
-import Animated, {
-  FadeAnimations,
-  RotateAnimations
-} from "animated-styled-components";
-import styled, { ThemeProvider } from "styled-components";
-
-
-import { Box, FullPage } from "./style";
-import posed from "react-pose";
-
-function getRandomArbitrary(min, max) {
-  return Math.random() * (max - min) + min;
-}
+import { FullPage } from "./style.js";
+import threeEntryPoint from "./threeEntryPoint";
+import threeEntryPoint2 from "./threeEntryPoint";
+import threeEntryPoint3 from "./threeEntryPoint";
 class Toys extends Component {
   constructor(props) {
     super(props);
-    this.state = { borderRadius:50 };
   }
-  state = { pose: "top" };
 
-  handleClick = () => {
-    this.setState({
-      pose: this.state.pose === "top" ? "bottom" : "top"
-      // y: getRandomArbitrary(0,window.innerHeight/8)
-    });
-    this.forceUpdate();
-  };
-
-  getRandomArbitrary = (min, max) => {
-    return Math.random() * (max - min) + min;
-  };
+  componentDidMount() {
+    threeEntryPoint(this.threeRootElement);
+    // threeEntryPoint2(this.threeRootElement2);
+  }
 
   render() {
-    console.log("scale value", this.state.scaleValue);
     return (
-      <FullPage background={this.state.backgroundColor}>
-        <Box borderRadius={this.state.borderRadius} onClick={()=>{this.setState({borderRadius:getRandomArbitrary(4,100)})}} >
-          Click Here to slideOutUp
-        </Box>
+      <FullPage background={"white"}>
+        <div style={{ position: "relative", textAlign:'center' }}>
+          <div
+            style={{ width: '400px', height: '400px', position:'absolute', left:50, top:0 }}
+            ref={element => (this.threeRootElement = element)}
+          />
 
+          <div
+            style={{ fontSize: 40, position: "absolute", top: 50, left: 50 }}
+          >
+           T O Y S
+          </div>
+        </div>
+        {/* <div style={{width:500, height:500}} ref={element => (this.threeRootElement2 = element)} /> */}
       </FullPage>
-      //
     );
   }
 }
 export default Toys;
-
-// export default class extends React.Component {
-//   state = { isActive: true };
-//   click = () => {
-//     this.setState({ isActive: false });
-//   };
-//   render() {
-//     return (
-//       <h1>
-//         <MyComponent onClick={this.click} isActive={this.state.isActive}>
-//           Click Here to slideOutUp
-//         </MyComponent>
-//         Hello!
-//       </h1>
-//     );
-//   }
-// }

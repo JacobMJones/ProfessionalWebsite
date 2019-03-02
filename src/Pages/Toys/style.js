@@ -19,7 +19,7 @@ const FullPage = styled.section`
 
 background: ${props => (props.background ? props.background : "#d8cfaf")};
 overflow-x: hidden;
-
+height:100vh
 `;
 
 export {Box, FullPage};

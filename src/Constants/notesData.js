@@ -28,6 +28,35 @@ module.exports = [
       name: "mdn"
     }
   },
+
+  {
+    name: "Custom Element",
+    blurb:
+      "Encapsulated bundles of HTML, CSS, and JavasScript. Custom elements require dashed in their name. ",
+    link: {
+      url:
+        "https://developer.mozilla.org/en-US/docs/Glossary/Callback_function",
+      name: "mdn"
+    }
+  },
+  {
+    name: "DOM Document Object Model",
+    blurb:
+      "The programming API for HTML. It allows programmers to create and manipulate every HTML element. While generally used with JavaScript, any language can access the DOM.",
+    link: {
+      url: "https://bit.ly/2RR784T",
+      name: "w3"
+    }
+  },
+  {
+    name: "Encapsulation",
+    blurb:
+      "Refers to the bundling of data with the methods that operate on that data. Encapsulation is used to hide the values or state of a structured data object inside a class, preventing unauthorized parties' direct access to them. Publicly accessible methods are generally provided in the class (so-called getters and setters) to access the values",
+    link: {
+      url: "https://bit.ly/2K9owLs",
+      name: "wikipedia"
+    }
+  },
   {
     name: "Lambda",
     blurb:
@@ -66,13 +95,33 @@ module.exports = [
     }
   },
   {
+    name: "Polyfill",
+    blurb:
+      "Implements features on a browser that doesn't support that feature. It intercepts and redirects API calls.",
+    link: {
+      url:
+        "https://en.wikipedia.org/wiki/Polyfill_(programming)",
+      name: "wikipedia"
+    }
+  },
+  {
+    name: "PropTypes",
+    blurb:
+      " PropTypes defines type and which props are required. Allows for better debugging.",
+    link: {
+      url:
+        "https://reactjs.org/docs/typechecking-with-proptypes.html",
+      name: "React Homepage"
+    }
+  },
+  {
     name: "Promise",
     blurb:
       "A Promise is an object representing the eventual completion or failure of an asynchronous operation. You attach callbacks to the promise instead of passing callbacks into a function. Callbacks can be chained together with .then() and will be executed one after the other.",
     link: {
       url:
         "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises",
-      name: 'mdn'
+      name: "mdn"
     }
   },
   {
@@ -81,7 +130,7 @@ module.exports = [
       "React is a user interface library that allows you to change data without having to reload your entire webpage.",
     link: {
       url: "https://reactjs.org/",
-      name: "ReactJs homepage"
+      name: "React Homepage"
     }
   },
   {
@@ -90,7 +139,7 @@ module.exports = [
       "Streams are a fundamental concept of Node.js that allow us to read or write data from or to a data source in a continuous manner (in other words, instead of reading or writing all the data at once, events are triggered that emit and receive 'chunks' of data, and callbacks are used to handle those events since they happen asynchronously).",
     link: {
       url: "web.compass.lighthouselabs.ca/",
-      name: "lighthouse labs"
+      name: "Lighthouse Labs"
     }
   },
   {
@@ -101,9 +150,16 @@ module.exports = [
       url: "https://stackoverflow.com/questions/4195970/what-does-this-mean",
       name: "stack overflow"
     }
+  },
+  {
+    name: "Web Components",
+    blurb:
+      "Web components are a suite of technologies. One thing they allow for are the creation of custom elements, encapsulated bundles of HTML, CSS, and JavasScript. Another part of Web Components is the Shadow DOM, a way of scoping for styles and remap events, preventing bubbling.",
+    link: {
+      url: "https://mzl.la/1CG1X5q",
+      name: "mdn"
+    }
   }
-
-  
 ];
 
 //lambdas
@@ -113,7 +169,13 @@ module.exports = [
 //closures
 //runtime
 //{...props}
-//.attrs() attributes
+//polyfill
+//shadowDom
 //hideVisually
 //webpack
+//ref attribute
 //PropTypes
+//HTML Templates
+//preact
+
+//select tag
