@@ -9,7 +9,7 @@ export default (canvas, options) => {
     const clock = new THREE.Clock();
     const origin = new THREE.Vector3(0,0,0);
 
-    const screenDimensions = {
+    const canvasDimensions = {
         width: options.width,
         height: options.height
     }
@@ -20,13 +20,13 @@ export default (canvas, options) => {
     }
 
     const scene = buildScene();
-    const renderer = buildRender(screenDimensions);
-    const camera = buildCamera(screenDimensions);
+    scene.background = new THREE.Color( options.backgroundColor);
+    const renderer = buildRender(canvasDimensions);
+    const camera = buildCamera(canvasDimensions);
     const sceneSubjects = createSceneSubjects(scene);
 
     function buildScene() {
-        const scene = new THREE.Scene();
-       
+        const scene = new THREE.Scene();  
         return scene;
     }
 
@@ -35,7 +35,6 @@ export default (canvas, options) => {
         const DPR = window.devicePixelRatio ? window.devicePixelRatio : 1;
         renderer.setPixelRatio(DPR);
         renderer.setSize(width, height);
-
         renderer.gammaInput = true;
         renderer.gammaOutput = true; 
         renderer.setClearColor( 0x000000, 0 )
@@ -84,8 +83,8 @@ export default (canvas, options) => {
     function onWindowResize() {
         const { width, height } = canvas;
         
-        screenDimensions.width = width;
-        screenDimensions.height = height;
+        canvasDimensions.width = width;
+        canvasDimensions.height = height;
 
         camera.aspect = width / height;
         camera.updateProjectionMatrix();

@@ -7,15 +7,19 @@ class ThreeJSCanvas extends Component {
   }
 
   componentDidMount() {
-
-    threeJSCanvas(this.threeRootElement, this.props.SceneManager, this.props.options);
+    threeJSCanvas(
+      this.threeRootElement,
+      this.props.SceneManager,
+      this.props.options
+    );
   }
 
   render() {
+    const { height, width } = this.props.options;
     return (
-      <div
-        ref={element => (this.threeRootElement = element)}
-      />
+
+        <div ref={element => (this.threeRootElement = element)} />
+    
     );
   }
 }

@@ -23,14 +23,14 @@ export default (container, SceneManager, options) => {
   }
 
   function resizeCanvas() {
-    canvas.style.width = "100%";
-    canvas.style.height = "100%";
+    canvas.style.width = options.width;
+    canvas.style.height = options.height;
 
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
+    // canvas.width = canvas.offsetWidth;
+    // canvas.height = canvas.offsetHeight;
 
-    canvasHalfWidth = Math.round(canvas.offsetWidth / 2);
-    canvasHalfHeight = Math.round(canvas.offsetHeight / 2);
+    // canvasHalfWidth = Math.round(canvas.offsetWidth / 2);
+    // canvasHalfHeight = Math.round(canvas.offsetHeight / 2);
 
    // sceneManager.onWindowResize();
   }

@@ -3,7 +3,7 @@ import alphaTexture from './Images/clean-grey-gradient.jpg';
 
 
 export default scene => {    
-    var geometry = new THREE.BoxGeometry( 10, 10, 10 );
+    var geometry = new THREE.SphereGeometry(5);
     var material = new THREE.MeshBasicMaterial( { color:'red'} );
     var cube = new THREE.Mesh( geometry, material );
     scene.add( cube );
@@ -12,7 +12,7 @@ export default scene => {
 
     const group = new THREE.Group();
    
-    const subjectGeometry = deformGeometry(new THREE.IcosahedronGeometry(7, 5));
+    const subjectGeometry = deformGeometry(new THREE.IcosahedronGeometry(12, 5));
     
     const subjectMaterial = new THREE.MeshStandardMaterial({ color: "transparent", transparent: true, side: THREE.DoubleSide, alphaTest: 0.1 });
     subjectMaterial.alphaMap = new THREE.TextureLoader().load(alphaTexture);

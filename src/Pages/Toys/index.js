@@ -15,7 +15,6 @@ class Toys extends Component {
   render() {
     return (
       <FullPage background={'white'}>
-      Toys
       <Marble />
       </FullPage>
     );
