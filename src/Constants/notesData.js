@@ -169,13 +169,13 @@ module.exports = [
 //closures
 //runtime
 //{...props}
-//polyfill
+//Canvas
 //shadowDom
 //hideVisually
 //webpack
 //ref attribute
-//PropTypes
+//Declarative vs. Imperative programming
 //HTML Templates
 //preact
-
+// Entity/Component pattern 
 //select tag

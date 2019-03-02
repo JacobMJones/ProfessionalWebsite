@@ -2,14 +2,16 @@ import * as THREE from 'three';
 import SceneSubject from './SceneSubject';
 import GeneralLights from './GeneralLights';
 
-export default canvas => {
-
+export default (canvas, options) => {
+    console.log(options, canvas)
+    var raycaster = new THREE.Raycaster(); 
+    var mouse = new THREE.Vector2();
     const clock = new THREE.Clock();
     const origin = new THREE.Vector3(0,0,0);
 
     const screenDimensions = {
-        width: canvas.width,
-        height: canvas.height
+        width: options.width,
+        height: options.height
     }
 
     const mousePosition = {
@@ -24,8 +26,7 @@ export default canvas => {
 
     function buildScene() {
         const scene = new THREE.Scene();
-        scene.background = new THREE.Color("#FFF");
-
+       
         return scene;
     }
 
@@ -37,7 +38,8 @@ export default canvas => {
 
         renderer.gammaInput = true;
         renderer.gammaOutput = true; 
-
+        renderer.setClearColor( 0x000000, 0 )
+       
         return renderer;
     }
 
@@ -91,14 +93,18 @@ export default canvas => {
         renderer.setSize(width, height);
     }
 
-    function onMouseMove(x, y) {
-        mousePosition.x = x;
-        mousePosition.y = y;
+    function onMouseMove(event) {
+        mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1; 
+  mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1; 
+        // console.log('mouse move',mousePosition.x )
     }
-
+    function onClick() {
+    console.log('mouse clicked')
+    }
     return {
         update,
         onWindowResize,
-        onMouseMove
+        onMouseMove,
+        onClick
     }
 }
