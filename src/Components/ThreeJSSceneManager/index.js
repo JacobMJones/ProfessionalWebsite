@@ -1,13 +1,13 @@
 import * as THREE from "three";
-import SceneSubject from "./SceneSubject";
-import GeneralLights from "./GeneralLights";
+import SceneSubject from "../ThreeJSSceneSubject";
+import GeneralLights from "../ThreeJSLights";
 
-export default (canvas, canvasOptions) => {
+export default (canvas, canvasOptions, sceneOptions) => {
+
   var mouse = new THREE.Vector2();
   const clock = new THREE.Clock();
-  const origin = new THREE.Vector3(0, 0, 0);
-
   var mouseClicked = false;
+  
   const canvasDimensions = {
     width: canvasOptions.width,
     height: canvasOptions.height
@@ -52,7 +52,7 @@ export default (canvas, canvasOptions) => {
       farPlane
     );
 
-    camera.position.z = 40;
+    camera.position.z = sceneOptions.cameraPositionZ ? sceneOptions.cameraPositionZ : 40;
 
     return camera;
   }

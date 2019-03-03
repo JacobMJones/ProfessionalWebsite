@@ -8,14 +8,20 @@ class Marble extends Component {
   }
 
   render() {
-    const width = window.innerWidth;
+    const width = 400;
     const height = 400;
     const canvasOptions = {
       height,
       width,
-      backgroundColor:'red'
+      backgroundColor: "red"
     };
-    return <Canvas canvasOptions={canvasOptions} SceneManager={SceneManager} />;
+    return (
+      <div>
+        <div>
+          <Canvas canvasOptions={canvasOptions} SceneManager={SceneManager} />
+        </div>
+      </div>
+    );
   }
 }
 export default Marble;

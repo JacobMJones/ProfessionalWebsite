@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { FullPage } from "./style.js";
 import Marble from "./SpecificToys/Marble"
-
+import ThreeJSWrapper  from '../../Components/ThreeJSWrapper'
 class Toys extends Component {
   constructor(props) {
     super(props);
@@ -15,7 +15,7 @@ class Toys extends Component {
   render() {
     return (
       <FullPage background={'white'}>
-      <Marble />
+      <ThreeJSWrapper/>
       </FullPage>
     );
   }

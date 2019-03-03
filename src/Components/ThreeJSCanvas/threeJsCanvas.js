@@ -1,6 +1,8 @@
-export default (container, SceneManager, canvasOptions) => {
+export default (container, SceneManager, canvasOptions, sceneOptions) => {
+
+  console.log(container, SceneManager, canvasOptions, sceneOptions)
   const canvas = createCanvas(document, container);
-  const sceneManager = new SceneManager(canvas, canvasOptions);
+  const sceneManager = new SceneManager(canvas, canvasOptions, sceneOptions);
 
   let canvasHalfWidth;
   let canvasHalfHeight;

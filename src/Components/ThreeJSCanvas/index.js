@@ -10,7 +10,8 @@ class ThreeJSCanvas extends Component {
     threeJSCanvas(
       this.threeRootElement,
       this.props.SceneManager,
-      this.props.canvasOptions
+      this.props.canvasOptions,
+      this.props.sceneOptions
     );
   }
 
