@@ -3,12 +3,10 @@ import alphaTexture from "./Images/clean-grey-gradient.jpg";
 import { Vector3 } from "three";
 
 export default scene => {
-  var radius = 100,
-    theta = 0;
   var raycaster = new THREE.Raycaster();
   var lastMouse;
   const group = new THREE.Group();
-
+  var speed = 1;
   const subjectGeometry = deformGeometry(new THREE.IcosahedronGeometry(14, 5));
 
   const subjectMaterial = new THREE.MeshStandardMaterial({
@@ -23,8 +21,11 @@ export default scene => {
   subjectMaterial.alphaMap.repeat.y = 5;
 
   const subjectMesh = new THREE.Mesh(subjectGeometry, subjectMaterial);
-  subjectMesh.callback = () => {
-    console.log("ya");
+
+  subjectMesh.callback = function() {
+  
+      console.log("clicked");
+    
   };
   console.log(subjectMesh);
 
@@ -34,7 +35,6 @@ export default scene => {
 
   subjectMesh.rotation.z = Math.PI / 2;
 
-  const speed = 0.3;
   const textureOffsetSpeed = 0.5;
 
   function deformGeometry(geometry) {
@@ -46,18 +46,15 @@ export default scene => {
     return geometry;
   }
 
-  function update(time, mouse, camera, mouseClick) {
-    // camera.position.x = radius * Math.sin( THREE.Math.degToRad( theta ) );
-    // 		camera.position.y = radius * Math.sin( THREE.Math.degToRad( theta ) );
-    // 		camera.position.z = radius * Math.cos( THREE.Math.degToRad( theta ) );
-    // 		camera.lookAt( scene.position );
-  
+  function update(time, mouse, camera, mouseClick, reset) {
+    if (mouseClick) {
+      raycaster.setFromCamera(mouse, camera);
+      var intersects = raycaster.intersectObjects([subjectMesh]);
+      if (intersects.length > 0) {
+      subjectMaterial.alphaMap.repeat.y = 15;
+      reset();
+      }
 
-    if (lastMouse !== mouse.x) {
-     raycaster.setFromCamera(mouse, camera);
-     var intersects = raycaster.intersectObjects( [subjectMesh] ); 
-console.log(intersects)
-      console.log('new mounse', mouse);
       lastMouse = mouse.x;
     }
 

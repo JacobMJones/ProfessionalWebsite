@@ -6,7 +6,7 @@ export default (canvas, canvasOptions) => {
   var mouse = new THREE.Vector2();
   const clock = new THREE.Clock();
   const origin = new THREE.Vector3(0, 0, 0);
-
+var mouseClicked = false;
   const canvasDimensions = {
     width: canvasOptions.width,
     height: canvasOptions.height
@@ -97,13 +97,19 @@ export default (canvas, canvasOptions) => {
     mouse.x = (event.clientX / renderer.domElement.clientWidth) * 2 - 1;
     mouse.y = -(event.clientY / renderer.domElement.clientHeight) * 2 + 1;
 
-    console.log("mouse clicked", mouse);
+    mouseClicked = true
+  }
+
+  function resetClick(){
+      console.log('mouse has reset')
+      mouseClicked = false;
   }
   function update() {
     const elapsedTime = clock.getElapsedTime();
 
     for (let i = 0; i < sceneSubjects.length; i++){
-        sceneSubjects[i].update(elapsedTime, mouse, camera);
+        sceneSubjects[i].update(elapsedTime, mouse, camera, mouseClicked, resetClick);
+        // mouseClicked = false;
    //     console.log('scene subjects', scene.children[1].children)
 
     }
