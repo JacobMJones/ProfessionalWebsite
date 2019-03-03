@@ -1,13 +1,11 @@
 import * as THREE from "three";
-import SceneSubject from "../ThreeJSSceneSubject";
-import GeneralLights from "../ThreeJSLights";
 
-export default (canvas, canvasOptions, sceneOptions) => {
+export default (canvas, canvasOptions, sceneOptions, subjects) => {
 
   var mouse = new THREE.Vector2();
   const clock = new THREE.Clock();
   var mouseClicked = false;
-  
+  var mouseClicks = [];
   const canvasDimensions = {
     width: canvasOptions.width,
     height: canvasOptions.height
@@ -36,7 +34,7 @@ export default (canvas, canvasOptions, sceneOptions) => {
     renderer.gammaInput = true;
     renderer.gammaOutput = true;
     renderer.setClearColor(0x000000, 0);
-    renderer.domElement.addEventListener("click", ()=>{console.log('pop')});
+    renderer.domElement.addEventListener("click", () => { console.log('') });
     return renderer;
   }
 
@@ -58,18 +56,20 @@ export default (canvas, canvasOptions, sceneOptions) => {
   }
 
   function createSceneSubjects(scene) {
-    const sceneSubjects = [new GeneralLights(scene), new SceneSubject(scene)];
+    const sceneSubjects = subjects.map(sub => sub(scene));
 
     return sceneSubjects;
   }
 
+  //const sceneSubjects = [new GeneralLights(scene), new SceneSubject(scene)];
 
+  //return sceneSubjects;
 
-//   function updateCameraPositionRelativeToMouse() {
-//     camera.position.x += (mouse.x * 0.01 - camera.position.x) * 0.01;
-//     camera.position.y += (-(mouse.y * 0.01) - camera.position.y) * 0.01;
-//     camera.lookAt(origin);
-//   }
+  //   function updateCameraPositionRelativeToMouse() {
+  //     camera.position.x += (mouse.x * 0.01 - camera.position.x) * 0.01;
+  //     camera.position.y += (-(mouse.y * 0.01) - camera.position.y) * 0.01;
+  //     camera.lookAt(origin);
+  //   }
 
   function onWindowResize() {
     const { width, height } = canvas;
@@ -88,29 +88,40 @@ export default (canvas, canvasOptions, sceneOptions) => {
     // mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
   }
   function onClick(event) {
+
     event.preventDefault();
 
     mouse.x = (event.clientX / renderer.domElement.clientWidth) * 2 - 1;
     mouse.y = -(event.clientY / renderer.domElement.clientHeight) * 2 + 1;
 
     mouseClicked = true
+
+    mouseClicks.push({ x: mouse.x, y: mouse.y });
+    console.log(mouseClicked);
   }
 
-  function resetClick(){
-      console.log('mouse has reset')
-      mouseClicked = false;
-  }
+  // function resetClick(){
+
+  //     mouseClicked = false;
+  //     //console.log(mouseClicked)
+  // }
+
   function update() {
+
     const elapsedTime = clock.getElapsedTime();
-
-    for (let i = 0; i < sceneSubjects.length; i++){
-        sceneSubjects[i].update(elapsedTime, mouse, camera, mouseClicked, resetClick);
-        // mouseClicked = false;
-   //     console.log('scene subjects', scene.children[1].children)
-
+    for (let click = undefined; click = mouseClicks.shift();) {
+      for (let i = 0; i < sceneSubjects.length; i++) {
+        sceneSubjects[i].update(elapsedTime, mouse, camera, mouseClicked);
+      }
     }
 
-   // updateCameraPositionRelativeToMouse();
+    for (let i = 0; i < sceneSubjects.length; i++) {
+      sceneSubjects[i].update(elapsedTime, mouse, camera, null);
+    }
+  
+    // if (mouseClicked) mouseClicked = false;
+
+    // updateCameraPositionRelativeToMouse();
 
     renderer.render(scene, camera);
   }

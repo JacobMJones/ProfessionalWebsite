@@ -11,7 +11,8 @@ class ThreeJSCanvas extends Component {
       this.threeRootElement,
       this.props.SceneManager,
       this.props.canvasOptions,
-      this.props.sceneOptions
+      this.props.sceneOptions, 
+      this.props.subjects
     );
   }
 

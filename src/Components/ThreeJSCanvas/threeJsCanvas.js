@@ -1,8 +1,8 @@
-export default (container, SceneManager, canvasOptions, sceneOptions) => {
+export default (container, SceneManager, canvasOptions, sceneOptions, subjects) => {
 
   console.log(container, SceneManager, canvasOptions, sceneOptions)
   const canvas = createCanvas(document, container);
-  const sceneManager = new SceneManager(canvas, canvasOptions, sceneOptions);
+  const sceneManager = new SceneManager(canvas, canvasOptions, sceneOptions, subjects);
 
   let canvasHalfWidth;
   let canvasHalfHeight;
@@ -26,14 +26,11 @@ export default (container, SceneManager, canvasOptions, sceneOptions) => {
   function resizeCanvas() {
     canvas.style.width = canvasOptions.width;
     canvas.style.height = canvasOptions.height;
-
-    // canvas.width = canvas.offsetWidth;
-    // canvas.height = canvas.offsetHeight;
-
-    // canvasHalfWidth = Math.round(canvas.offsetWidth / 2);
-    // canvasHalfHeight = Math.round(canvas.offsetHeight / 2);
-
-    // sceneManager.onWindowResize();
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+    canvasHalfWidth = Math.round(canvas.offsetWidth / 2);
+    canvasHalfHeight = Math.round(canvas.offsetHeight / 2);
+    sceneManager.onWindowResize();
   }
 
   //   CANVAS API
