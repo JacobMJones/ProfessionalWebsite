@@ -24,7 +24,8 @@ class ThreeJSWrapper extends Component {
           <Canvas
             canvasOptions={canvasOptions}
             SceneManager={SceneManager}
-            sceneOptions={sceneOptions}
+            sceneOptions={sceneOptions} 
+            
           />
         </div>
         
