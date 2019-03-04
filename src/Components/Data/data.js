@@ -20,6 +20,7 @@ class Data {
       
     ];
   }
+  
   getWindowWidth = () => {
       return window.innerWidth;
   }
