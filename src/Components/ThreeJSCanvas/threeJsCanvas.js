@@ -1,6 +1,6 @@
-export default (container, SceneManager, canvasOptions, sceneOptions, subjects) => {
+export default (container, SceneManager, canvasOptions, sceneOptions, subjects, click) => {
 
-  console.log(container, SceneManager, canvasOptions, sceneOptions)
+  console.log('click in canvas', click)
   const canvas = createCanvas(document, container);
   const sceneManager = new SceneManager(canvas, canvasOptions, sceneOptions, subjects);
 

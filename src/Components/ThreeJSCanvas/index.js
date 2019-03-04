@@ -6,22 +6,24 @@ class ThreeJSCanvas extends Component {
     super(props);
   }
 
+
+  //this is only called once on mount
   componentDidMount() {
+
+  
     threeJSCanvas(
       this.threeRootElement,
       this.props.SceneManager,
       this.props.canvasOptions,
       this.props.sceneOptions, 
-      this.props.subjects
+      this.props.subjects,
+      this.props.clickCallback
     );
   }
 
   render() {
- 
     return (
-
-        <div ref={element => (this.threeRootElement = element)} />
-    
+        <div ref={element => (this.threeRootElement = element)} />  
     );
   }
 }

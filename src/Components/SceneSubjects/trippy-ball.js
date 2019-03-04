@@ -5,9 +5,9 @@ export default scene => {
   var raycaster = new THREE.Raycaster();
   var lastMouse = {x:null, y:null}
   var clicked;
-  const group = new THREE.Group();
+  const group = new THREE.Group()
 
-  const subjectGeometry = deformGeometry(new THREE.IcosahedronGeometry(12, 5));
+  const subjectGeometry = deformGeometry(new THREE.IcosahedronGeometry(12, ));
 
   const subjectMaterial = new THREE.MeshStandardMaterial({
     color: 0x093145,
@@ -23,7 +23,6 @@ export default scene => {
   const subjectMesh = new THREE.Mesh(subjectGeometry, subjectMaterial);
   subjectMesh.position.set(0, -10, -10);
   group.add(subjectMesh);
-  // group.add(subjectWireframe);
   scene.add(group);
 
   group.rotation.z = Math.PI / 6;
@@ -32,10 +31,10 @@ export default scene => {
   const textureOffsetSpeed = .15;
 
   function deformGeometry(geometry) {
-    // for (let i=0; i<geometry.vertices.length; i+=8) {
-    //     const scalar = 1 - Math.random() * .2;
-    //     geometry.vertices[i].multiplyScalar(scalar)
-    // }
+    for (let i=0; i<geometry.vertices.length; i+=8) {
+        const scalar = 1 - Math.random() * .2;
+        geometry.vertices[i].multiplyScalar(scalar)
+    }
 
     return geometry;
   }
@@ -64,10 +63,10 @@ export default scene => {
     subjectMesh.rotation.x = angle;
     subjectMaterial.alphaMap.offset.y = 0.55 + time * textureOffsetSpeed;
     subjectMaterial.alphaMap.offset.x = 0.55 + time * textureOffsetSpeed;
-    // subjectWireframe.material.color.setHSL( Math.sin(angle*2), 0.5, 0.5 );
 
-    // const scale = (Math.sin(angle * 6) + 8) / 5;
-    // subjectMesh.scale.set(scale, scale, scale)
+
+    const scale = (Math.sin(angle * 6) + 8) / 5;
+    subjectMesh.scale.set(scale, scale, scale)
     lastMouse = mouse.x;
   }
 

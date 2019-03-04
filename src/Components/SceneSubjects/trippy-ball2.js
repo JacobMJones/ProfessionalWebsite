@@ -3,11 +3,11 @@ import alphaTexture from "./blue-stars.jpg";
 
 export default scene => {
   var raycaster = new THREE.Raycaster();
-  var lastMouse = {x:null, y:null}
+  var lastMouse = { x: null, y: null }
   var clicked;
   const group = new THREE.Group();
 
-  const subjectGeometry = deformGeometry(new THREE.IcosahedronGeometry(5, 5));
+  const subjectGeometry = deformGeometry(new THREE.IcosahedronGeometry(9, 5));
 
   const subjectMaterial = new THREE.MeshStandardMaterial({
     color: 0x093145,
@@ -21,9 +21,9 @@ export default scene => {
   subjectMaterial.alphaMap.repeat.y = 12;
 
   const subjectMesh = new THREE.Mesh(subjectGeometry, subjectMaterial);
-  subjectMesh.position.set(10, -10, -10);
+  subjectMesh.position.set(0, 0, 0);
   group.add(subjectMesh);
-  // group.add(subjectWireframe);
+
   scene.add(group);
 
   group.rotation.z = Math.PI / 6;
@@ -32,20 +32,20 @@ export default scene => {
   const textureOffsetSpeed = .15;
 
   function deformGeometry(geometry) {
-    // for (let i=0; i<geometry.vertices.length; i+=8) {
-    //     const scalar = 1 - Math.random() * .2;
-    //     geometry.vertices[i].multiplyScalar(scalar)
+    // for (let i = 0; i < geometry.vertices.length; i += 8) {
+    //   const scalar = 1 + Math.random() * .2;
+    //   geometry.vertices[i].multiplyScalar(scalar)
     // }
 
     return geometry;
   }
 
   function update(time, mouse, camera, mouseClicked) {
-  
+
     if (mouseClicked) {
       console.log('second ball aware of mouseclick', lastMouse, mouse.x)
-      
-      
+
+
       raycaster.setFromCamera(mouse, camera);
       var intersects = raycaster.intersectObjects([subjectMesh]);
       if (intersects.length > 0) {
@@ -55,9 +55,9 @@ export default scene => {
           subjectMaterial.alphaMap.repeat.y = 2;
         }
       }
-      clicked = !clicked;   
+      clicked = !clicked;
     }
-    
+
     const angle = time * speed;
 
     subjectMesh.rotation.y = angle;
