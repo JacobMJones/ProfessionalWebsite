@@ -17,7 +17,7 @@ Recent: "https://github.com/JacobMJones/ProfessionalWebsite/blob/master/src/Page
   CollapsibleCard:
     "https://raw.githubusercontent.com/JacobMJones/ProfessionalWebsite/master/src/Components/CollapsibleCard/index.js",
   TitleNavBar:
-    "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Components/TitleNavBar/index.js",
+    "https://raw.githubusercontent.com/JacobMJones/ProfessionalWebsite/master/src/Components/TitleNavBar/index.js",
   GetCode:
     "https://raw.githubusercontent.com/JacobMJones/ProfessionalWebsite/master/src/Functions/getCode.js",
   PrismCode:
