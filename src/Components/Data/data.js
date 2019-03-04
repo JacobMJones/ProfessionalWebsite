@@ -11,9 +11,10 @@ class Data {
       // { title: "Toys", path: "/toys" }
     ];
     this.studiesButtonData = [
+      { title: "Recent", path: "/recent" },
       { title: "Formal", path: "/formal-education" },
       { title: "Tutorials", path: "/tutorials" },
-      { title: "Notes", path: "/notes" },
+     
      
     
       

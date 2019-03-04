@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import * as routes from "../../Constants/routes";
 import ProjectsPage from "../../Pages/Projects";
 import ToysPage from "../../Pages/Toys";
-import Notes from "../../Pages/Notes";
+import Recent from "../../Pages/Recent";
 import WorkHistoryPage from "../../Pages/WorkHistory";
 import LandingPage from "../../Pages/Landing";
 import SpeedReadPage from '../../Pages/SpeedRead'
@@ -40,7 +40,7 @@ class App extends Component {
           <Route exact path={routes.STUDIES} component={StudiesPage} />
           <Route exact path={routes.TUTORIALS} component={TutorialsPage} />
           <Route exact path={routes.FORMALEDUCATION} component={FormalEducation} />
-          <Route exact path={routes.NOTES} component={Notes} />
+          <Route exact path={routes.RECENT} component={Recent} />
           <Route exact path={routes.SPEEDREAD} component={SpeedReadPage} />
           <Route exact path={routes.WORKHISTORY} component={WorkHistoryPage} />
         </div>

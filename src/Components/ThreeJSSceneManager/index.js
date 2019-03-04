@@ -1,7 +1,6 @@
 import * as THREE from "three";
 
 export default (canvas, canvasOptions, sceneOptions, subjects) => {
-
   var mouse = new THREE.Vector2();
   const clock = new THREE.Clock();
   var mouseClicked = false;
@@ -11,14 +10,15 @@ export default (canvas, canvasOptions, sceneOptions, subjects) => {
     height: canvasOptions.height
   };
 
-
   const scene = buildScene();
+  // scene.background = new THREE.Color(0xff0000);
   const renderer = buildRender(canvasDimensions);
   const camera = buildCamera(canvasDimensions);
   const sceneSubjects = createSceneSubjects(scene);
 
   function buildScene() {
     const scene = new THREE.Scene();
+    console.log(scene);
     return scene;
   }
 
@@ -34,23 +34,20 @@ export default (canvas, canvasOptions, sceneOptions, subjects) => {
     renderer.gammaInput = true;
     renderer.gammaOutput = true;
     renderer.setClearColor(0x000000, 0);
-    renderer.domElement.addEventListener("click", () => { console.log('') });
+    renderer.domElement.addEventListener("click", () => {
+      console.log("");
+    });
     return renderer;
   }
 
   function buildCamera({ width, height }) {
-    const aspectRatio = width / height;
-    const fieldOfView = 60;
-    const nearPlane = 4;
+    const fieldOfView = 70;
+    const aspect = width / height;
     const farPlane = 100;
-    const camera = new THREE.PerspectiveCamera(
-      fieldOfView,
-      aspectRatio,
-      nearPlane,
-      farPlane
-    );
+ const camera = new THREE.PerspectiveCamera( 70, width / height, 1, 10000 );
 
-    camera.position.z = sceneOptions.cameraPositionZ ? sceneOptions.cameraPositionZ : 40;
+    camera.position.z = 15;
+    camera.position.y = 0
     return camera;
   }
 
@@ -60,7 +57,7 @@ export default (canvas, canvasOptions, sceneOptions, subjects) => {
   }
 
   function onWindowResize() {
-    const { width, height } = canvas;
+    const { width, height } = canvasDimensions;
     canvasDimensions.width = width;
     canvasDimensions.height = height;
     camera.aspect = width / height;
@@ -73,13 +70,13 @@ export default (canvas, canvasOptions, sceneOptions, subjects) => {
     // mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
   }
   function onClick(event) {
-
     event.preventDefault();
 
-    mouse.x = (event.clientX / renderer.domElement.clientWidth) * 2 - 1;
-    mouse.y = -(event.clientY / renderer.domElement.clientHeight) * 2 + 1;
-
-    mouseClicked = true
+    mouse.x = (event.clientX / canvasDimensions.width) * 2 - 1;
+    mouse.y = -(event.clientY / canvasDimensions.height) * 2 + 1;
+    // mouse.x = ( e.clientX / window.innerWidth ) * 2 - 1;
+    // mouse.y = - ( e.clientY / window.innerHeight ) * 2 + 1;
+    mouseClicked = true;
 
     mouseClicks.push({ x: mouse.x, y: mouse.y });
     console.log(mouseClicked);
@@ -87,15 +84,18 @@ export default (canvas, canvasOptions, sceneOptions, subjects) => {
 
   function update() {
     const elapsedTime = clock.getElapsedTime();
-    for (let click = undefined; click = mouseClicks.shift();) {
+    if (mouseClicked) {
       for (let i = 0; i < sceneSubjects.length; i++) {
-        sceneSubjects[i].update(elapsedTime, mouse, camera, mouseClicked);
+        sceneSubjects[i].click(mouse, camera);
       }
     }
 
     for (let i = 0; i < sceneSubjects.length; i++) {
-      sceneSubjects[i].update(elapsedTime, mouse, camera, null);
+      sceneSubjects[i].update(elapsedTime, mouse, camera);
     }
+
+    mouseClicked = false;
+
     renderer.render(scene, camera);
   }
   return {
@@ -106,12 +106,10 @@ export default (canvas, canvasOptions, sceneOptions, subjects) => {
   };
 };
 
-
-
 // updateCameraPositionRelativeToMouse();
 
-  //   function updateCameraPositionRelativeToMouse() {
-  //     camera.position.x += (mouse.x * 0.01 - camera.position.x) * 0.01;
-  //     camera.position.y += (-(mouse.y * 0.01) - camera.position.y) * 0.01;
-  //     camera.lookAt(origin);
-  //   }
+//   function updateCameraPositionRelativeToMouse() {
+//     camera.position.x += (mouse.x * 0.01 - camera.position.x) * 0.01;
+//     camera.position.y += (-(mouse.y * 0.01) - camera.position.y) * 0.01;
+//     camera.lookAt(origin);
+//   }

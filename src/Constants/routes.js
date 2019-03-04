@@ -1,5 +1,5 @@
 export const LANDING = '/'
-export const NOTES = '/notes'
+export const RECENT = '/recent'
 export const PROJECTS = '/projects'
 export const WORKHISTORY = '/work-history'
 export const TOYS = '/toys'

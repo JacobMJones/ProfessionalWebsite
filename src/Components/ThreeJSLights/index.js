@@ -11,12 +11,16 @@ export default scene => {
 
     const rad = 2;
 
+    function click(){
+
+    }
     function update(time) {
         const x = rad * Math.sin(time*0.2)
         lightOut.position.x = x;
     }
 
     return {
-        update
+        update,
+        click
     }
 }

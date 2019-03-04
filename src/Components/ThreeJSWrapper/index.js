@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import SceneManager from "../ThreeJSSceneManager";
 import Canvas from "../ThreeJSCanvas";
 import GeneralLights from "../ThreeJSLights";
-import SceneSubject from '../SceneSubjects/trippy-ball.js'
+import SceneSubject from '../SceneSubjects/button.js'
 import SceneSubject2 from '../SceneSubjects/trippy-ball2.js'
 
 class ThreeJSWrapper extends Component {
@@ -32,7 +32,8 @@ class ThreeJSWrapper extends Component {
         sceneOptions={sceneOptions}
         subjects={[
           (scene) => new GeneralLights(scene),
-          (scene) => new SceneSubject2(scene),
+         (scene) => new SceneSubject2(scene),
+          // (scene) => new SceneSubject(scene),
         ]}
       />
 

@@ -21,9 +21,9 @@ class Toys extends Component {
   render() {
     return (
       <FullPage background={'white'}>
-        <FlexRow><button onClick={() => { this.clickHandler() }}>Change</button></FlexRow>
-        <FlexRow> {this.state.clicked && <ThreeJSWrapper />}</FlexRow>
-
+     
+       
+        <ThreeJSWrapper />
       </FullPage>
     );
   }
