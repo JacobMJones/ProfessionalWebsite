@@ -1,31 +1,64 @@
 import React, { Component } from "react";
-import { FullPage, FlexRow, FlexColumn, FlexElement } from "./style.js";
-import Marble from "./SpecificToys/Marble"
-import ThreeJSWrapper from '../../Components/ThreeJSWrapper'
+import Animated, {
+  FadeAnimations,
+  RotateAnimations
+} from "animated-styled-components";
+import styled, { ThemeProvider } from "styled-components";
+
+
+import { Box, FullPage } from "./style";
+import posed from "react-pose";
+
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
 class Toys extends Component {
   constructor(props) {
     super(props);
-    this.state = { clicked: false }
+    this.state = { borderRadius:50 };
   }
+  state = { pose: "top" };
 
-  componentDidMount() {
+  handleClick = () => {
+    this.setState({
+      pose: this.state.pose === "top" ? "bottom" : "top"
+      // y: getRandomArbitrary(0,window.innerHeight/8)
+    });
+    this.forceUpdate();
+  };
 
+  getRandomArbitrary = (min, max) => {
+    return Math.random() * (max - min) + min;
+  };
 
-  }
-  clickHandler = () => {
-    console.log('clicked')
-    this.setState(prevState => ({
-      clicked: !prevState.clicked
-    }));
-  }
   render() {
+    console.log("scale value", this.state.scaleValue);
     return (
-      <FullPage background={'white'}>
-     
-       
-        <ThreeJSWrapper />
+      <FullPage background={this.state.backgroundColor}>
+        <Box borderRadius={this.state.borderRadius} onClick={()=>{this.setState({borderRadius:getRandomArbitrary(4,100)})}} >
+          Click Here to slideOutUp
+        </Box>
+
       </FullPage>
+      //
     );
   }
 }
 export default Toys;
+
+// export default class extends React.Component {
+//   state = { isActive: true };
+//   click = () => {
+//     this.setState({ isActive: false });
+//   };
+//   render() {
+//     return (
+//       <h1>
+//         <MyComponent onClick={this.click} isActive={this.state.isActive}>
+//           Click Here to slideOutUp
+//         </MyComponent>
+//         Hello!
+//       </h1>
+//     );
+//   }
+// }

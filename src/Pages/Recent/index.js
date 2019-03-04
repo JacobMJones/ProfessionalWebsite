@@ -12,7 +12,7 @@ class Recent extends Component {
   }
   async componentDidMount() {
     const arrayOfCode = [];
-    codeData.ProjectsCode.forEach(async function(element) {
+    codeData.RecentCode.forEach(async function(element) {
       const code = await getCode(element);
       arrayOfCode.push(code);
     });
@@ -22,7 +22,7 @@ class Recent extends Component {
   render() {
     return (
       <NoteBasedPage
-        title={"Recent Studies"}
+        title={"Recent"}
         backArrow={true}
         code={this.state.code}
         data={recentData}

@@ -9,7 +9,7 @@ const components = {
     "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Pages/WorkHistory/index.js",
   Notes:
     "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Pages/Notes/index.js",
-
+Recent: "https://github.com/JacobMJones/PersonalWebsite/blob/master/src/Pages/Recent/index.js",
   CheckBox:
     "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Components/Checkbox/index.js",
   Collapsible:
@@ -46,9 +46,11 @@ const {
   Notes,
   NoteBasedPage,
   Tutorials,
+  Recent
 } = components;
 
 const ProjectsCode = [Projects, NoteBasedPage, TitleNavBar, PrismCode];
+const RecentCode = [Recent, NoteBasedPage, TitleNavBar, PrismCode]
 const StudiesCode = [Studies, GetCode, TitleNavBar, PrismCode];
 const NotesCode = [Notes, GetCode, TitleNavBar, PrismCode];
 const TutorialsCode = [Tutorials, NoteBasedPage]
@@ -73,4 +75,5 @@ export default {
   FormalEducationCode,
   NotesCode,
   TutorialsCode,
+  RecentCode
 };

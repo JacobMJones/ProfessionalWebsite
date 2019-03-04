@@ -26,8 +26,7 @@
     "react-window-size-listener": "^1.2.3",
     "react-youtube": "^7.9.0",
     "styled-components": "^4.1.3",
-    "styled-tools": "^1.7.1",
-    "three": "^0.102.0"
+    "styled-tools": "^1.7.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -43,17 +42,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "description": "This is my personal website. It serves as a clearing house for stuff related to web dev. It is also an ongoing project I use to experiment. I try and make this code base as clean as possible and follow best practices. That said, since I use this code base to learn, some things are overly engineered (or weirdly engineered, currently I provide a data object through the context API as a way of learning about providing context) or at times (hopefully brief) a complete mess.",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JacobMJones/PersonalWebsite.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JacobMJones/PersonalWebsite/issues"
-  },
-  "homepage": "https://github.com/JacobMJones/PersonalWebsite#readme"
+  ]
 }
