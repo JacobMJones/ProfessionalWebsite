@@ -2,33 +2,33 @@
 
 const components = {
   Projects:
-    "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Pages/Projects/index.js",
+    "https://raw.githubusercontent.com/JacobMJones/ProfessionalWebsite/master/src/Pages/Projects/index.js",
   Cards:
-    "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Components/Cards/index.js",
+    "https://raw.githubusercontent.com/JacobMJones/ProfessionalWebsite/master/src/Components/Cards/index.js",
   WorkHistory:
-    "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Pages/WorkHistory/index.js",
+    "https://raw.githubusercontent.com/JacobMJones/ProfessionalWebsite/master/src/Pages/WorkHistory/index.js",
   Notes:
-    "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Pages/Notes/index.js",
-Recent: "https://github.com/JacobMJones/PersonalWebsite/blob/master/src/Pages/Recent/index.js",
+    "https://raw.githubusercontent.com/JacobMJones/ProfessionalWebsite/master/src/Pages/Notes/index.js",
+Recent: "https://github.com/JacobMJones/ProfessionalWebsite/blob/master/src/Pages/Recent/index.js",
   CheckBox:
-    "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Components/Checkbox/index.js",
+    "https://raw.githubusercontent.com/JacobMJones/ProfessionalWebsite/master/src/Components/Checkbox/index.js",
   Collapsible:
-    "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Components/Collapsible/index.js",
+    "https://raw.githubusercontent.com/JacobMJones/ProfessionalWebsite/master/src/Components/Collapsible/index.js",
   CollapsibleCard:
-    "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Components/CollapsibleCard/index.js",
+    "https://raw.githubusercontent.com/JacobMJones/ProfessionalWebsite/master/src/Components/CollapsibleCard/index.js",
   TitleNavBar:
     "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Components/TitleNavBar/index.js",
   GetCode:
-    "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Functions/getCode.js",
+    "https://raw.githubusercontent.com/JacobMJones/ProfessionalWebsite/master/src/Functions/getCode.js",
   PrismCode:
-    "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Components/PrismCode/index.js",
+    "https://raw.githubusercontent.com/JacobMJones/ProfessionalWebsite/master/src/Components/PrismCode/index.js",
   Studies:
-    "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Pages/Studies/index.js",
+    "https://raw.githubusercontent.com/JacobMJones/ProfessionalWebsite/master/src/Pages/Studies/index.js",
   FormalEducation:
-    "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Pages/FormalEducation/index.js",
+    "https://raw.githubusercontent.com/JacobMJones/ProfessionalWebsite/master/src/Pages/FormalEducation/index.js",
   NoteBasedPage:
-    "https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Components/NoteBasedPage/index.js",
-Tutorials:"https://raw.githubusercontent.com/JacobMJones/PersonalWebsite/master/src/Pages/Tutorials/index.js",
+    "https://raw.githubusercontent.com/JacobMJones/ProfessionalWebsite/master/src/Components/NoteBasedPage/index.js",
+Tutorials:"https://raw.githubusercontent.com/JacobMJones/ProfessionalWebsite/master/src/Pages/Tutorials/index.js",
 };
 
 const {
